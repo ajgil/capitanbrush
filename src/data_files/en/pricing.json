@@ -25,7 +25,7 @@
     "description": "Best for large scale uses",
     "price": "150",
     "cents": ".00",
-    "billingFrequency": "EUR",
+    "billingFrequency": "USD / monthly",
     "features": [
       "Premium tool selection",
       "Priority support",

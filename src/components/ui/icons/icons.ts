@@ -196,6 +196,19 @@ export const Icons = {
     strokeLinejoin: "round",
     stroke: "currentColor",
   },
+  captBrush: {
+    paths: [
+      {
+        d:"M64 464 c3 -9 6 -29 6 -44 0 -19 7 -33 21 -40 24 -13 38 -5 21 12 -77 -12 24 -12 38 0 26 -16 50 -33 50 -5 0 -6 -7 -3 -16z"
+      }
+    ],
+    class:
+      "w-4.5 h-4.5 transition flex-shrink-0 text-neutral-700 duration-300 group-hover:-translate-y-1",
+    width: 16,
+    height: 16,
+    viewBox: "0 0 16 16",
+    fill: "currentColor",
+  },
   github: {
     paths: [
       {

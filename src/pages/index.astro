@@ -10,14 +10,16 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+import heroImage from "@images/logo-1.webp";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import featureImage from "@images/features-image.avif";
+//import featureImage from "@images/features-image.avif";
+import featureImage from "@images/logo-1.webp";
 import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
+//import tools from "@images/automated-tools.avif";
+import tools from "@images/ref-Alberto-1.webp"
+import dashboard from "@images/ref-Sara-1.webp";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -28,19 +30,21 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
+  <!--
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"
     url="https://github.com/mearashadowfax/ScrewFast"
   />
+   -->
 
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
+    title=`¡Únete a Nuestro Curso Exclusivo sobre <span
+        class="text-yellow-500 dark:text-yellow-400">Mega Yates!</span>`
+    subTitle="Aprende de un ingeniero de mega yates con experiencia y adquiere una visión profunda de la industria."
+    primaryBtn="Contenido"
     primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
+    secondaryBtn="Enrolate ya"
     secondaryBtnURL="/contact"
     withReview={true}
     avatars={avatarSrcs}
@@ -50,11 +54,12 @@ const avatarSrcs: Array<string> = [
     src={heroImage}
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
   />
-
+  <!--
   <ClientsSection
     title="Trusted by Industry Leaders"
     subTitle="Experience the reliability chosen by industry giants."
   />
+
 
   <FeaturesGeneral
     title="Meeting Industry Demands"
@@ -63,6 +68,7 @@ const avatarSrcs: Array<string> = [
     alt="ScrewFast products in floating boxes"
     features={features}
   />
+   -->
 
   <FeaturesNavs
     title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
@@ -85,6 +91,7 @@ const avatarSrcs: Array<string> = [
         alt: "A screenshot or graphic representation of the intuitive dashboard",
         second: true,
       },
+      /*
       {
         heading: "Robust Features",
         content:
@@ -93,9 +100,11 @@ const avatarSrcs: Array<string> = [
         src: construction,
         alt: "Gray metal building frame near tower crane during daytime",
       },
+      */
     ]}
   />
 
+  <!--
   <TestimonialsSection
     title="Fast-Track Your Projects"
     subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
@@ -132,14 +141,14 @@ const avatarSrcs: Array<string> = [
       },
     ]}
   />
-
+ --> 
   <PricingSection pricing={pricing} />
 
   <FAQ title="Frequently<br />asked questions" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    title="¡No pierdas esta oportunidad única!"
+    subTitle="Recibirás acceso a materiales de estudio, guías paso a paso, enlaces a recursos importantes y ejemplos prácticos."
+    url="/contact"
   />
 </MainLayout>
