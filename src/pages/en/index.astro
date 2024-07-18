@@ -1,5 +1,5 @@
 ---
-// Importa los componentes necesarios
+// Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
@@ -20,42 +20,42 @@ const avatarSrcs: Array<string> = [
 ];
 ---
 
-<MainLayout lang="es">
+<MainLayout lang="en">
   <HeroSection
-    title={`Únete a nuestro exclusivo curso sobre <span class="text-yellow-500 dark:text-yellow-400">Mega Yates!</span>`}
-    subTitle="Aprende de un ingeniero experimentado en mega yates y obtén una profunda comprensión de la industria."
-    primaryBtn="Contenido"
-    primaryBtnURL="/productos"
-    secondaryBtn="Inscríbete ahora"
-    secondaryBtnURL="/contacto"
+    title={`Join our exclusive course on <span class="text-yellow-500 dark:text-yellow-400">Mega Yachts!</span>`}
+    subTitle="Learn from an experienced mega yacht engineer and gain a deep understanding of the industry."
+    primaryBtn="Content"
+    primaryBtnURL="/products"
+    secondaryBtn="Sign up now"
+    secondaryBtnURL="/contact"
     withReview={true}
     avatars={avatarSrcs}
     rating={`<span class="font-bold">4.8</span> / 5`}
     starCount={4}
-    reviews={`De más de <span class="font-bold">12.8k</span> opiniones`}
+    reviews={`From over <span class="font-bold">12.8k</span> reviews`}
     src={heroImage}
-    alt="Pila de cajas de productos ScrewFast que contienen herramientas variadas"
+    alt="Stack of ScrewFast product boxes containing various tools"
   />
 
   <FeaturesNavs
-    title={`Personaliza las ofertas de <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span> para adaptarse perfectamente a tus necesidades de hardware y construcción.`}
+    title={`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span> offerings to perfectly suit your hardware and construction needs.`}
     tabs={[
       {
-        heading: "Herramientas de Última Generación",
+        heading: "Cutting-Edge Tools",
         content:
-          "Potencia tus proyectos con las herramientas de última generación de ScrewFast. Experimenta una eficiencia mejorada en la gestión de construcción con nuestras soluciones automatizadas sofisticadas.",
+          "Power your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
         svg: "tools",
         src: tools,
-        alt: "Equipo pesado amarillo y negro en un campo de césped marrón",
+        alt: "Yellow and black heavy equipment in a brown grass field",
         first: true,
       },
       {
-        heading: "Paneles Intuitivos",
+        heading: "Intuitive Dashboards",
         content:
-          "Navega con facilidad utilizando los paneles intuitivos de ScrewFast. Configura y supervisa tus proyectos de manera fluida, con interfaces fáciles de usar diseñadas para una gestión de flujo de trabajo rápida y efectiva.",
+          "Navigate easily using ScrewFast's intuitive dashboards. Configure and monitor your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
         svg: "dashboard",
         src: dashboard,
-        alt: "Una captura de pantalla o representación gráfica del panel intuitivo",
+        alt: "A screenshot or graphical representation of the intuitive dashboard",
         second: true,
       },
     ]}
@@ -63,11 +63,11 @@ const avatarSrcs: Array<string> = [
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title={`Preguntas<br />frecuentes`} faqs={faqs} />
+  <FAQ title={`Frequently<br />Asked Questions`} faqs={faqs} />
 
   <HeroSectionAlt
-    title="¡No te pierdas esta oportunidad única!"
-    subTitle="Recibirás acceso a materiales de estudio, guías paso a paso, enlaces a recursos importantes y ejemplos prácticos."
-    url="/contacto"
+    title="Don't miss out on this unique opportunity!"
+    subTitle="You'll receive access to study materials, step-by-step guides, links to important resources, and practical examples."
+    url="/contact"
   />
-</MainLayout>
+</MainLayout>;
