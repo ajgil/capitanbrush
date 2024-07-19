@@ -12,24 +12,11 @@ import LanguagePicker from "@components/ui/LanguagePicker.astro";
 // Definir el tipo para los locales soportados
 type SupportedLocales = 'es' | 'fr' | 'en';
 
-// Definir un objeto con las cadenas de texto para cada local
-const localeStrings: Record<SupportedLocales, { navBarLinks: { name: string; url: string; }[] }> = {
-  fr: frStrings,
-  en: enStrings,
-  es: esStrings,
-};
 
-// Función para verificar si un valor es un locale soportado
-function isSupportedLocale(locale: string | undefined): locale is SupportedLocales {
-  return ['es', 'fr', 'en'].includes(locale || '/');
-}
-
-// Obtener el locale actual y asegurarse que es uno de los soportados
-const currentLocale: SupportedLocales = isSupportedLocale(Astro.currentLocale) ? Astro.currentLocale : 'es';
 
 // Obtener las cadenas de texto y la URL del inicio basados en el locale actual
-const strings = localeStrings[currentLocale];
-const homeUrl = `/${currentLocale === 'es' ? '/' : currentLocale}`;
+const strings = Astro.currentLocale === 'en' ? enStrings : Astro.currentLocale === 'fr' ? frStrings : esStrings;
+const homeUrl = `/${Astro.currentLocale === 'es' ? '/' : Astro.currentLocale}`;
 
 ---
 
