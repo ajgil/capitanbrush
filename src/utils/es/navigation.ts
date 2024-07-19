@@ -1,35 +1,35 @@
-// An array of links for navigation bar
+// Un array de enlaces para la barra de navegación
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  //{ name: "Productos", url: "/products" },
+  { name: "Inicio", url: "/" },
   { name: "Servicios", url: "/services" },
- // { name: "Blog", url: "/blog" },
   { name: "Contacto", url: "/contact" },
 ];
-// An array of links for footer
+
+// Un array de enlaces para el pie de página
 const footerLinks = [
   {
     section: "Ecosistema",
     links: [
-      { name: "Documentacion", url: "/welcome-to-docs/" },
-      { name: "Herramientas y Equipación", url: "/products" },
+      { name: "Documentación", url: "/welcome-to-docs/" },
+      { name: "Herramientas y Equipos", url: "/products" },
       { name: "Servicios", url: "/services" },
     ],
   },
   {
-    section: "Compañia",
+    section: "Empresa",
     links: [
-      { name: "Acerca de", url: "#" },
+      { name: "Sobre Nosotros", url: "#" },
       { name: "Blog", url: "/blog" },
-      { name: "Trabajo", url: "#" },
+      { name: "Carreras", url: "#" },
       { name: "Clientes", url: "#" },
     ],
   },
 ];
-// An object of links for social icons
+
+// Un objeto de enlaces para iconos sociales
 const socialLinks = {
   facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
+  x: "https://x.com/",
   google: "https://www.google.com/",
   slack: "https://slack.com/",
 };

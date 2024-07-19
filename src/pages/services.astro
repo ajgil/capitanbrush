@@ -1,12 +1,12 @@
 ---
-// Import necessary components
+// Importa los componentes necesarios
 import MainLayout from "@/layouts/MainLayout.astro";
 import MainSection from "@components/ui/blocks/MainSection.astro";
 import LeftSection from "@components/ui/blocks/LeftSection.astro";
 import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
-// Import necessary images
+// Importa las imágenes necesarias
 import blueprints from "@images/blueprints-image.avif";
 import personWorking from "@images/person-working.avif";
 import beforeAfter from "@images/before-after.avif";
@@ -17,7 +17,7 @@ import progressBuilding from "@images/progress-building.avif";
 import underConstruction from "@images/under-construction.avif";
 import { SITE } from "@data/constants";
 
-interface Article {
+interface Articulo {
   isRightSection: boolean;
   title: string;
   subTitle: string;
@@ -33,66 +33,67 @@ interface Article {
   imgTwoAlt?: string;
 }
 
-const articles: Article[] = [
+const articles: Articulo[] = [
   {
     isRightSection: true,
-    title: "Delivering Expert Guidance",
+    title: "Entregando Orientación Experta",
     subTitle:
-      "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
+      "Embarcarse en un proyecto de construcción puede ser abrumador. Con nuestros servicios de consulta profesional, te guiamos en cada etapa, asegurando que tomes decisiones informadas. Ya seas un entusiasta del bricolaje o un contratista experimentado, nuestros expertos están disponibles para ofrecer asesoramiento personalizado sobre selección de productos, alcance del proyecto y cumplimiento de regulaciones locales.",
     single: false,
     imgOne: blueprints,
-    imgOneAlt: "Blueprints and digital tablet with construction plans.",
+    imgOneAlt: "Planos y tableta digital con planes de construcción.",
     imgTwo: personWorking,
-    imgTwoAlt: "Person working in the office",
+    imgTwoAlt: "Persona trabajando en la oficina",
   },
   {
     isRightSection: false,
-    title: "Transforming Designs into Reality",
+    title: "Transformando Diseños en Realidad",
     subTitle:
-      "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
+      "Nuestros artesanos expertos aportan precisión y excelencia a cada proyecto de construcción. Desde instalaciones menores hasta trabajos estructurales sustanciales, ScrewFast ofrece servicios confiables de construcción para convertir tus planes en resultados tangibles. Garantizamos los más altos estándares de seguridad y mano de obra, utilizando herramientas y materiales de alta calidad de nuestro extenso inventario.",
     img: beforeAfter,
-    imgAlt: "Construction site before and after",
+    imgAlt: "Sitio de construcción antes y después",
     btnExists: true,
-    btnTitle: "Learn More",
+    btnTitle: "Más Información",
     btnURL: "#",
   },
   {
     isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
+    title: "Navegando Proyectos con Supervisión Profesional",
     subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
+      "La gestión efectiva de proyectos es fundamental para cualquier construcción exitosa. ScrewFast ofrece servicios de planificación exhaustiva y gestión robusta que mantienen tu proyecto a tiempo y dentro del presupuesto. Permítenos manejar las complejidades de la coordinación del flujo de trabajo, asignación de recursos y comunicación con las partes interesadas mientras tú te enfocas en tu visión.",
     single: false,
     imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
+    imgOneAlt: "Trabajadores de construcción orquestando un proyecto",
     imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
+    imgTwoAlt: "Vista aérea de una construcción gestionada",
   },
   {
     isRightSection: false,
-    title: "Ensuring Long-lasting Performance",
+    title: "Garantizando un Rendimiento Duradero",
     subTitle:
-      "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
+      "Nuestro compromiso con tu proyecto no termina al completarlo. ScrewFast ofrece servicios continuos de mantenimiento y soporte para garantizar la longevidad y el rendimiento de tu construcción. Desde revisiones regulares hasta asistencia de emergencia, nuestro equipo receptivo está ahí para brindar soporte sin interrupciones.",
     img: usingTools,
     imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+      "Hombre con chaleco naranja y negro usando casco blanco sosteniendo una herramienta eléctrica amarilla y negra",
   },
   {
     isRightSection: true,
-    title: "Crafting Bespoke Strategies for Unique Challenges",
+    title: "Creando Estrategias a Medida para Desafíos Únicos",
     subTitle:
-      "For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
+      "Para nuestros clientes corporativos más grandes, ScrewFast ofrece soluciones personalizadas diseñadas para enfrentar desafíos específicos de la industria. Al comprender tus necesidades únicas, diseñamos estrategias a medida para optimizar tus operaciones, mejorar la eficiencia y impulsar tu negocio hacia adelante.",
     single: false,
     imgOne: progressBuilding,
-    imgOneAlt: "In progress building structure",
+    imgOneAlt: "Estructura en construcción en progreso",
     imgTwo: underConstruction,
-    imgTwoAlt: "Brown and gray building under construction",
+    imgTwoAlt: "Edificio en construcción en tonos marrón y gris",
     btnExists: true,
-    btnTitle: "Read more",
+    btnTitle: "Leer más",
     btnURL: "#",
   },
 ];
 
-const pageTitle: string = `Services | ${SITE.title}`;
+const pageTitle: string = `Servicios | ${SITE.title}`;
+
 ---
 
 <MainLayout
@@ -102,33 +103,24 @@ const pageTitle: string = `Services | ${SITE.title}`;
     "@type": "WebPage",
     "@id": "https://screwfast.uk/services",
     "url": "https://screwfast.uk/services",
-    "name": "Expert Consultation Services | ScrewFast",
-    "description": "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    "name": "Servicios de Consultoría Expertos | ScrewFast",
+    "description": "Uniendo experiencia con tu visión, ScrewFast ofrece un servicio excepcional y soluciones completas en la industria de hardware y construcción, desde la consulta hasta la finalización del proyecto.",
     "isPartOf": {
-        "@type": "WebSite",
-        "url": "https://screwfast.uk",
-        "name": "ScrewFast",
-        "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+      "@type": "WebSite",
+      "url": "https://screwfast.uk",
+      "name": "ScrewFast",
+      "description": "ScrewFast ofrece herramientas de hardware de primera categoría y servicios de construcción expertos para satisfacer todas tus necesidades de proyecto."
     },
-    "inLanguage": "en-US"
+    "inLanguage": "es"
   }}
 >
-  <!--MainSection is the introductory section of the page, it also contains a CTA button-->
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    title="Uniendo Experiencia con tu Visión"
+    subTitle="En ScrewFast, nos enorgullece proporcionar soluciones completas y un servicio excepcional en la industria de hardware y construcción. Nuestro equipo experimentado está dedicado a apoyar tu proyecto desde el inicio hasta la finalización con una variedad de servicios especializados."
     btnExists={true}
-    btnTitle="Schedule a Consultation"
+    btnTitle="Programar una Consulta"
     btnURL="#"
   />
-  <!-- RightSection and LeftSection contain details about various services along with pertinent imagery.
-  They alternate for variety in design.
-  The 'btnExists' property is used to toggle the display of a button in these sections.
-  When btnExists={true}, a button is displayed.
-  This can be used to link to more detailed information or related resources.
-  RightSection can also conditionally render one or two images based on the 'single' property.
-  If 'single' is true, it displays one image, otherwise it displays two.
-  -->
   {
     articles.map(article => {
       return article.isRightSection ? (
@@ -157,24 +149,23 @@ const pageTitle: string = `Services | ${SITE.title}`;
       );
     })
   }
-  <!--FeaturesStats section showcases essential stats valuable to users-->
   <FeaturesStats
-    title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    title="Por los Números"
+    subTitle="Nuestro compromiso con la calidad y la fiabilidad se refleja en cada proyecto que emprendemos. En ScrewFast, estamos dedicados a ofrecer servicios líderes en la industria que aseguran que tus proyectos de construcción estén hechos para perdurar."
     mainStatTitle="96%"
-    mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
+    mainStatSubTitle="de nuestros clientes califican su experiencia con ScrewFast como excepcional"
     stats={[
       {
         stat: "99.8%",
-        description: "project completion rate",
+        description: "tasa de finalización de proyectos",
       },
       {
         stat: "5,000+",
-        description: "successful installations",
+        description: "instalaciones exitosas",
       },
       {
         stat: "85%",
-        description: "client growth year-over-year",
+        description: "crecimiento de clientes año tras año",
       },
     ]}
   />

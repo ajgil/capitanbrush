@@ -1,45 +1,51 @@
 ---
-//Import relevant dependencies
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import Authentication from "../misc/Authentication.astro";
-import enStrings from "@utils/navigation.ts";
-import frStrings from "@utils/fr/navigation.ts";
+import esStrings from "@/utils/es/navigation";
+import frStrings from "@/utils/fr/navigation";
+import enStrings from "@/utils/en/navigation";
 import { Image } from "astro:assets";
 import heroImage from "@images/heroImageCaptBrush.svg";
-//import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
-// Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
-const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/" ;
+// Definir el tipo para los locales soportados
+type SupportedLocales = 'es' | 'fr' | 'en';
+
+// Definir un objeto con las cadenas de texto para cada local
+const localeStrings: Record<SupportedLocales, { navBarLinks: { name: string; url: string; }[] }> = {
+  fr: frStrings,
+  en: enStrings,
+  es: esStrings,
+};
+
+// Función para verificar si un valor es un locale soportado
+function isSupportedLocale(locale: string | undefined): locale is SupportedLocales {
+  return ['es', 'fr', 'en'].includes(locale || '/');
+}
+
+// Obtener el locale actual y asegurarse que es uno de los soportados
+const currentLocale: SupportedLocales = isSupportedLocale(Astro.currentLocale) ? Astro.currentLocale : 'es';
+
+// Obtener las cadenas de texto y la URL del inicio basados en el locale actual
+const strings = localeStrings[currentLocale];
+const homeUrl = `/${currentLocale === 'es' ? '/' : currentLocale}`;
+
 ---
 
-<!-- Main header component -->
-<header
-  class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
->
-  <!-- Navigation container -->
+<header class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start">
   <nav
     class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
     aria-label="Global"
   >
     <div class="flex items-center justify-between">
-      <!-- Brand logo -->
       <a
         class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
         href={homeUrl}
         aria-label="Brand"
       >
-      <Image
-      src={heroImage}
-      alt={"Capitan Brush"}
-      class="h-auto w-24"
-      draggable={"false"}
-      format={"svg"}
- /> </Image> <!--<BrandLogo /> class="h-full w-full scale-30 object-cover object-center"-->
+        <Image src={heroImage} alt="Capitan Brush" class="h-auto w-24" draggable="false" format="svg" />
       </a>
-      <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
         <button
           type="button"
@@ -48,6 +54,7 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/" ;
           aria-controls="navbar-collapse-with-animation"
           aria-label="Toggle navigation"
         >
+        
           <svg
             class="h-[1.25rem] w-[1.25rem] flex-shrink-0 hs-collapse-open:hidden"
             width="24"
@@ -77,40 +84,36 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/" ;
             <path d="M18 6 6 18"></path>
             <path d="m6 6 12 12"></path>
           </svg>
+          
+           
+          
         </button>
       </div>
-      <!-- ThemeIcon component specifically for smaller screens -->
       <span class="inline-block md:hidden">
         <ThemeIcon />
       </span>
     </div>
-    <!-- Contains navigation links -->
-    <div
-      id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
-    >
-      <!-- Navigation links container -->
-      <div
-        class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7"
-      >
-        <!-- Navigation links and Authentication component -->
+    <div id="navbar-collapse-with-animation" class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block">
+      <div class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 lg:gap-x-7 md:gap-y-0 md:ps-7">
+       
         {strings.navBarLinks.map(link => (
+          
+          
           <NavLink url={link.url} name={link.name} />
         ))}
-
-<!--
-        <Authentication />
- -->
+        
         <LanguagePicker />
-        <!-- ThemeIcon component specifically for larger screens -->
+        
+
         <span class="hidden md:inline-block">
           <ThemeIcon />
+          
         </span>
       </div>
     </div>
   </nav>
 </header>
-<!-- Theme Appearance script to manage light/dark modes -->
+
 <script is:inline>
   const HSThemeAppearance = {
     init() {
@@ -135,35 +138,27 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/" ;
       }
 
       if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default";
       }
 
       document.querySelector("html").classList.remove("dark");
       document.querySelector("html").classList.remove("default");
       document.querySelector("html").classList.remove("auto");
 
-      document
-        .querySelector("html")
-        .classList.add(this.getOriginalAppearance());
+      document.querySelector("html").classList.add(theme);
 
       setTimeout(() => {
         $resetStylesEl.remove();
       });
 
       if (dispatchEvent) {
-        window.dispatchEvent(
-          new CustomEvent("on-hs-appearance-change", { detail: theme }),
-        );
+        window.dispatchEvent(new CustomEvent("on-hs-appearance-change", { detail: theme }));
       }
     },
     getAppearance() {
       let theme = this.getOriginalAppearance();
       if (theme === "auto") {
-        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "default";
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default";
       }
       return theme;
     },
@@ -174,33 +169,23 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/" ;
   };
   HSThemeAppearance.init();
 
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", () => {
-      if (HSThemeAppearance.getOriginalAppearance() === "auto") {
-        HSThemeAppearance.setAppearance("auto", false);
-      }
-    });
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (HSThemeAppearance.getOriginalAppearance() === "auto") {
+      HSThemeAppearance.setAppearance("auto", false);
+    }
+  });
 
   window.addEventListener("load", () => {
-    const $clickableThemes = document.querySelectorAll(
-      "[data-hs-theme-click-value]",
-    );
-    const $switchableThemes = document.querySelectorAll(
-      "[data-hs-theme-switch]",
-    );
+    const $clickableThemes = document.querySelectorAll("[data-hs-theme-click-value]");
+    const $switchableThemes = document.querySelectorAll("[data-hs-theme-switch]");
 
-    $clickableThemes.forEach(($item) => {
+    $clickableThemes.forEach($item => {
       $item.addEventListener("click", () =>
-        HSThemeAppearance.setAppearance(
-          $item.getAttribute("data-hs-theme-click-value"),
-          true,
-          $item,
-        ),
+        HSThemeAppearance.setAppearance($item.getAttribute("data-hs-theme-click-value"), true, $item)
       );
     });
 
-    $switchableThemes.forEach(($item) => {
+    $switchableThemes.forEach($item => {
       $item.addEventListener("change", (e) => {
         HSThemeAppearance.setAppearance(e.target.checked ? "dark" : "default");
       });
@@ -209,15 +194,13 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/" ;
     });
 
     window.addEventListener("on-hs-appearance-change", (e) => {
-      $switchableThemes.forEach(($item) => {
+      $switchableThemes.forEach($item => {
         $item.checked = e.detail === "dark";
       });
     });
   });
 </script>
-<!--Import the necessary Collapse and Overlay plugins-->
-<!--https://preline.co/plugins/html/collapse.html-->
-<!--https://preline.co/plugins/html/overlay.html-->
+
 <script>
   import "@preline/collapse/index.js";
   import "@preline/overlay/index.js";
