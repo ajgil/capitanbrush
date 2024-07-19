@@ -67,7 +67,7 @@ export default defineConfig({
         },
       ],
       social: {
-        github: "https://github.com/mearashadowfax/Capitanbrush",
+        github: "https://github.com/ajgil/capitanbrush",
       },
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
