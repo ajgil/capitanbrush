@@ -9,7 +9,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   // Configuración del sitio
   site: "https://ajgil.github.io",
-  base: "capitanbrush",
+  base: "/",
   
   // Autorización de imágenes remotas
   image: {
@@ -111,5 +111,5 @@ export default defineConfig({
   },
 
   // Adaptador de Vercel para sitios estáticos
-  adapter: vercelStatic(),
+  
 });
