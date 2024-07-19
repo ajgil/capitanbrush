@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import faqs from "@data/faqs.json";
+import faqs from "@data/faqs_es.json";
 import pricing from "@data/pricing.json";
 import heroImage from "@images/logo-1.webp";
 import tools from "@images/ref-Alberto-1.webp";
@@ -25,37 +25,47 @@ const avatarSrcs: Array<string> = [
     title={`Únete a nuestro exclusivo curso sobre <span class="text-yellow-500 dark:text-yellow-400">Mega Yates!</span>`}
     subTitle="Aprende de un ingeniero experimentado en mega yates y obtén una profunda comprensión de la industria."
     primaryBtn="Contenido"
-    primaryBtnURL="/productos"
+    primaryBtnURL="/services"
     secondaryBtn="Inscríbete ahora"
-    secondaryBtnURL="/contacto"
+    secondaryBtnURL="/contact"
     withReview={true}
     avatars={avatarSrcs}
     rating={`<span class="font-bold">4.8</span> / 5`}
     starCount={4}
     reviews={`De más de <span class="font-bold">12.8k</span> opiniones`}
     src={heroImage}
-    alt="Pila de cajas de productos ScrewFast que contienen herramientas variadas"
+    alt="Pila de cajas de productos Capitanbrush que contienen herramientas variadas"
   />
 
   <FeaturesNavs
-    title={`Personaliza las ofertas de <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span> para adaptarse perfectamente a tus necesidades de hardware y construcción.`}
+    title={`Lo que dicen nuestros alumnos del curso de <span class="text-yellow-500 dark:text-yellow-400">Capitanbrush</span>.`}
     tabs={[
       {
-        heading: "Herramientas de Última Generación",
+        heading: "Alberto Molina, Chef en Mega Yates",
         content:
-          "Potencia tus proyectos con las herramientas de última generación de ScrewFast. Experimenta una eficiencia mejorada en la gestión de construcción con nuestras soluciones automatizadas sofisticadas.",
+          "Al cerrar mi negocio tuve la suerte de que Capitán Brush me aconsejo y guió para elaborar un CV específico para yates, aparte de aconsejó sobre que distintos cursos debía hacer y en gran parte gracias a él conseguí mi primer trabajo en Yates, consiguiendo un sueldo que nunca hubiese conseguido en tierra haciendo el mismo trabajo.",
         svg: "tools",
         src: tools,
-        alt: "Equipo pesado amarillo y negro en un campo de césped marrón",
+        alt: "Alberto Molina sobre la pasarela de mega yate atracado en puerto",
         first: true,
       },
       {
-        heading: "Paneles Intuitivos",
+        heading: "Sara Martínez, Azafata y Marinera en Mega Yates",
         content:
-          "Navega con facilidad utilizando los paneles intuitivos de ScrewFast. Configura y supervisa tus proyectos de manera fluida, con interfaces fáciles de usar diseñadas para una gestión de flujo de trabajo rápida y efectiva.",
+          "Hice el curso online, luego la mentoría y me ayudó a encontrar trabajo en mega yates, muy recomendable. Sin duda una muy buena experiencia.",
         svg: "dashboard",
         src: dashboard,
-        alt: "Una captura de pantalla o representación gráfica del panel intuitivo",
+        alt: "Sara sobre la cubierta de un yate en un estado de tranquilidad y paz",
+        second: true,
+      },
+      
+      {
+        heading: "Luis Jiménez, Marinero y Chef en Mega Yates",
+        content:
+          "Hice el cursillo online y la mentoría, una grata experiencia, me ayudó bastante a poder introducirme en este sector del mar y los mega yates, buena persona y gran profesional, sin duda recomendable.",
+        svg: "dashboard",
+        src: dashboard,
+        alt: "Sara sobre la cubierta de un yate en un estado de tranquilidad y paz",
         second: true,
       },
     ]}
@@ -67,7 +77,7 @@ const avatarSrcs: Array<string> = [
 
   <HeroSectionAlt
     title="¡No te pierdas esta oportunidad única!"
-    subTitle="Recibirás acceso a materiales de estudio, guías paso a paso, enlaces a recursos importantes y ejemplos prácticos."
-    url="/contacto"
+    subTitle="Recibirás acceso a materiales de estudio, los fundamentos básicos y estrategias avanzadas para maximizar tu éxito."
+    url="/contact"
   />
 </MainLayout>

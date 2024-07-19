@@ -1,7 +1,7 @@
 {
-  "title": "Simple, Transparent Pricing",
-  "subTitle": "Boost efficiency with ScrewFast's clear, value-driven plans.",
-  "badge": "Best value",
+  "title": "Precio del curso",
+  "subTitle": "",
+  "badge": "Mejor precio del mercado",
   "thirdOption": "Enterprise Solutions?",
   "btnText": "Get a Custom Quote",
 
@@ -21,18 +21,18 @@
   },
 
   "professionalToolbox": {
-    "name": "Professional Toolbox",
-    "description": "Best for large scale uses",
+    "name": "Precio total del curso",
+    "description": "",
     "price": "150",
     "cents": ".00",
     "billingFrequency": "EUR",
     "features": [
-      "Premium tool selection",
-      "Priority support",
-      "Exclusive content & deals",
-      "Bulk order discounts"
+      "Acceso a materiales de estudio",
+      "Guías paso a paso",
+      "Ejemplos prácticos",
+      "Casos de estudio y testimonios de profesionales"
     ],
-    "purchaseBtnTitle": "Get the Professional Toolbox",
-    "purchaseLink": "#"
+    "purchaseBtnTitle": "¡Inscríbete ya!",
+    "purchaseLink": "/contact"
   }
 }

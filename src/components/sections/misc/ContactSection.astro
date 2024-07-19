@@ -9,14 +9,16 @@ import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define las variables que se utilizarán en este componente
-const title: string = "Contáctanos";
+const title: string = "Estás a un paso de cambiar tu vida";
 const subTitle: string =
-  "¿Tienes preguntas o deseas discutir un proyecto? Ponte en contacto y crearemos la solución perfecta con nuestras herramientas y servicios.";
-const formTitle: string = "Completa el formulario a continuación";
-const formSubTitle: string = "Nos pondremos en contacto contigo en 1-2 días hábiles.";
+  "Navega por el mundo mientras llenas tu cartera, visitas sitios únicos. ¡Embárcate y empieza una nueva vida!";
+const formTitle: string = "Completa el formulario";
+const formSubTitle: string =
+  "Nos pondremos en contacto contigo en 1 día hábil.";
 
 // Componente principal de la sección de contacto
 ---
+
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
@@ -39,77 +41,88 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1-2 días há
         </h2>
         <!-- Formulario para la entrada del usuario con diferentes campos de entrada.-->
         <!-- Cada campo utiliza un componente de entrada diferente para el tipo específico de entrada (texto, correo electrónico, teléfono y área de texto)-->
-        <form>
+        <form method="POST">
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <TextInput
-                id="hs-firstname-contacts"
-                label="Nombre"
-                name="hs-firstname-contacts"
+              <input
+                type="text"
+                required
+                name="firstname"
+                id="firstname"
+                class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                placeholder="Nombre"
               />
-              <TextInput
-                id="hs-lastname-contacts"
-                label="Apellido"
-                name="hs-firstname-contacts"
+              <input
+                type="text"
+                required
+                name="lastname"
+                id="lastname"
+                class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                placeholder="Apellidos"
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" label="Teléfono" />
-            <TextAreaInput
-              id="hs-about-contacts"
-              label="Detalles"
-              name="hs-about-contacts"
-            />
+            <div>
+              <input
+                type="email"
+                required
+                name="email"
+                id="email"
+                class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                placeholder="Email"
+              />
+            </div>
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                required
+                id="phone"
+                class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                placeholder="Número de teléfono"
+              />
+            </div>
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Enviar Mensaje" />
+            <AuthBtn title="Me apunto" />
           </div>
 
-            <div class="mt-3 text-center">
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                {formSubTitle}
-              </p>
-            </div>
+          <div class="mt-3 text-center">
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              {formSubTitle}
+            </p>
           </div>
         </form>
+      </div>
 
       <!-- ContactIconBlocks se utilizan para mostrar diferentes métodos de contacto, incluyendo visita a la oficina, correo electrónico, navegación en la base de conocimientos y FAQ.-->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
-          heading="Base de conocimientos"
-          content="Explora todos nuestros artículos de base de conocimientos."
+          heading="Accede al contenido del curso"
+          content="Explora todo los bloques y trabaja en Mega Yates."
           isLinkVisible={true}
-          linkTitle="Visitar guías y tutoriales"
-          linkURL="#"
+          linkTitle="Contenido del curso"
+          linkURL="/services"
           isArrowVisible={true}
           ><Icon name="question" />
         </ContactIconBlock>
 
         <ContactIconBlock
           heading="FAQ"
-          content="Consulta nuestras preguntas frecuentes para respuestas rápidas y claras a consultas comunes."
+          content="Consulta nuestras preguntas frecuentes."
           isLinkVisible={true}
           linkTitle="Visitar FAQ"
-          linkURL="#"
+          linkURL="/"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Visítanos en la oficina"
-          content="ScrewFast UK"
-          isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
-          ><Icon name="mapPin" />
-        </ContactIconBlock>
-
-        <ContactIconBlock
-          heading="Contáctanos por correo electrónico"
-          content="¿Prefieres la comunicación escrita? Envíanos un correo electrónico a"
+          heading="¿Tienes alguna duda? Agenda una mentoría"
+          content="Capitanbrush te ayudará con las dudas"
           isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
-          linkURL="#"
+          linkTitle="Agendar mentoría"
+          linkURL="https://calendly.com/hugolisbona/consultancy"
           ><Icon name="envelopeOpen" />
         </ContactIconBlock>
       </div>
