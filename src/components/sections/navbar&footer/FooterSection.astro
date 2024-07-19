@@ -6,17 +6,17 @@ import enStrings from "@/utils/en/navigation";
 import frStrings from "@utils/fr/navigation.ts";
 import esStrings from "@utils/es/navigation.ts";
 import Icon from "@components/ui/icons/Icon.astro";
-import BrandLogo from "@components/BrandLogo.astro";
+import { Image } from "astro:assets";
+import heroImage from "@images/heroImageCaptBrush.svg";
 import { SITE } from "@data/constants";
 
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : Astro.currentLocale === "en"?  enStrings : esStrings;
 
 // Define the variables that will be used in this component
-const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : Astro.currentLocale === "en" ?  "Stay up to date" : "Mantente informado";
-const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez à jour avec les derniers outils et offres exclusives." : Astro.currentLocale === "en" ?  "Stay updated with the latest tools and exclusive deals." : "Mantente informado con las últimas herramientas y ofertas exclusivas.";
+const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : Astro.currentLocale === "en" ?  "Stay up to date" : "Deseo recibir más información sobre el curso";
  
-const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.currentLocale === "en" ? "Crafted with" : "Hecho con";
+const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.currentLocale === "en" ? "Crafted with" : "Hecho por";
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -25,8 +25,10 @@ const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.cur
   >
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
       <div class="col-span-full lg:col-span-1">
-        <!-- Brand Logo -->
+        <!-- Brand Logo 
         <BrandLogo class="h-auto w-32" />
+      -->
+      <Image src={heroImage} alt="Capitan Brush" class="h-auto w-32"/>
         
       </div>
       
@@ -65,9 +67,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.cur
 
         <form>
           <EmailFooterInput />
-          <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
-            {sectionThreeContent}
-          </p>
+          
         </form>
       </div>
     </div>

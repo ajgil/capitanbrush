@@ -1,28 +1,18 @@
 
 const navBarLinks = [
   { name: "Accueil", url: "/fr" },
-  
   { name: "Services", url: "/fr/services" },
-
   { name: "Contact", url: "/fr/contact" },
 ];
 
 const footerLinks = [
-  {
-    section: "Écosystème",
-    links: [
-      { name: "Documentation", url: "/fr/welcome-to-docs/" },
-      { name: "Outils et Équipements", url: "/fr/products" },
-      { name: "Services de Construction", url: "/fr/services" },
-    ],
-  },
+ 
   {
     section: "Société",
     links: [
       { name: "À propos de nous", url: "#" },
-      { name: "Blog", url: "/fr/blog" },
-      { name: "Carrières", url: "#" },
-      { name: "Clients", url: "#" },
+      { name: "Services", url: "/fr/services" },
+      { name: "Contact", url: "/fr/products" },
     ],
   },
 ];

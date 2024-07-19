@@ -7,21 +7,13 @@ const navBarLinks = [
 
 // Un array de enlaces para el pie de página
 const footerLinks = [
-  {
-    section: "Ecosistema",
-    links: [
-      { name: "Documentación", url: "/welcome-to-docs/" },
-      { name: "Herramientas y Equipos", url: "/products" },
-      { name: "Servicios", url: "/services" },
-    ],
-  },
+  
   {
     section: "Empresa",
     links: [
       { name: "Sobre Nosotros", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Carreras", url: "#" },
-      { name: "Clientes", url: "#" },
+      { name: "Servicios", url: "/services" },
+      { name: "Contacto", url: "/contact" },
     ],
   },
 ];
