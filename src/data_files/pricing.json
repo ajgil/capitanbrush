@@ -1,8 +1,8 @@
 {
-  "title": "Precio del curso",
+  "title": "¡No Pierdas Esta Oportunidad!",
   "subTitle": "",
-  "badge": "Mejor precio del mercado",
-  "thirdOption": "Enterprise Solutions?",
+  "badge": "¡Plazas limitadas!",
+  "thirdOption": "Rellena el formulario y te enviaremos toda la información del curso junto con el modo de reserva.",
   "btnText": "Get a Custom Quote",
 
   "starterKit": {
@@ -32,7 +32,7 @@
       "Ejemplos prácticos",
       "Casos de estudio y testimonios de profesionales"
     ],
-    "purchaseBtnTitle": "¡Inscríbete ya!",
+    "purchaseBtnTitle": "¡Inscríbete Ahora!",
     "purchaseLink": "/contact"
   }
 }

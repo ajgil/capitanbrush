@@ -11,6 +11,7 @@ import dashboard from "@images/ref-Sara-1.webp";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
+import Temario from "../pages/temario/index.astro"
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -22,8 +23,8 @@ const avatarSrcs: Array<string> = [
 
 <MainLayout lang="es">
   <HeroSection
-    title={`Únete a nuestro exclusivo curso sobre <span class="text-yellow-500 dark:text-yellow-400">Mega Yates!</span>`}
-    subTitle="Aprende de un ingeniero experimentado en mega yates y obtén una profunda comprensión de la industria."
+    title={`Transforma Tu Carrera con Nuestro Curso Exclusivo sobre <span class="text-yellow-500 dark:text-yellow-400">Mega Yates!</span>`}
+    subTitle="¿Sueñas con ganar más de 3000€ al mes trabajando en mega yates? Únete a nuestro curso impartido por un ingeniero experto en mega yates y descubre cómo puedes alcanzar tus metas profesionales en esta apasionante industria."
     primaryBtn="Contenido"
     primaryBtnURL="/services"
     secondaryBtn="Inscríbete ahora"
@@ -36,6 +37,8 @@ const avatarSrcs: Array<string> = [
     src={heroImage}
     alt="Pila de cajas de productos Capitanbrush que contienen herramientas variadas"
   />
+  
+  <Temario />
 
   <FeaturesNavs
     title={`Lo que dicen nuestros alumnos del curso de <span class="text-yellow-500 dark:text-yellow-400">Capitanbrush</span>.`}
@@ -76,8 +79,8 @@ const avatarSrcs: Array<string> = [
   <FAQ title={`Preguntas<br />frecuentes`} faqs={faqs} />
 
   <HeroSectionAlt
-    title="¡No te pierdas esta oportunidad única!"
-    subTitle="Recibirás acceso a materiales de estudio, los fundamentos básicos y estrategias avanzadas para maximizar tu éxito."
+    title="¡No te pierdas esta oportunidad!"
+    subTitle="El curso tiene un precio de 150€, incluyendo todos los materiales de estudio y acceso a recursos exclusivos. ¡Plazas limitadas!"
     url="/contact"
   />
 </MainLayout>
