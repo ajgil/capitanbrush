@@ -79,7 +79,8 @@ interface Props {
   <!-- Hero Image Section -->
   <div class="flex w-full">
       <div class="top-12 overflow-hidden">
-	{src && alt &&
+	
+  {src && alt &&
 	<Image
         src={src}
         alt={alt}
@@ -89,6 +90,7 @@ interface Props {
         format={"avif"}
 	 />
 	}
+  
     </div>
   </div>
 </section>

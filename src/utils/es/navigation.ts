@@ -7,7 +7,6 @@ const navBarLinks = [
 
 // Un array de enlaces para el pie de página
 const footerLinks = [
-  
   {
     section: "Empresa",
     links: [
