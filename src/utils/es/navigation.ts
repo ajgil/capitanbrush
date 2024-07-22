@@ -11,10 +11,17 @@ const footerLinks = [
   {
     section: "Empresa",
     links: [
-      { name: "Sobre Nosotros", url: "#" },
+      { name: "Sobre mi", url: "/about" },
       { name: "Contenido", url: "/content" },
       { name: "Clientes", url: "/customers" },
       { name: "Contacto", url: "/contact" },
+    ],
+  },
+  {
+    section: "Legal",
+    links: [
+      { name: "Política de privacidad", url: "/privacy" },
+      { name: "Términos y condiciones", url: "/terms" },
     ],
   },
 ];
