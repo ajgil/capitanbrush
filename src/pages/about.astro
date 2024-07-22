@@ -1,18 +1,117 @@
-<main>
+---
+// Importa los componentes necesarios
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import { SITE } from "@data/constants";
+
+// Define el título de la página
+const pageTitle: string = `Sobre mí | ${SITE.title}`;
+
+// Utilizando MainLayout para el diseño exterior de la página, y definiendo meta para propósitos de SEO
+---
+<MainLayout
+lang="es" 
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://capitanbrush.es/contact",
+    "url": "https://capitanbrush.es/contact",
+    "name": "Contáctanos | Capitanbrush",
+    "description":
+      "¿Tienes preguntas o deseas discutir un proyecto? Ponte en contacto y crearemos la solución perfecta con nuestras herramientas y servicios.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://capitanbrush.es",
+      "name": "Capitanbrush",
+      "description":
+        "Capitanbrush ofrece herramientas de hardware de primera categoría y servicios de construcción expertos para satisfacer todas tus necesidades de proyecto.",
+    },
+    "inLanguage": "es"
+  }}
+
+>
   <div
     class="mx-auto flex max-w-screen-lg flex-col items-center pb-16 pt-24 text-center"
   >
-    <p>Last updated on July 26, 2024</p>
+  <h2
+  class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+>
+Sobre Capitán Brush
+  </h2>
     <h1 class="heading-3 sm:heading-2 pb-10 pt-3">Sobre Capitán Brush</h1>
   </div>
   <div>
     <section class="grid-container">
       <article>
         <p>
-          These terms of service apply to your access and use of the
-          Capitanbrush website. Please read them carefully.
+          ¿Quién es Capitán Brush? #### Asunto: Descubre la Historia de Capitán
+          Brush Estimados navegantes, Hoy queremos presentarles a una figura
+          inspiradora en el mundo de la navegación: Capitán Brush. Con una
+          pasión inquebrantable por el mar y una vida llena de aventuras,
+          Capitán Brush no solo ha dejado su huella en el océano, sino que
+          también ha encontrado la forma de equilibrar su vida profesional con
+          sus aficiones personales. **Un hombre de muchas pasiones:** -
+          **Pintura:** Capitán Brush ha encontrado una forma de expresarse a
+          través del arte, capturando la majestuosidad del mar en sus lienzos. -
+          **Artes marciales:** La disciplina y el control aprendidos en las
+          artes marciales han sido fundamentales en su vida y carrera. -
+          **Kitesurf:** Volar sobre las olas con un kitesurf es una de las
+          maneras favoritas de Capitán Brush para experimentar la libertad del
+          mar. - **Viajar:** Explorar nuevos lugares y culturas siempre ha sido
+          una parte esencial de su vida. Desde cruzar el Atlántico hasta enseñar
+          a otros a navegar, la vida de Capitán Brush es una historia de pasión,
+          dedicación y aventuras. ¡Sigue leyendo nuestras newsletters para
+          conocer más sobre su increíble trayectoria!
+        </p>
+        <p>
+          De Ingeniero a Navegante: La Transformación de Capitán Brush Estimados
+          navegantes, Hoy exploramos un capítulo fascinante en la vida de
+          Capitán Brush: su transición de una exitosa carrera en ingeniería a
+          cruzar el Atlántico a vela. **Un cambio de rumbo audaz:** - **Carrera
+          en ingeniería:** Capitán Brush comenzó su carrera en el campo de la
+          ingeniería, trabajando en proyectos innovadores y desafiantes. -
+          **Decisión de dejarlo todo:** A pesar de su éxito, sentía que algo
+          faltaba. Así que tomó la audaz decisión de dejar su trabajo y
+          embarcarse en una travesía a vela a través del Atlántico. -
+          **Reinvención como ingeniero de megayates:** Tras cruzar el océano,
+          encontró su verdadera vocación como ingeniero de megayates, combinando
+          su amor por el mar con sus habilidades técnicas. La travesía del
+          Atlántico fue solo el comienzo de una nueva y emocionante fase en su
+          vida. ¡Sigue conectado para descubrir más sobre su camino hacia
+          convertirse en capitán!
+        </p>
+        <p>
+          De Ingeniero a Capitán #### Asunto: El Viaje de Capitán Brush Hacia la
+          Enseñanza de la Navegación Estimados navegantes, En nuestra newsletter
+          de hoy, compartimos cómo Capitán Brush pasó de ser un ingeniero de
+          megayates a convertirse en capitán y comenzar a enseñar a otros a
+          navegar. **El ascenso a capitán:** - **Experiencia en megayates:** A
+          través de años de trabajo duro y aprendizaje constante, Capitán Brush
+          ascendió en las filas de la tripulación de megayates. -
+          **Certificación como capitán:** Completó rigurosos cursos y
+          certificaciones para finalmente obtener su licencia de capitán. -
+          **Enseñanza de la navegación:** Con su conocimiento y experiencia,
+          decidió compartir su pasión por el mar enseñando a otros a navegar. La
+          enseñanza se ha convertido en una de las mayores satisfacciones de
+          Capitán Brush, ayudando a otros a encontrar su camino en el vasto
+          océano.
+        </p>
+        <p>
+          La Libertad Financiera de Capitán Brush Estimados navegantes, Hoy nos
+          adentramos en la historia de cómo Capitán Brush logró la libertad
+          financiera y ahora disfruta de una vida plena en su finca de frutas
+          tropicales. **Vivir sus sueños:** - **Planificación financiera:** A lo
+          largo de su carrera, Capitán Brush hizo inversiones inteligentes y
+          ahorró estratégicamente. - **Finca de frutas tropicales:** Con su
+          libertad financiera, adquirió una hermosa finca donde cultiva una
+          variedad de frutas tropicales. - **Vida equilibrada:** Ahora, disfruta
+          de un equilibrio perfecto entre sus pasiones y su vida en el mar. La
+          libertad financiera le ha permitido a Capitán Brush vivir una vida que
+          muchos solo pueden soñar. ¡Sigue leyendo para aprender más sobre sus
+          consejos y experiencias!
         </p>
       </article>
     </section>
   </div>
-</main>
+</MainLayout>
