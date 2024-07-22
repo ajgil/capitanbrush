@@ -9,61 +9,73 @@ const pageTitle: string = `Sobre mí | ${SITE.title}`;
 
 // Utilizando MainLayout para el diseño exterior de la página, y definiendo meta para propósitos de SEO
 ---
+
 <MainLayout
-lang="es" 
+  lang="es"
   title={pageTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://capitanbrush.es/contact",
-    "url": "https://capitanbrush.es/contact",
-    "name": "Contáctanos | Capitanbrush",
-    "description":
-      "¿Tienes preguntas o deseas discutir un proyecto? Ponte en contacto y crearemos la solución perfecta con nuestras herramientas y servicios.",
-    "isPartOf": {
+    url: "https://capitanbrush.es/contact",
+    name: "Contáctanos | Capitanbrush",
+    description:
+      "¿Tienes preguntas sobre el curso? Ponte en contacto y crearemos la solución perfecta mediante una mentoría y nuestros servicios.",
+    isPartOf: {
       "@type": "WebSite",
-      "url": "https://capitanbrush.es",
-      "name": "Capitanbrush",
-      "description":
-        "Capitanbrush ofrece herramientas de hardware de primera categoría y servicios de construcción expertos para satisfacer todas tus necesidades de proyecto.",
+      url: "https://capitanbrush.es",
+      name: "Capitanbrush",
+      description:
+        "Capitanbrush ofrece un curso completo de como poder trabajar en la industria de los mega yates.",
     },
-    "inLanguage": "es"
+    inLanguage: "es",
   }}
-
 >
   <div
     class="mx-auto flex max-w-screen-lg flex-col items-center pb-16 pt-24 text-center"
   >
-  <h2
-  class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
->
-Sobre Capitán Brush
-  </h2>
-    <h1 class="heading-3 sm:heading-2 pb-10 pt-3">Sobre Capitán Brush</h1>
+    <h1
+      class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+    >
+      ¿Quién es Capitán Brush?
+    </h1>
+    <div>
+      <p class="mt-1 text-pretty text-neutral-800 dark:text-neutral-600">
+        Descubre la Historia de Capitán Brush
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        Estimados navegantes, Hoy queremos presentarles a una figura inspiradora
+        en el mundo de la navegación: Capitán Brush. Con una pasión
+        inquebrantable por el mar y una vida llena de aventuras, Capitán Brush
+        no solo ha dejado su huella en el océano, sino que también ha encontrado
+        la forma de equilibrar su vida profesional con sus aficiones personales.
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">Un hombre de muchas pasiones:</p>
+      <ul>
+        <li>
+          Pintura: Capitán Brush ha encontrado una forma de expresarse a través
+          del arte, capturando la majestuosidad del mar en sus lienzos.
+        </li>
+        <li>
+          Artes marciales: La disciplina y el control aprendidos en las artes
+          marciales han sido fundamentales en su vida y carrera.
+        </li>
+        <li>
+          Kitesurf: Volar sobre las olas con un kitesurf es una de las maneras
+          favoritas de Capitán Brush para experimentar la libertad del mar.
+        </li>
+        <li>
+          Viajar: Explorar nuevos lugares y culturas siempre ha sido una parte
+          esencial de su vida. Desde cruzar el Atlántico hasta enseñar a otros a
+          navegar, la vida de Capitán Brush es una historia de pasión,
+          dedicación y aventuras.
+        </li>
+      </ul>
+    </div>
   </div>
   <div>
     <section class="grid-container">
       <article>
-        <p>
-          ¿Quién es Capitán Brush? #### Asunto: Descubre la Historia de Capitán
-          Brush Estimados navegantes, Hoy queremos presentarles a una figura
-          inspiradora en el mundo de la navegación: Capitán Brush. Con una
-          pasión inquebrantable por el mar y una vida llena de aventuras,
-          Capitán Brush no solo ha dejado su huella en el océano, sino que
-          también ha encontrado la forma de equilibrar su vida profesional con
-          sus aficiones personales. **Un hombre de muchas pasiones:** -
-          **Pintura:** Capitán Brush ha encontrado una forma de expresarse a
-          través del arte, capturando la majestuosidad del mar en sus lienzos. -
-          **Artes marciales:** La disciplina y el control aprendidos en las
-          artes marciales han sido fundamentales en su vida y carrera. -
-          **Kitesurf:** Volar sobre las olas con un kitesurf es una de las
-          maneras favoritas de Capitán Brush para experimentar la libertad del
-          mar. - **Viajar:** Explorar nuevos lugares y culturas siempre ha sido
-          una parte esencial de su vida. Desde cruzar el Atlántico hasta enseñar
-          a otros a navegar, la vida de Capitán Brush es una historia de pasión,
-          dedicación y aventuras. ¡Sigue leyendo nuestras newsletters para
-          conocer más sobre su increíble trayectoria!
-        </p>
         <p>
           De Ingeniero a Navegante: La Transformación de Capitán Brush Estimados
           navegantes, Hoy exploramos un capítulo fascinante en la vida de
