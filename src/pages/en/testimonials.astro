@@ -27,9 +27,9 @@ const testimonials = [
   // First testimonial data
   {
     content:
-      " \"Al cerrar mi negocio tuve la suerte de que Capitán Brush me aconsejo y guió para elaborar un CV específico para yates, aparte de aconsejó sobre que distintos cursos debía hacer y en gran parte gracias a él conseguí mi primer trabajo en Yates, consiguiendo un sueldo que nunca hubiese conseguido en tierra haciendo el mismo trabajo.\" ",
-    author: "Alberto Molina, ",
-    role: "Chef en Mega Yates",
+      " \"When I closed my business, I was fortunate that Capitán Brush advised and guided me in creating a specific CV for yachts, in addition to advising on various courses I should take. Thanks to him, I got my first job on yachts, with a salary I would never have achieved on land doing the same job.\" ",
+    author: "Alberto Molina",
+    role: "Chef on Mega Yachts",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -37,9 +37,9 @@ const testimonials = [
   // Second testimonial data
   {
     content:
-      " \"Hice el curso online, luego la mentoría y me ayudó a encontrar trabajo en mega yates, muy recomendable. Sin duda una muy buena experiencia.\" ",
+      " \"I took the online course and the mentoring, which helped me find a job on mega yachts. Highly recommended. Definitely a very good experience.\" ",
     author: "Sara Martínez",
-    role: "Azafata y Marinera en Mega Yates",
+    role: "Stewardess and Sailor on Mega Yachts",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -47,16 +47,16 @@ const testimonials = [
   // Third testimonial data
   {
     content:
-      " \"Hice el cursillo online y la mentoría, una grata experiencia, me ayudó bastante a poder introducirme en este sector del mar y los mega yates, buena persona y gran profesional, sin duda recomendable.\" ",
+      " \"I took the online course and the mentoring, and it was a pleasant experience. It helped me a lot to enter the maritime sector and mega yachts. A good person and great professional. Definitely recommended.\" ",
     author: "Luis Jiménez",
-    role: "Marinero y Chef en Mega Yates",
+    role: "Sailor and Chef on Mega Yachts",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
 ];
 
-const pageTitle: string = `Testimonios | ${SITE.title}`;
+const pageTitle: string = `Testimonials | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -66,7 +66,7 @@ const pageTitle: string = `Testimonios | ${SITE.title}`;
     "@type": "WebPage",
     "@id": "https://capitanbrush.es/testimonials",
     url: "https://capitanbrush.es/testimonials",
-    name: "Testimonios | Capitanbrush",
+    name: "Testimonials | Capitanbrush",
     description:
       "Explore the durability and precision of Capitanbrush tools, designed for both professionals and enthusiasts.",
     isPartOf: {
@@ -81,7 +81,7 @@ const pageTitle: string = `Testimonios | ${SITE.title}`;
 >
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="Lo que dicen nuestros clientes"
+    title="What Our Clients Are Saying"
     testimonials={testimonials}
   />
 </MainLayout>

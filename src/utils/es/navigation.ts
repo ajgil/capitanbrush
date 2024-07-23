@@ -3,7 +3,7 @@ const navBarLinks = [
   { name: "Inicio", url: "/" },
   { name: "Sobre mi", url: "/about" },
   { name: "Contenido", url: "/content" },
-  { name: "Clientes", url: "/customers" },
+  //{ name: "Clientes", url: "/customers" },
   { name: "Contacto", url: "/contact" },
   { name: "Testimonios", url: "/testimonials" },
 ];

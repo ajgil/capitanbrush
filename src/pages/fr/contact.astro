@@ -1,30 +1,35 @@
 ---
-// Import the necessary components
-import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/fr/ContactSection_fr.astro";
----
 
-<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+// Importa los componentes necesarios
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import { SITE } from "@data/constants";
+
+// Define el título de la página
+const pageTitle: string = `Contact | ${SITE.title}`;
+
+// Usando MainLayout para el diseño exterior de la página, y definiendo metadatos para SEO
+---
 <MainLayout
-  title="Contact | Capitanbrush"
   lang="fr"
+  title={pageTitle}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://capitanbrush.es/fr/contact",
-    url: "https://capitanbrush.es/fr/contact",
-    name: "Nous Contacter | Capitanbrush",
-    description:
-      "Vous avez des questions ou souhaitez discuter d'un projet ? Contactez-nous et élaborons ensemble la solution parfaite avec nos outils et services.",
-    isPartOf: {
+    "@id": "https://capitanbrush.fr/contact",
+    "url": "https://capitanbrush.fr/contact",
+    "name": "Contactez-nous | Capitanbrush",
+    "description":
+      "Vous avez des questions ou souhaitez discuter d'un projet ? Contactez-nous et nous créerons la solution parfaite avec nos outils et services.",
+    "isPartOf": {
       "@type": "WebSite",
-      url: "https://capitanbrush.es/fr/",
-      name: "Capitanbrush",
-      description:
-        "Capitanbrush propose des outils matériels de premier ordre et des services de construction experts pour répondre à tous vos besoins de projet.",
+      "url": "https://capitanbrush.fr",
+      "name": "Capitanbrush",
+      "description":
+        "Capitanbrush offre des outils de haute qualité et des services de construction experts pour répondre à tous vos besoins de projet.",
     },
-    inLanguage: "fr",
+    "inLanguage": "fr"
   }}
 >
-  <ContactSection />
-</MainLayout>
+  <ContactSection  />
+</MainLayout>;

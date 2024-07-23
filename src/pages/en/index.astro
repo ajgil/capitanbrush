@@ -2,15 +2,16 @@
 // Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
-import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import faqs from "@data/faqs.json";
-import pricing from "@data/pricing.json";
+
+import faqs from "@/data_files/faqs_en.json";
+import pricing from "@/data_files/pricing_fr.json";
 import heroImage from "@images/logo-1.webp";
-import tools from "@images/ref-Alberto-1.webp";
-import dashboard from "@images/ref-Sara-1.webp";
+;
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
+import Temario from "../en/temario/index.astro"
+
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -22,52 +23,30 @@ const avatarSrcs: Array<string> = [
 
 <MainLayout lang="en">
   <HeroSection
-    title={`Join our exclusive course on <span class="text-yellow-500 dark:text-yellow-400">Mega Yachts!</span>`}
-    subTitle="Learn from an experienced mega yacht engineer and gain a deep understanding of the industry."
+    title={`Transform Your Career with Our Exclusive Mega Yachts Course!`}
+    subTitle="Do you dream of earning over €3000 per month working on mega yachts? Join our course taught by an expert mega yacht engineer and discover how you can achieve your professional goals in this exciting industry."
     primaryBtn="Content"
-    primaryBtnURL="en/services"
-    secondaryBtn="Sign up now"
-    secondaryBtnURL="en/contact"
+    primaryBtnURL="/en/content"
+    secondaryBtn="Sign Up Now"
+    secondaryBtnURL="/en/contact"
     withReview={true}
     avatars={avatarSrcs}
     rating={`<span class="font-bold">4.8</span> / 5`}
     starCount={4}
     reviews={`From over <span class="font-bold">12.8k</span> reviews`}
     src={heroImage}
-    alt="Stack of Capitanbrush product boxes containing various tools"
+    alt="Mega Yachts Course"
   />
-
-  <FeaturesNavs
-    title={`Customize <span class="text-yellow-500 dark:text-yellow-400">Capitanbrush</span> offerings to perfectly suit your hardware and construction needs.`}
-    tabs={[
-      {
-        heading: "Cutting-Edge Tools",
-        content:
-          "Power your projects with Capitanbrush's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
-        svg: "tools",
-        src: tools,
-        alt: "Yellow and black heavy equipment in a brown grass field",
-        first: true,
-      },
-      {
-        heading: "Intuitive Dashboards",
-        content:
-          "Navigate easily using Capitanbrush's intuitive dashboards. Configure and monitor your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "A screenshot or graphical representation of the intuitive dashboard",
-        second: true,
-      },
-    ]}
-  />
+  
+  <Temario />
 
   <PricingSection pricing={pricing} />
 
   <FAQ title={`Frequently<br />Asked Questions`} faqs={faqs} />
 
   <HeroSectionAlt
-    title="Don't miss out on this unique opportunity!"
-    subTitle="You'll receive access to study materials, step-by-step guides, links to important resources, and practical examples."
-    url="/contact"
+    title="Don’t Miss This Opportunity!"
+    subTitle="The course is priced at €150, including all study materials and access to exclusive resources. Limited spots available!"
+    url="/en/contact"
   />
-</MainLayout>;
+</MainLayout>

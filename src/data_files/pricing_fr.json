@@ -1,0 +1,39 @@
+{
+    "title": "Ne Manquez Pas Cette Opportunité !",
+    "subTitle": "",
+    "badge": "Places limitées !",
+    "thirdOption": "Remplissez le formulaire et nous vous enverrons toutes les informations sur le cours ainsi que les modalités de réservation.",
+    "btnText": "Obtenez un Devis Personnalisé",
+  
+    "starterKit": {
+      "name": "Kit de Début",
+      "description": "Meilleure option pour les projets de bricolage",
+      "price": "49",
+      "cents": ".00",
+      "billingFrequency": "USD / mensuel",
+      "features": [
+        "Outils de base",
+        "Accès aux guides et tutoriels",
+        "Support standard"
+      ],
+      "purchaseBtnTitle": "Obtenez le Kit de Début",
+      "purchaseLink": "#"
+    },
+  
+    "professionalToolbox": {
+      "name": "Prix total du cours",
+      "description": "",
+      "price": "150",
+      "cents": ".00",
+      "billingFrequency": "EUR",
+      "features": [
+        "Accès aux matériaux d'étude",
+        "Guides étape par étape",
+        "Exemples pratiques",
+        "Études de cas et témoignages de professionnels"
+      ],
+      "purchaseBtnTitle": "Inscrivez-vous Maintenant !",
+      "purchaseLink": "/contact"
+    }
+  }
+  

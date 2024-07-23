@@ -18,18 +18,18 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Products";
+const title: string = "Produits";
 const subTitle: string =
-  "Explore the durability and precision of Capitanbrush tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+  "Découvrez la durabilité et la précision des outils Capitanbrush, conçus pour les professionnels et les passionnés. Chacun de nos produits est fabriqué avec précision et conçu pour durer, vous assurant d'avoir le bon outil pour chaque tâche.";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   // First testimonial data
   {
     content:
-      " \"Al cerrar mi negocio tuve la suerte de que Capitán Brush me aconsejo y guió para elaborar un CV específico para yates, aparte de aconsejó sobre que distintos cursos debía hacer y en gran parte gracias a él conseguí mi primer trabajo en Yates, consiguiendo un sueldo que nunca hubiese conseguido en tierra haciendo el mismo trabajo.\" ",
-    author: "Alberto Molina, ",
-    role: "Chef en Mega Yates",
+      " \"Lorsque j'ai fermé mon entreprise, j'ai eu la chance que Capitán Brush me conseille et me guide pour créer un CV spécifique pour les yachts, en plus de me conseiller sur les différents cours que je devais suivre. Grâce à lui, j'ai obtenu mon premier emploi sur des yachts, avec un salaire que je n'aurais jamais obtenu à terre en faisant le même travail.\" ",
+    author: "Alberto Molina",
+    role: "Chef sur Méga Yachts",
     avatarSrc:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -37,9 +37,9 @@ const testimonials = [
   // Second testimonial data
   {
     content:
-      " \"Hice el curso online, luego la mentoría y me ayudó a encontrar trabajo en mega yates, muy recomendable. Sin duda una muy buena experiencia.\" ",
+      " \"J'ai suivi le cours en ligne et le mentorat, ce qui m'a aidé à trouver un emploi sur des méga yachts. Très recommandé. Sans aucun doute, une très bonne expérience.\" ",
     author: "Sara Martínez",
-    role: "Azafata y Marinera en Mega Yates",
+    role: "Hôtesse et Marin sur Méga Yachts",
     avatarSrc:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
@@ -47,16 +47,16 @@ const testimonials = [
   // Third testimonial data
   {
     content:
-      " \"Hice el cursillo online y la mentoría, una grata experiencia, me ayudó bastante a poder introducirme en este sector del mar y los mega yates, buena persona y gran profesional, sin duda recomendable.\" ",
+      " \"J'ai suivi le cours en ligne et le mentorat, et ce fut une expérience agréable. Cela m'a beaucoup aidé à entrer dans le secteur maritime et les méga yachts. Une bonne personne et un grand professionnel. Sans aucun doute recommandé.\" ",
     author: "Luis Jiménez",
-    role: "Marinero y Chef en Mega Yates",
+    role: "Marin et Chef sur Méga Yachts",
     avatarSrc:
       "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
     avatarAlt: "Image Description",
   },
 ];
 
-const pageTitle: string = `Testimonios | ${SITE.title}`;
+const pageTitle: string = `Témoignages | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -66,22 +66,22 @@ const pageTitle: string = `Testimonios | ${SITE.title}`;
     "@type": "WebPage",
     "@id": "https://capitanbrush.es/testimonials",
     url: "https://capitanbrush.es/testimonials",
-    name: "Testimonios | Capitanbrush",
+    name: "Témoignages | Capitanbrush",
     description:
-      "Explore the durability and precision of Capitanbrush tools, designed for both professionals and enthusiasts.",
+      "Découvrez la durabilité et la précision des outils Capitanbrush, conçus pour les professionnels et les passionnés.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://capitanbrush.es",
       name: "Capitanbrush",
       description:
-        "Capitanbrush offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Capitanbrush propose des outils de haute qualité et des services de construction experts pour répondre à tous vos besoins de projet.",
     },
-    inLanguage: "en-US",
+    inLanguage: "fr-FR",
   }}
 >
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="Lo que dicen nuestros clientes"
+    title="Ce que disent nos clients"
     testimonials={testimonials}
   />
 </MainLayout>

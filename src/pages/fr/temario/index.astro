@@ -1,0 +1,42 @@
+---
+// Importing necessary components
+import TemarioSectionAlt from "@components/sections/testimonials/TemarioSectionAlt.astro";
+
+// Testimonial data that will be rendered in the component
+const temario = [
+  // First testimonial data
+  {
+    content:
+      "Des guides étape par étape, des liens vers des ressources clés et des exemples pratiques qui faciliteront l'apprentissage.",
+    author: "Accès à des Matériaux d'Étude Premium :",
+  },
+  // Second testimonial data
+  {
+    content:
+      "Apprenez des expériences de professionnels réussis dans le secteur qui ont commencé comme vous.",
+    author: "Études de Cas et Témoignages Réels :",
+  },
+  // Third testimonial data
+  {
+    content:
+      "Une heure de mentorat en ligne avec un expert en méga yachts pour répondre à toutes vos questions et vous guider dans votre carrière.",
+    author: "Mentorat Personnalisé :",
+  },
+  {
+    content:
+      "Un CV de référence et des conseils spécialisés pour créer le vôtre.",
+    author: "Conseils Professionnels :",
+  },
+  {
+    content:
+      "Accès aux contacts des recruteurs et aux canaux d'emploi dans le secteur pour vous aider à trouver un emploi rapidement.",
+    author: "Bourse d'Emploi Exclusive :",
+  },
+];
+
+---
+  <!--Testimonials section-->
+  <TemarioSectionAlt
+    title="Que Recevrez-vous en Rejoignant?"
+    temario={temario}
+  />

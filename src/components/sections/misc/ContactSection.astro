@@ -1,11 +1,99 @@
 ---
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 
+// Define los posibles idiomas
+type Locale = 'es' | 'en' | 'fr';
 
-const title: string = "Estás a un paso de cambiar tu vida";
-const subTitle: string = "Navega por el mundo mientras llenas tu cartera, visitas sitios únicos. ¡Embárcate y empieza una nueva vida!";
-const formTitle: string = "Completa el formulario";
-const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil.";
+// Obtén el idioma actual, usando 'es' por defecto
+const lang: Locale = (Astro.currentLocale as Locale) || 'es';
+
+// Define el tipo de traducciones para cada idioma
+type Translations = {
+  [key in Locale]: {
+    title: string;
+    subTitle: string;
+    formTitle: string;
+    formSubTitle: string;
+    placeholderName: string;
+    placeholderLastName: string;
+    placeholderEmail: string;
+    placeholderPhone: string;
+    emailErrorText: string;
+    phoneErrorText: string;
+    terms: string;
+    privacy: string;
+    newsletter: string;
+    submitButton: string;
+    successTitle: string;
+    successMessage: string;
+    closeButton: string;
+  };
+};
+
+// Define las traducciones
+const translations: Translations = {
+  es: {
+    title: "Estás a un paso de cambiar tu vida",
+    subTitle: "Navega por el mundo mientras llenas tu cartera, visitas sitios únicos. ¡Embárcate y empieza una nueva vida!",
+    formTitle: "Completa el formulario",
+    formSubTitle: "Nos pondremos en contacto contigo en 1 día hábil.",
+    placeholderName: "Nombre",
+    placeholderLastName: "Apellidos",
+    placeholderEmail: "Email",
+    placeholderPhone: "Número de teléfono",
+    emailErrorText: "Por favor, ingresa un email válido.",
+    phoneErrorText: "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.",
+    terms: "términos",
+    privacy: "política de privacidad",
+    newsletter: "Suscribirse a la newsletter",
+    submitButton: "Me apunto",
+    successTitle: "¡Éxito!",
+    successMessage: "¡Tu formulario ha sido enviado correctamente! Nos pondremos en contacto contigo pronto.",
+    closeButton: "Cerrar",
+  },
+  en: {
+    title: "You’re One Step Away from Changing Your Life",
+    subTitle: "Travel the world while filling your wallet, visiting unique places. Embark and start a new life!",
+    formTitle: "Complete the Form",
+    formSubTitle: "We will contact you within 1 business day.",
+    placeholderName: "First Name",
+    placeholderLastName: "Last Name",
+    placeholderEmail: "Email",
+    placeholderPhone: "Phone Number",
+    emailErrorText: "Please enter a valid email address.",
+    phoneErrorText: "Please enter a valid phone number with at least 10 digits.",
+    terms: "terms",
+    privacy: "privacy policy",
+    newsletter: "Subscribe to the newsletter",
+    submitButton: "Sign Up",
+    successTitle: "Success!",
+    successMessage: "Your form has been submitted successfully! We will get in touch with you soon.",
+    closeButton: "Close",
+  },
+  fr: {
+    title: "Vous êtes à un pas de changer votre vie",
+    subTitle: "Voyagez à travers le monde tout en remplissant votre portefeuille, visitez des endroits uniques. Embarquez et commencez une nouvelle vie !",
+    formTitle: "Complétez le formulaire",
+    formSubTitle: "Nous vous contacterons dans un délai d'un jour ouvrable.",
+    placeholderName: "Prénom",
+    placeholderLastName: "Nom de famille",
+    placeholderEmail: "Email",
+    placeholderPhone: "Numéro de téléphone",
+    emailErrorText: "Veuillez entrer une adresse e-mail valide.",
+    phoneErrorText: "Veuillez entrer un numéro de téléphone valide avec au moins 10 chiffres.",
+    terms: "conditions",
+    privacy: "politique de confidentialité",
+    newsletter: "S'abonner à la newsletter",
+    submitButton: "Je m'inscris",
+    successTitle: "Succès !",
+    successMessage: "Votre formulaire a été soumis avec succès ! Nous vous contacterons bientôt.",
+    closeButton: "Fermer",
+  }
+};
+
+// Desestructura las traducciones para el idioma actual
+const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLastName, placeholderEmail, placeholderPhone, emailErrorText, phoneErrorText, terms, privacy, newsletter, submitButton, successTitle, successMessage, closeButton } = translations[lang];
+
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -32,7 +120,7 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               name="firstname"
               id="firstname"
               class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder="Nombre"
+              placeholder={placeholderName}
             />
             <input
               type="text"
@@ -40,7 +128,7 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               name="lastname"
               id="lastname"
               class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder="Apellidos"
+              placeholder={placeholderLastName}
             />
           </div>
           <div>
@@ -50,10 +138,10 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               name="email"
               id="email"
               class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder="Email"
+              placeholder={placeholderEmail}
               aria-describedby="email-error"
             />
-            <span id="email-error" class="text-red-600 text-sm hidden">Por favor, ingresa un email válido.</span>
+            <span id="email-error" class="text-red-600 text-sm hidden">{emailErrorText}</span>
           </div>
           <div>
             <input
@@ -64,10 +152,10 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               minlength="10"
               pattern="[0-9]{10,}"
               class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder="Número de teléfono"
+              placeholder={placeholderPhone}
               aria-describedby="phone-error"
             />
-            <span id="phone-error" class="text-red-600 text-sm hidden">Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.</span>
+            <span id="phone-error" class="text-red-600 text-sm hidden">{phoneErrorText}</span>
           </div>
 
           <div class="grid space-y-3">
@@ -84,8 +172,8 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               </div>
               <label for="checkbox-tyc" class="ms-3">
                 <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">
-                  Acepto los <a href="terms" target="_blank"> términos </a>
-                  <a href="privacy" target="_blank"> y la política de privacidad</a>
+                  Acepto los <a href="terms" target="_blank"> {terms} </a>
+                  <a href="privacy" target="_blank"> y la {privacy}</a>
                 </span>
               </label>
             </div>
@@ -102,14 +190,14 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               </div>
               <label for="checkbox-ads" class="ms-3">
                 <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">
-                  Suscribirse a la newsletter
+                  {newsletter}
                 </span>
               </label>
             </div>
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Me apunto" id="btn" name="btn" disabled />
+            <AuthBtn title={submitButton} id="btn" name="btn" disabled />
           </div>
         </div>
       </form>
@@ -122,9 +210,9 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
-          <h3 id="success-modal-label" class="text-lg font-bold text-gray-900 dark:text-white">¡Éxito!</h3>
-          <p class="mt-2 text-gray-700 dark:text-neutral-400">¡Tu formulario ha sido enviado correctamente! Nos pondremos en contacto contigo pronto.</p>
-          <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg" data-hs-overlay="#success-modal">Cerrar</button>
+          <h3 id="success-modal-label" class="text-lg font-bold text-gray-900 dark:text-white">{successTitle}</h3>
+          <p class="mt-2 text-gray-700 dark:text-neutral-400">{successMessage}</p>
+          <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg" data-hs-overlay="#success-modal">{closeButton}</button>
         </div>
       </div>
 
@@ -142,16 +230,14 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
 
           function mostrarErrores() {
             if (emailInput.validity.typeMismatch) {
-              emailError.textContent = "Por favor, ingresa un email válido.";
+              emailError.textContent = "Format incorrect";
               emailError.classList.remove("hidden");
             } else {
               emailError.classList.add("hidden");
             }
 
             if (phoneInput.validity.patternMismatch || phoneInput.validity.tooShort) {
-              phoneError.textContent = phoneInput.validity.patternMismatch ? 
-                "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos." :
-                "El número de teléfono debe tener al menos 10 dígitos.";
+              phoneError.textContent = "Format incorrect";
               phoneError.classList.remove("hidden");
             } else {
               phoneError.classList.add("hidden");

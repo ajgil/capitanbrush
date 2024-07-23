@@ -1,8 +1,8 @@
 {
-  "title": "¡No Pierdas Esta Oportunidad!",
+  "title": "Don't Miss This Opportunity!",
   "subTitle": "",
-  "badge": "¡Plazas limitadas!",
-  "thirdOption": "Rellena el formulario y te enviaremos toda la información del curso junto con el modo de reserva.",
+  "badge": "Limited spots!",
+  "thirdOption": "Fill out the form and we'll send you all the course information along with the booking method.",
   "btnText": "Get a Custom Quote",
 
   "starterKit": {
@@ -21,18 +21,18 @@
   },
 
   "professionalToolbox": {
-    "name": "Precio total del curso",
+    "name": "Total Course Price",
     "description": "",
     "price": "150",
     "cents": ".00",
     "billingFrequency": "EUR",
     "features": [
-      "Acceso a materiales de estudio",
-      "Guías paso a paso",
-      "Ejemplos prácticos",
-      "Casos de estudio y testimonios de profesionales"
+      "Access to study materials",
+      "Step-by-step guides",
+      "Practical examples",
+      "Case studies and testimonials from professionals"
     ],
-    "purchaseBtnTitle": "¡Inscríbete Ahora!",
+    "purchaseBtnTitle": "Sign Up Now!",
     "purchaseLink": "/contact"
   }
 }
