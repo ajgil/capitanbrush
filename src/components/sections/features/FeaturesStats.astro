@@ -1,7 +1,8 @@
 ---
 // Import the necessary components
-import StatsBig from "@components/ui/blocks/StatsBig.astro";
-import StatsSmall from "@components/ui/blocks/StatsSmall.astro";
+//import StatsBig from "@components/ui/blocks/StatsBig.astro";
+//import StatsSmall from "@components/ui/blocks/StatsSmall.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 
 const { title, subTitle, stats, mainStatTitle, mainStatSubTitle } = Astro.props;
 
@@ -39,16 +40,22 @@ type Stat = {
     </p>
     }
   </div>
-  <!-- Grid container for statistics -->
+  <!-- Grid container for CTA -->
+
+  <div class="items-center lg:grid-cols-12 lg:gap-12">
+      <PrimaryCTA title="Inscríbete ahora" url="contact" />
+  </div>
+  <!-- deshabilitamos las estadisticas y colocamos un CTA 
+   Grid container for statistics 
   <div class="grid items-center gap-6 lg:grid-cols-12 lg:gap-12">
-    <!-- First grid item, showing a big statistics -->
+    First grid item, showing a big statistics 
     <div class="lg:col-span-4">
       <StatsBig
         title={mainStatTitle}
         subTitle={mainStatSubTitle}
       />
     </div>
-    <!-- Second grid item, showing multiple small statistics -->
+    Second grid item, showing multiple small statistics 
     {stats &&
     <div
       class="relative lg:col-span-8 lg:before:absolute lg:before:-start-12 lg:before:top-0 lg:before:h-full lg:before:w-px lg:before:bg-neutral-300 lg:before:dark:bg-neutral-700"
@@ -56,7 +63,7 @@ type Stat = {
       <div
         class="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 lg:grid-cols-3"
       >
-        <!-- Iterate over the 'stats' array and create a 'StatsSmall' component for each object in the array -->
+        Iterate over the 'stats' array and create a 'StatsSmall' component for each object in the array 
         {
           stats.map((stat) => (
             <StatsSmall title={stat.stat} subTitle={stat.description} />
@@ -66,4 +73,5 @@ type Stat = {
     </div>
     }
   </div>
+-->
 </section>
