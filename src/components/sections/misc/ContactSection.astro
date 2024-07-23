@@ -1,18 +1,11 @@
 ---
-
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
-import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
-import TextInput from "@components/ui/forms/input/TextInput.astro";
-import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
-import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
-import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
-import Icon from "@components/ui/icons/Icon.astro";
+
 
 const title: string = "Estás a un paso de cambiar tu vida";
 const subTitle: string = "Navega por el mundo mientras llenas tu cartera, visitas sitios únicos. ¡Embárcate y empieza una nueva vida!";
 const formTitle: string = "Completa el formulario";
 const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil.";
-
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
@@ -76,7 +69,7 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
             />
             <span id="phone-error" class="text-red-600 text-sm hidden">Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.</span>
           </div>
-      
+
           <div class="grid space-y-3">
             <div class="relative flex items-start">
               <div class="mt-1 flex h-5 items-center">
@@ -96,7 +89,7 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
                 </span>
               </label>
             </div>
-      
+
             <div class="relative flex items-start">
               <div class="mt-1 flex h-5 items-center">
                 <input
@@ -114,14 +107,27 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               </label>
             </div>
           </div>
-      
+
           <div class="mt-4 grid">
             <AuthBtn title="Me apunto" id="btn" name="btn" disabled />
           </div>
         </div>
       </form>
-      
-      
+
+      <!-- Success Modal -->
+      <div id="success-modal" class="fixed inset-0 z-50 hidden justify-center items-center bg-black bg-opacity-50" aria-labelledby="success-modal-label">
+        <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 max-w-sm mx-auto relative">
+          <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100" aria-label="Cerrar modal">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+          <h3 id="success-modal-label" class="text-lg font-bold text-gray-900 dark:text-white">¡Éxito!</h3>
+          <p class="mt-2 text-gray-700 dark:text-neutral-400">¡Tu formulario ha sido enviado correctamente! Nos pondremos en contacto contigo pronto.</p>
+          <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg" data-hs-overlay="#success-modal">Cerrar</button>
+        </div>
+      </div>
+
       <script>
         document.addEventListener('DOMContentLoaded', () => {
           const form = document.getElementById("contact-form") as HTMLFormElement;
@@ -129,19 +135,19 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
           const enviar = document.getElementById("btn") as HTMLButtonElement;
           const emailInput = document.getElementById("email") as HTMLInputElement;
           const phoneInput = document.getElementById("phone") as HTMLInputElement;
-      
+          const emailError = document.getElementById("email-error") as HTMLSpanElement;
+          const phoneError = document.getElementById("phone-error") as HTMLSpanElement;
+          const successModal = document.getElementById("success-modal") as HTMLDivElement;
+          const closeModalButton = document.getElementById("close-modal") as HTMLButtonElement;
+
           function mostrarErrores() {
-            // Mensaje de error para el email
-            const emailError = document.getElementById("email-error") as HTMLSpanElement;
             if (emailInput.validity.typeMismatch) {
               emailError.textContent = "Por favor, ingresa un email válido.";
               emailError.classList.remove("hidden");
             } else {
               emailError.classList.add("hidden");
             }
-      
-            // Mensaje de error para el teléfono
-            const phoneError = document.getElementById("phone-error") as HTMLSpanElement;
+
             if (phoneInput.validity.patternMismatch || phoneInput.validity.tooShort) {
               phoneError.textContent = phoneInput.validity.patternMismatch ? 
                 "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos." :
@@ -151,25 +157,39 @@ const formSubTitle: string = "Nos pondremos en contacto contigo en 1 día hábil
               phoneError.classList.add("hidden");
             }
           }
-      
-          // Función para actualizar el estado del botón
+
           function cambiarCondiciones() {
             enviar.disabled = !tyc.checked;
           }
-      
-          // Agregar eventos
-          tyc.addEventListener('change', cambiarCondiciones);
+
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!emailInput.validity.valid || !phoneInput.validity.valid || !tyc.checked) {
+              mostrarErrores();
+              return;
+            }
+
+            // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
+            setTimeout(() => {
+              successModal.classList.remove('hidden');
+              form.reset();
+              enviar.disabled = true;
+            }, 500);
+          });
+
           emailInput.addEventListener('input', mostrarErrores);
           phoneInput.addEventListener('input', mostrarErrores);
-      
-          // Establecer el estado inicial del botón y mostrar mensajes de error
+          tyc.addEventListener('change', cambiarCondiciones);
+
+          closeModalButton.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+          });
+
           cambiarCondiciones();
           mostrarErrores();
         });
       </script>
-      
-      
-      
     </div>
   </div>
 </section>
