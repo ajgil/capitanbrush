@@ -1,0 +1,81 @@
+---
+// Import necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import { SITE } from "@data/constants";
+
+// Define the page title
+const pageTitle: string = `About Me | ${SITE.title}`;
+
+// Using MainLayout for the exterior design of the page, and defining meta for SEO purposes
+---
+
+<MainLayout
+  lang="en"
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://capitanbrush.es/contact",
+    url: "https://capitanbrush.es/contact",
+    name: "Contact Us | Capitanbrush",
+    description:
+      "Have questions about the course? Get in touch and we will create the perfect solution through mentoring and our services.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://capitanbrush.es",
+      name: "Capitanbrush",
+      description:
+        "Capitanbrush offers a comprehensive course on how to work in the mega yacht industry.",
+    },
+    inLanguage: "en",
+  }}
+>
+  <div
+    class="mx-auto flex max-w-screen-lg flex-col items-center pb-16 pt-24 text-center "
+  >
+    <h1
+      class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+    >
+      Who is Captain Brush?
+    </h1>
+    <div>
+      <p class="mt-1 text-pretty text-neutral-800 dark:text-neutral-600">
+        Discover the Story of Captain Brush
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        Dear sailors, today we introduce you to an inspiring figure in the world of navigation: Captain Brush. With an unbreakable passion for the sea and a life full of adventures, Captain Brush has not only left his mark on the ocean but has also found a way to balance his professional life with his personal hobbies.
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400"><strong>A man of many passions:</strong></p>
+      <ul>
+        <li>
+          Painting: Captain Brush has found a way to express himself through art, capturing the majesty of the sea on his canvases.
+        </li>
+        <li>
+          Martial Arts: The discipline and control learned through martial arts have been fundamental in his life and career.
+        </li>
+        <li>
+          Kitesurfing: Gliding over the waves with a kiteboard is one of Captain Brush’s favorite ways to experience the freedom of the sea.
+        </li>
+        <li>
+          Traveling: Exploring new places and cultures has always been an essential part of his life. From crossing the Atlantic to teaching others how to sail, Captain Brush's life is a story of passion, dedication, and adventure.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <section class="grid-container mb-10">
+      <article>
+        <p>
+          <strong>From Engineer to Navigator: Captain Brush’s Transformation</strong> Dear sailors, today we explore a fascinating chapter in Captain Brush’s life: his transition from a successful engineering career to sailing across the Atlantic. <strong>A Bold Change of Course:</strong> - <strong>Engineering Career:</strong> Captain Brush began his career in engineering, working on innovative and challenging projects. - <strong>Decision to Leave It All:</strong> Despite his success, he felt something was missing. So, he made the bold decision to leave his job and embark on a sailing voyage across the Atlantic. - <strong>Reinvention as a Mega Yacht Engineer:</strong> After crossing the ocean, he found his true vocation as a mega yacht engineer, combining his love for the sea with his technical skills. The Atlantic voyage was just the beginning of an exciting new phase in his life. Stay tuned to learn more about his journey to becoming a captain!
+        </p>
+        <p>
+          <strong>From Engineer to Captain</strong> <strong>Subject: Captain Brush’s Journey to Teaching Navigation</strong> Dear sailors, in today’s newsletter, we share how Captain Brush went from being a mega yacht engineer to becoming a captain and starting to teach others how to sail. <strong>The Rise to Captain:</strong> - <strong>Mega Yacht Experience:</strong> Through years of hard work and constant learning, Captain Brush climbed the ranks of mega yacht crew. - <strong>Captain Certification:</strong> He completed rigorous courses and certifications to finally obtain his captain’s license. - <strong>Teaching Navigation:</strong> With his knowledge and experience, he decided to share his passion for the sea by teaching others how to sail. Teaching has become one of Captain Brush’s greatest satisfactions, helping others find their way in the vast ocean.
+        </p>
+        <p>
+          <strong>Captain Brush’s Financial Freedom</strong> Dear sailors, today we delve into the story of how Captain Brush achieved financial freedom and now enjoys a fulfilling life on his tropical fruit farm. <strong>Living His Dreams:</strong> - <strong>Financial Planning:</strong> Throughout his career, Captain Brush made smart investments and saved strategically. - <strong>Tropical Fruit Farm:</strong> With his financial freedom, he acquired a beautiful estate where he grows a variety of tropical fruits. - <strong>Balanced Life:</strong> Now, he enjoys a perfect balance between his passions and his life at sea. Financial freedom has allowed Captain Brush to live a life that many can only dream of. Keep reading to learn more about his tips and experiences!
+        </p>
+      </article>
+    </section>
+  </div>
+</MainLayout>

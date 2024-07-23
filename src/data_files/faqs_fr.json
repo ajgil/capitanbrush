@@ -1,0 +1,30 @@
+{
+    "subTitle": "Posez-nous toutes vos questions sur notre marque et nos produits, et obtenez des réponses factuelles.",
+    "faqs": [
+      {
+        "question": "Quels types d'outils sont inclus dans le Kit de Démarrage ?",
+        "answer": "Le Kit de Démarrage comprend des outils manuels et électriques essentiels pour divers projets de bricolage, y compris des marteaux, des perceuses, des tournevis et une variété de fixations. C'est une sélection soigneusement choisie pour aider les débutants et les bricoleurs expérimentés à s'attaquer à la plupart des tâches d'amélioration de la maison."
+      },
+      {
+        "question": "Puis-je passer du Kit de Démarrage à la Boîte à Outils Professionnelle ?",
+        "answer": "Absolument ! Vous pouvez passer à la Boîte à Outils Professionnelle à tout moment pour accéder à une gamme plus large d'outils de haute qualité, bénéficier d'un support client prioritaire et recevoir du contenu exclusif. Contactez notre équipe de support pour une transition en douceur."
+      },
+      {
+        "question": "Quels rabais sont disponibles pour les commandes en gros via le plan Boîte à Outils Professionnelle ?",
+        "answer": "Les membres de la Boîte à Outils Professionnelle ont droit à des rabais exclusifs sur les commandes en gros, dont le pourcentage peut varier en fonction du volume de la commande. Contactez-nous pour discuter de vos besoins, et nous vous fournirons une structure de rabais adaptée."
+      },
+      {
+        "question": "Quel type de support client puis-je attendre ?",
+        "answer": "Tous nos clients reçoivent un support par e-mail dédié. Avec le Kit de Démarrage, vous bénéficierez de notre support standard, tandis que le plan Boîte à Outils Professionnelle vous offre un support prioritaire, ce qui signifie des temps de réponse plus rapides et une assistance spécialisée."
+      },
+      {
+        "question": "Quelle est l'actualité des ressources en ligne et des tutoriels ?",
+        "answer": "Nous mettons régulièrement à jour nos ressources en ligne et nos tutoriels pour refléter les dernières tendances en matière de bricolage et de construction, ainsi que les nouvelles introductions d'outils et de techniques. Notre matériel vise à être complet et facile à utiliser pour tous les niveaux de compétence."
+      },
+      {
+        "question": "Capitanbrush propose-t-il des services pour des projets de construction à grande échelle ?",
+        "answer": "Oui, nos Solutions Entreprises sont conçues pour les grandes entreprises nécessitant des services complets. Nous proposons des consultations, de la planification, ainsi que la fourniture d'outils et de matériaux de haute qualité, ainsi que des solutions de personnel pour des besoins de construction importants. Contactez-nous pour un devis personnalisé."
+      }
+    ]
+  }
+  

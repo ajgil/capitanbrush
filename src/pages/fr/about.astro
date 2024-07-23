@@ -1,0 +1,81 @@
+---
+// Importer les composants nécessaires
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactSection from "@components/sections/misc/ContactSection.astro";
+import { SITE } from "@data/constants";
+
+// Définir le titre de la page
+const pageTitle: string = `À Propos de Moi | ${SITE.title}`;
+
+// Utiliser MainLayout pour le design extérieur de la page, et définir les métadonnées pour les fins de SEO
+---
+
+<MainLayout
+  lang="fr"
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://capitanbrush.es/contact",
+    url: "https://capitanbrush.es/contact",
+    name: "Contactez-nous | Capitanbrush",
+    description:
+      "Vous avez des questions sur le cours ? Contactez-nous et nous créerons la solution parfaite grâce à un mentorat et nos services.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://capitanbrush.es",
+      name: "Capitanbrush",
+      description:
+        "Capitanbrush propose un cours complet sur le travail dans l'industrie des mégayachts.",
+    },
+    inLanguage: "fr",
+  }}
+>
+  <div
+    class="mx-auto flex max-w-screen-lg flex-col items-center pb-16 pt-24 text-center"
+  >
+    <h1
+      class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+    >
+      Qui est le Capitaine Brush ?
+    </h1>
+    <div>
+      <p class="mt-1 text-pretty text-neutral-800 dark:text-neutral-600">
+        Découvrez l'Histoire du Capitaine Brush
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        Chers navigateurs, aujourd'hui nous vous présentons une figure inspirante du monde de la navigation : le Capitaine Brush. Avec une passion inébranlable pour la mer et une vie pleine d'aventures, le Capitaine Brush n'a pas seulement marqué l'océan, mais a aussi trouvé un moyen d'équilibrer sa vie professionnelle avec ses hobbies personnels.
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400"><strong>Un homme de nombreuses passions :</strong></p>
+      <ul>
+        <li>
+          Peinture : Le Capitaine Brush a trouvé un moyen de s'exprimer à travers l'art, capturant la majesté de la mer sur ses toiles.
+        </li>
+        <li>
+          Arts Martiaux : La discipline et le contrôle acquis à travers les arts martiaux ont été fondamentaux dans sa vie et sa carrière.
+        </li>
+        <li>
+          Kitesurf : Glisser sur les vagues avec une planche de kitesurf est l'un des moyens préférés du Capitaine Brush pour expérimenter la liberté de la mer.
+        </li>
+        <li>
+          Voyager : Explorer de nouveaux lieux et cultures a toujours été une partie essentielle de sa vie. De la traversée de l'Atlantique à l'enseignement de la navigation, la vie du Capitaine Brush est une histoire de passion, de dévouement et d'aventures.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <section class="grid-container mb-10">
+      <article>
+        <p>
+          <strong>De l'Ingénieur au Navigateur : La Transformation du Capitaine Brush</strong> Chers navigateurs, aujourd'hui nous explorons un chapitre fascinant de la vie du Capitaine Brush : sa transition d'une carrière réussie en ingénierie à la traversée de l'Atlantique à voile. <strong>Un Changement de Cap Audacieux :</strong> - <strong>Carrière en Ingénierie :</strong> Le Capitaine Brush a commencé sa carrière dans le domaine de l'ingénierie, travaillant sur des projets innovants et stimulants. - <strong>Décision de Tout Quitter :</strong> Malgré son succès, il sentait qu'il lui manquait quelque chose. Il a donc pris la décision audacieuse de quitter son emploi et de se lancer dans une traversée de l'Atlantique à voile. - <strong>Réinvention en tant qu'Ingénieur de Méga-Yachts :</strong> Après avoir traversé l'océan, il a trouvé sa véritable vocation en tant qu'ingénieur de méga-yachts, combinant son amour pour la mer avec ses compétences techniques. La traversée de l'Atlantique n'était que le début d'une nouvelle phase passionnante de sa vie. Restez connectés pour en savoir plus sur son parcours pour devenir capitaine !
+        </p>
+        <p>
+          <strong>De l'Ingénieur au Capitaine</strong> <strong>Objet : Le Voyage du Capitaine Brush vers l'Enseignement de la Navigation</strong> Chers navigateurs, dans notre newsletter d'aujourd'hui, nous partageons comment le Capitaine Brush est passé d'ingénieur de méga-yachts à capitaine et a commencé à enseigner aux autres comment naviguer. <strong>Ascension au Poste de Capitaine :</strong> - <strong>Expérience en Méga-Yachts :</strong> Grâce à des années de travail acharné et d'apprentissage constant, le Capitaine Brush a gravi les échelons de l'équipage de méga-yachts. - <strong>Certification de Capitaine :</strong> Il a complété des cours et certifications rigoureux pour obtenir enfin sa licence de capitaine. - <strong>Enseignement de la Navigation :</strong> Avec ses connaissances et son expérience, il a décidé de partager sa passion pour la mer en enseignant aux autres comment naviguer. L'enseignement est devenu l'une des plus grandes satisfactions du Capitaine Brush, aidant les autres à trouver leur chemin dans le vaste océan.
+        </p>
+        <p>
+          <strong>La Liberté Financière du Capitaine Brush</strong> Chers navigateurs, aujourd'hui nous plongeons dans l'histoire de la manière dont le Capitaine Brush a atteint la liberté financière et profite maintenant d'une vie épanouissante sur sa ferme de fruits tropicaux. <strong>Vivre Ses Rêves :</strong> - <strong>Planification Financière :</strong> Tout au long de sa carrière, le Capitaine Brush a fait des investissements judicieux et a économisé de manière stratégique. - <strong>Ferme de Fruits Tropicaux :</strong> Avec sa liberté financière, il a acquis un magnifique domaine où il cultive une variété de fruits tropicaux. - <strong>Vie Équilibrée :</strong> Désormais, il profite d'un équilibre parfait entre ses passions et sa vie en mer. La liberté financière a permis au Capitaine Brush de vivre une vie que beaucoup ne peuvent que rêver. Continuez à lire pour découvrir ses conseils et expériences !
+        </p>
+      </article>
+    </section>
+  </div>
+</MainLayout>

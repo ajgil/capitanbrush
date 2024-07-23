@@ -1,0 +1,39 @@
+{
+    "title": "¡No Pierdas Esta Oportunidad!",
+    "subTitle": "",
+    "badge": "¡Plazas limitadas!",
+    "thirdOption": "Rellena el formulario y te enviaremos toda la información del curso junto con el modo de reserva.",
+    "btnText": "Obtén una Cotización Personalizada",
+  
+    "starterKit": {
+      "name": "Kit de Inicio",
+      "description": "La mejor opción para proyectos de bricolaje",
+      "price": "49",
+      "cents": ".00",
+      "billingFrequency": "USD / mensual",
+      "features": [
+        "Herramientas de hardware clave",
+        "Acceso a guías y tutoriales",
+        "Soporte estándar"
+      ],
+      "purchaseBtnTitle": "Obtén el Kit de Inicio",
+      "purchaseLink": "#"
+    },
+  
+    "professionalToolbox": {
+      "name": "Precio total del curso",
+      "description": "",
+      "price": "150",
+      "cents": ".00",
+      "billingFrequency": "EUR",
+      "features": [
+        "Acceso a materiales de estudio",
+        "Guías paso a paso",
+        "Ejemplos prácticos",
+        "Casos de estudio y testimonios de profesionales"
+      ],
+      "purchaseBtnTitle": "¡Inscríbete Ahora!",
+      "purchaseLink": "/contact"
+    }
+  }
+  

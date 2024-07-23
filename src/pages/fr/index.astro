@@ -1,24 +1,16 @@
 ---
-// Import the necessary components
+// Importation des composants nécessaires
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
+
+import faqs from "@/data_files/faqs_fr.json";
+import pricing from "@/data_files/pricing_fr.json";
+import heroImage from "@images/logo-1.webp";
+
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import ClientsSection from "@components/sections/landing/ClientsSection.astro";
-import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
-import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
-import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
-import faqs from "@data/fr/faqs.json";
-import features from "@data/fr/features.json";
-import pricing from "@data/fr/pricing.json";
-import featureImage from "@images/features-image.avif";
-import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import Temario from "../fr/temario/index.astro";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -29,117 +21,31 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout lang="fr">
-  <AnnouncementBanner
-    btnId="dismiss-button"
-    btnTitle="Découvrez Capitanbrush sur GitHub"
-    url="https://github.com/mearashadowfax/Capitanbrush"
-  />
-
   <HeroSection
-    title=`Équipez vos projets avec <span class="text-yellow-500 dark:text-yellow-400">Capitanbrush</span>`
-    subTitle="Outils matériels de haute qualité et services de construction experts pour tous les besoins en projet."
-    primaryBtn="Commencez à explorer"
-    primaryBtnURL={getRelativeLocaleUrl("fr", "products")}
-    secondaryBtn="Contacter l'équipe commerciale"
-    secondaryBtnURL={getRelativeLocaleUrl("fr", "contact")}
+    title={`Transformez Votre Carrière avec Notre Cours Exclusif sur <span class="text-yellow-500 dark:text-yellow-400">Mega Yachts!</span>`}
+    subTitle="Vous rêvez de gagner plus de 3000€ par mois en travaillant sur des méga yachts ? Rejoignez notre cours dispensé par un ingénieur expert en méga yachts et découvrez comment vous pouvez atteindre vos objectifs professionnels dans cette industrie passionnante."
+    primaryBtn="Contenu"
+    primaryBtnURL="/content"
+    secondaryBtn="Inscrivez-vous maintenant"
+    secondaryBtnURL="/contact"
     withReview={true}
     avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
+    rating={`<span class="font-bold">4.8</span> / 5`}
     starCount={4}
-    reviews=`À partir de plus de <span class="font-bold">12,8k</span> avis`
+    reviews={`De plus de <span class="font-bold">12.8k</span> avis`}
     src={heroImage}
-    alt="Pile de boîtes de produits Capitanbrush contenant des outils matériels assortis"
+    alt="Capitanbrush"
   />
-
-  <ClientsSection
-    title="Faites confiance aux leaders de l'industrie"
-    subTitle="Découvrez la fiabilité choisie par les géants de l'industrie."
-  />
-
-  <FeaturesGeneral
-    title="Répondre aux exigences de l'industrie"
-    subTitle="Chez Capitanbrush, nous relevons les défis uniques rencontrés dans les secteurs du matériel et de la construction. Des outils de pointe aux services experts, nous sommes déterminés à vous aider à surmonter les obstacles et à atteindre vos objectifs."
-    src={featureImage}
-    alt="Produits Capitanbrush dans des boîtes flottantes"
-    features={features}
-  />
-
-  <FeaturesNavs
-    title=`Personnalisez les offres de <span class="text-yellow-500 dark:text-yellow-400">Capitanbrush</span> pour répondre parfaitement à vos besoins en matériel et en construction.`
-    tabs={[
-      {
-        heading: "Outils de pointe",
-        content:
-          "Optimisez vos projets avec les outils de pointe de Capitanbrush. Faites l'expérience d'une efficacité accrue dans la gestion de la construction avec nos solutions automatisées sophistiquées.",
-        svg: "tools",
-        src: tools,
-        alt: "Équipement lourd jaune et noir sur un champ d'herbe brune",
-        first: true,
-      },
-      {
-        heading: "Tableaux de bord intuitifs",
-        content:
-          "Naviguez facilement avec les tableaux de bord intuitifs de Capitanbrush. Configurez et supervisez vos projets de manière transparente, avec des interfaces conviviales conçues pour une gestion efficace des flux de travail rapide et efficace.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "Capture d'écran ou représentation graphique du tableau de bord intuitif",
-        second: true,
-      },
-      {
-        heading: "Fonctionnalités robustes",
-        content:
-          "Minimisez la complexité, maximisez la productivité. Les fonctionnalités robustes de Capitanbrush sont conçues pour rationaliser votre processus de construction, offrant des résultats qui se distinguent par leur excellence.",
-        svg: "house",
-        src: construction,
-        alt: "Structure métallique grise d'un bâtiment près d'une grue à tour pendant la journée",
-      },
-    ]}
-  />
-
-  <TestimonialsSection
-    title="Accélérez vos projets"
-    subTitle="Chez Capitanbrush, nous assurons un démarrage rapide avec une configuration de compte instantanée. Découvrez la vitesse de la construction redéfinie."
-    testimonials={[
-      {
-        content:
-          "Capitanbrush a considérablement augmenté l'efficacité de notre projet. La configuration a été instantanée et leurs temps de réponse rapides sont phénoménaux. Vraiment un changement de jeu dans le support matériel et de construction !",
-        author: "Samantha Ruiz",
-        role: "Directrice des opérations | ConstructIt Inc.",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-      },
-    ]}
-    statistics={[
-      {
-        count: "70k+",
-        description:
-          "clients équipés — des bricoleurs aux grandes entreprises de construction",
-      },
-      {
-        count: "35%",
-        description:
-          "hausse de l'efficacité des projets avec les outils et services de Capitanbrush",
-      },
-      {
-        count: "15,3%",
-        description:
-          "réduction des coûts de maintenance rapportée par des clients à long terme",
-      },
-      {
-        count: "2x",
-        description:
-          "assemblage plus rapide grâce à des solutions de fixation innovantes",
-      },
-    ]}
-  />
+  
+  <Temario />
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
+  <FAQ title={`Questions<br />Fréquemment Posées`} faqs={faqs} />
 
   <HeroSectionAlt
-    title="Construisons ensemble"
-    subTitle="Capitanbrush est un modèle open source, méticuleusement conçu avec les frameworks Astro, Tailwind CSS et Preline UI."
-    url="https://github.com/mearashadowfax/Capitanbrush"
+    title="Ne Manquez Pas Cette Opportunité!"
+    subTitle="Le cours coûte 150€, incluant tous les matériaux d'étude et l'accès à des ressources exclusives. Places limitées !"
+    url="/contact"
   />
 </MainLayout>
