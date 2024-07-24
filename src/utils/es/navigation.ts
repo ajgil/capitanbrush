@@ -1,11 +1,11 @@
 // Un array de enlaces para la barra de navegación
 const navBarLinks = [
-  { name: "Inicio", url: "/" },
   { name: "Sobre mi", url: "/about" },
+  { name: "Clientes", url: "/customers" },
+  { name: "Inicio", url: "/" },
   { name: "Contenido", url: "/content" },
-  //{ name: "Clientes", url: "/customers" },
-  { name: "Contacto", url: "/contact" },
   { name: "Testimonios", url: "/testimonials" },
+  { name: "Contacto", url: "/contact" },
 ];
 
 // Un array de enlaces para el pie de página
@@ -14,10 +14,11 @@ const footerLinks = [
     section: "Empresa",
     links: [
       { name: "Sobre mi", url: "/about" },
-      { name: "Contenido", url: "/content" },
       { name: "Clientes", url: "/customers" },
-      { name: "Contacto", url: "/contact" },
+      { name: "Inicio", url: "/" },
+      { name: "Contenido", url: "/content" },
       { name: "Testimonios", url: "/testimonials" },
+      { name: "Contacto", url: "/contact" },
     ],
   },
   {

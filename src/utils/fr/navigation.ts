@@ -1,11 +1,11 @@
 // Un tableau de liens pour la barre de navigation
 const navBarLinks = [
-  { name: "Accueil", url: "/fr/" },
   { name: "À propos", url: "/fr/about" },
+  { name: "Clients", url: "/fr/customers" },
+  { name: "Accueil", url: "/fr/" },
   { name: "Contenu", url: "/fr/content" },
-  //{ name: "Clients", url: "/fr/customers" },
-  { name: "Contact", url: "/fr/contact" },
   { name: "Témoignages", url: "/fr/testimonials" },
+  { name: "Contact", url: "/fr/contact" },
 ];
 
 // Un tableau de liens pour le pied de page
@@ -14,10 +14,11 @@ const footerLinks = [
     section: "Entreprise",
     links: [
       { name: "À propos", url: "/fr/about" },
-      { name: "Contenu", url: "/fr/content" },
       { name: "Clients", url: "/fr/customers" },
-      { name: "Contact", url: "/fr/contact" },
+      { name: "Accueil", url: "/fr/" },
+      { name: "Contenu", url: "/fr/content" },
       { name: "Témoignages", url: "/fr/testimonials" },
+      { name: "Contact", url: "/fr/contact" },
     ],
   },
   {
