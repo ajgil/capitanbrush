@@ -2,7 +2,7 @@
 const navBarLinks = [
   { name: "About", url: "/en/about" },
   { name: "Customers", url: "/en/customers" },
-  { name: "Home", url: "/en/" },
+  { name: "Course", url: "/en/" },
   { name: "Content", url: "/en/content" },
   { name: "Testimonials", url: "/en/testimonials" },
   { name: "Contact", url: "/en/contact" },
@@ -16,7 +16,7 @@ const footerLinks = [
     links: [
       { name: "About", url: "/en/about" },
       { name: "Customers", url: "/en/customers" },
-      { name: "Home", url: "/en/" },
+      { name: "Course", url: "/en/" },
       { name: "Content", url: "/en/content" },
       { name: "Testimonials", url: "/en/testimonials" },
       { name: "Contact", url: "/en/contact" },

@@ -7,14 +7,13 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Importa las imágenes necesarias
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
-import constructionWorkers from "@images/construction-workers.avif";
-import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
-import progressBuilding from "@images/progress-building.avif";
-import underConstruction from "@images/under-construction.avif";
+import yatchFive from "@images/yatchs/yatch-5.png";
+import yatchSix from "@images/yatchs/yatch-6.png";
+import yatchSeven from "@images/yatchs/yatch-7.png";
+import yatchTwo from "@images/yatchs/yatch-2.png";
+import yatchOne from "@images/yatchs/yatch-1.png";
+import yatchThree from "@images/yatchs/yatch-3.png";
+import yatchFour from "@images/yatchs/yatch-4.png";
 import { SITE } from "@data/constants";
 
 interface Articulo {
@@ -39,36 +38,33 @@ const articles: Articulo[] = [
     title: "Bolsa de Empleo",
     subTitle:
       "Acceso a ofertas de empleo náutico y canales de empleo en mega yates, para que encuentres trabajo rápidamente.",
-    single: false,
-    imgOne: blueprints,
-    imgOneAlt: "Planos y tableta digital con planes de construcción.",
-    imgTwo: personWorking,
-    imgTwoAlt: "Persona trabajando en la oficina",
+    single: true,
+    img: yatchOne,
+    imgAlt:
+      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
   },
   {
     isRightSection: false,
     title: "Introducción y Preparación",
     subTitle:
       "Introducción al mundo de los Mega Yates para que encuentres trabajo.",
-    img: beforeAfter,
-    imgAlt: "Sitio de construcción antes y después",
-
+    img: yatchTwo,
+    imgAlt: "Trabajadores de construcción orquestando un proyecto",
   },
   {
     isRightSection: true,
     title: "Vida y Trabajo en Mega Yates",
     subTitle: "Vida y trabajo en los Mega Yates desde dentro.",
-    single: false,
-    imgOne: constructionWorkers,
-    imgOneAlt: "Trabajadores de construcción orquestando un proyecto",
-    imgTwo: aerialView,
-    imgTwoAlt: "Vista aérea de una construcción gestionada",
+    single: true,
+    img: yatchThree,
+    imgAlt:
+      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
   },
   {
     isRightSection: false,
     title: "Estrategias Financieras",
     subTitle: "Estrategias financieras recomendadas por un MBA en Finanzas.",
-    img: usingTools,
+    img: yatchFour,
     imgAlt:
       "Hombre con chaleco naranja y negro usando casco blanco sosteniendo una herramienta eléctrica amarilla y negra",
   },
@@ -77,10 +73,9 @@ const articles: Articulo[] = [
     title: "Carrera, de tripulante a capitán",
     subTitle:
       "Planificación de carrera a largo plazo en el sector de los Mega Yates.",
-    imgOne: constructionWorkers,
-    imgOneAlt: "Trabajadores de construcción orquestando un proyecto",
-    imgTwo: aerialView,
-    imgTwoAlt: "Vista aérea de una construcción gestionada",
+      img: yatchFive,
+    imgAlt:
+      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
     btnExists: true,
     btnTitle: "Pregunta por whatsapp",
     btnURL: "http://wa.link/9ggwrg",
@@ -90,7 +85,7 @@ const articles: Articulo[] = [
     title: "Un CV naútico para trabajar en mega yates",
     subTitle:
       "Un CV náutico para trabajar en Mega Yates de referencia y asesoramiento especializado para crear el tuyo.",
-    img: usingTools,
+    img: yatchSix,
     imgAlt:
       "Planificación de carrera a largo plazo en el sector de los Mega Yates",
   },
@@ -98,10 +93,9 @@ const articles: Articulo[] = [
     isRightSection: true,
     title: "Glosario Náutico Español / Inglés",
     subTitle: "Términos esenciales para la vida a bordo.",
-    imgOne: constructionWorkers,
-    imgOneAlt: "Glosario nautico.",
-    imgTwo: aerialView,
-    imgTwoAlt: "vida a bordo.",
+    img: yatchSeven,
+    imgAlt:
+      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
     btnExists: true,
     btnTitle: "Agendar reunión",
     btnURL: "http://wa.link/9ggwrg",
@@ -145,10 +139,8 @@ const pageTitle: string = `Servicios | ${SITE.title}`;
           title={article.title}
           subTitle={article.subTitle}
           single={article.single}
-          imgOne={article.imgOne}
-          imgOneAlt={article.imgOneAlt}
-          imgTwo={article.imgTwo}
-          imgTwoAlt={article.imgTwoAlt}
+          img={article.img}
+          imgAlt={article.imgAlt}
           btnExists={article.btnExists}
           btnTitle={article.btnTitle}
           btnURL={article.btnURL}

@@ -10,10 +10,7 @@ const {
   btnTitle,
   btnURL,
   single,
-  imgOne,
-  imgOneAlt,
-  imgTwo,
-  imgTwoAlt,
+  img, imgAlt 
 } = Astro.props;
 // Define TypeScript interface for the properties
 interface Props {
@@ -23,10 +20,8 @@ interface Props {
   btnTitle?: string;
   btnURL?: string;
   single?: boolean;
-  imgOne?: any;
-  imgOneAlt?: any;
-  imgTwo?: any;
-  imgTwoAlt?: any;
+  img: any;
+  imgAlt: any;
 }
 ---
 <!-- Root section of the component -->
@@ -49,37 +44,13 @@ interface Props {
     <!-- Conditional rendering of the Primary Call-To-Action button if 'btnExists' is true -->
     {btnExists ? <PrimaryCTA title={btnTitle} url={btnURL} /> : null}
   </div>
-  <!-- Conditionally render one or two images based on 'single' property -->
-  {
-    single ? (
-      <div class="mt-8">
-        <!-- Single image -->
-        <Image
-          class="w-full rounded-lg"
-          src={imgOne}
-          alt={imgOneAlt}
-          format={"avif"}
-        />
-      </div>
-    ) : (
-      <div class="mt-8 grid grid-cols-2 gap-4">
-        <!-- First image in a two-image layout -->
-        <Image
-          class="w-full rounded-xl"
-          src={imgOne}
-          alt={imgOneAlt}
-          draggable={"false"}
-          format={"avif"}
-        />
-        <!-- Second image in a two-image layout -->
-        <Image
-          class="mt-4 w-full rounded-xl lg:mt-10"
-          src={imgTwo}
-          alt={imgTwoAlt}
-          draggable={"false"}
-          format={"avif"}
-        />
-      </div>
-    )
-  }
+  <!-- The Image component which renders the image -->
+  <Image
+    class="w-full rounded-xl"
+    src={img}
+    alt={imgAlt}
+    draggable={"false"}
+    format={"avif"}
+  />
+  
 </section>
