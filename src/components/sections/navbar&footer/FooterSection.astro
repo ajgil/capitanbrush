@@ -95,20 +95,20 @@ const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.cur
 
       <!-- Social Brands -->
       <div>
+        <FooterSocialLink url={strings.socialLinks.tiktok}
+          ><Icon name="tiktokFooter" /></FooterSocialLink
+        >
+
+        <FooterSocialLink url={strings.socialLinks.instagram}
+          ><Icon name="instagramFooter" /></FooterSocialLink
+        >
+
         <FooterSocialLink url={strings.socialLinks.facebook}
           ><Icon name="facebookFooter" />
         </FooterSocialLink>
 
-        <FooterSocialLink url={strings.socialLinks.x}
-          ><Icon name="xFooter" /></FooterSocialLink
-        >
-
-        <FooterSocialLink url={strings.socialLinks.google}
-          ><Icon name="googleFooter" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={strings.socialLinks.slack}
-          ><Icon name="slackFooter" />
+        <FooterSocialLink url={strings.socialLinks.youtube}
+          ><Icon name="youtubeFooter" />
         </FooterSocialLink>
       </div>
     </div>

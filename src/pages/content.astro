@@ -36,9 +36,9 @@ interface Articulo {
 const articles: Articulo[] = [
   {
     isRightSection: true,
-    title: " Temario Completo",
+    title: "Bolsa de Empleo",
     subTitle:
-      "Dispondrás de cuatro bloques con contenido detallado y enlaces a webs de referencia",
+      "Acceso a ofertas de empleo náutico y canales de empleo en mega yates, para que encuentres trabajo rápidamente.",
     single: false,
     imgOne: blueprints,
     imgOneAlt: "Planos y tableta digital con planes de construcción.",
@@ -47,20 +47,17 @@ const articles: Articulo[] = [
   },
   {
     isRightSection: false,
-    title: "Glosario Náutico Español / Inglés",
+    title: "Introducción y Preparación",
     subTitle:
-      "Términos esenciales para la vida a bordo.",
+      "Introducción al mundo de los Mega Yates para que encuentres trabajo.",
     img: beforeAfter,
     imgAlt: "Sitio de construcción antes y después",
-    btnExists: true,
-    btnTitle: "Inscríbete",
-    btnURL: "/contact",
+
   },
   {
     isRightSection: true,
-    title: "Mentoría y Orientación Profesional",
-    subTitle:
-      "Sesión de una hora online con un experto",
+    title: "Vida y Trabajo en Mega Yates",
+    subTitle: "Vida y trabajo en los Mega Yates desde dentro.",
     single: false,
     imgOne: constructionWorkers,
     imgOneAlt: "Trabajadores de construcción orquestando un proyecto",
@@ -69,17 +66,49 @@ const articles: Articulo[] = [
   },
   {
     isRightSection: false,
-    title: "Bolsa de Empleo",
-    subTitle:
-      "Datos de contacto de reclutadores y canales con ofertas de empleo.",
+    title: "Estrategias Financieras",
+    subTitle: "Estrategias financieras recomendadas por un MBA en Finanzas.",
     img: usingTools,
     imgAlt:
       "Hombre con chaleco naranja y negro usando casco blanco sosteniendo una herramienta eléctrica amarilla y negra",
   },
+  {
+    isRightSection: true,
+    title: "Carrera, de tripulante a capitán",
+    subTitle:
+      "Planificación de carrera a largo plazo en el sector de los Mega Yates.",
+    imgOne: constructionWorkers,
+    imgOneAlt: "Trabajadores de construcción orquestando un proyecto",
+    imgTwo: aerialView,
+    imgTwoAlt: "Vista aérea de una construcción gestionada",
+    btnExists: true,
+    btnTitle: "Pregunta por whatsapp",
+    btnURL: "http://wa.link/9ggwrg",
+  },
+  {
+    isRightSection: false,
+    title: "Un CV naútico para trabajar en mega yates",
+    subTitle:
+      "Un CV náutico para trabajar en Mega Yates de referencia y asesoramiento especializado para crear el tuyo.",
+    img: usingTools,
+    imgAlt:
+      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
+  },
+  {
+    isRightSection: true,
+    title: "Glosario Náutico Español / Inglés",
+    subTitle: "Términos esenciales para la vida a bordo.",
+    imgOne: constructionWorkers,
+    imgOneAlt: "Glosario nautico.",
+    imgTwo: aerialView,
+    imgTwoAlt: "vida a bordo.",
+    btnExists: true,
+    btnTitle: "Agendar reunión",
+    btnURL: "http://wa.link/9ggwrg",
+  },
 ];
 
 const pageTitle: string = `Servicios | ${SITE.title}`;
-
 ---
 
 <MainLayout
@@ -88,27 +117,29 @@ const pageTitle: string = `Servicios | ${SITE.title}`;
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://capitanbrush.es/content",
-    "url": "https://capitanbrush.es/content",
-    "name": "Servicio de cursos para trabajar en mega yates | Capitanbrush",
-    "description": "Uniendo experiencia con tu visión, Capitanbrush ofrece un servicio excepcional y un curso completo para trabjar en la industria de los mega yates.",
-    "isPartOf": {
+    url: "https://capitanbrush.es/content",
+    name: "consejos de un experto en mega yates, ofertas de empleo | Capitanbrush",
+    description:
+      "Canales de empleo en mega yates, estrategias financieras, planificación de carrera a largo plazo en sector mega yates.",
+    isPartOf: {
       "@type": "WebSite",
-      "url": "https://capitanbrush.es",
-      "name": "Capitanbrush",
-      "description": "Capitanbrush ofrece un curso único para aprender la industria de los mega yates. Alcanza la libertad financiera"
+      url: "https://capitanbrush.es",
+      name: "Capitanbrush",
+      description:
+        "Capitanbrush ofrece un curso único para aprender la industria de los mega yates y alcanza la libertad financiera",
     },
-    "inLanguage": "es"
+    inLanguage: "es",
   }}
 >
   <MainSection
-    title="Contenido del Curso"
-    subTitle="Diseñada para proporcionar una comprensión profunda y práctica sobre cómo comenzar y prosperar en la industria de los Mega Yates. ¿Tienes dudas? Clica abajo para enviarme un whatsapp y lo hablamos."
+    title="Mentoría Personalizada"
+    subTitle="Una hora de consejos personalizados para ti, de un experto en mega yates, para resolver tus dudas y guiarte en tu carrera."
     btnExists={true}
-    btnTitle="Ir a whatsapp"
+    btnTitle="Agendar reunión"
     btnURL="http://wa.link/9ggwrg"
   />
   {
-    articles.map(article => {
+    articles.map((article) => {
       return article.isRightSection ? (
         <RightSection
           title={article.title}

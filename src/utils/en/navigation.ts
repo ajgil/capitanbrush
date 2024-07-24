@@ -31,10 +31,10 @@ const footerLinks = [
 
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://x.com/",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  tiktok: "https://www.tiktok.com/@capitanbrush",
+  instagram: "https://www.instagram.com/capitan.brush/",
+  facebook: " https://www.facebook.com/CapitanBrushh/",
+  youtube: "https://www.youtube.com/@CapitanBrush/shorts",
 };
 
 export default {
