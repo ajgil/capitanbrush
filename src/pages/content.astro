@@ -41,7 +41,7 @@ const articles: Articulo[] = [
     single: true,
     img: yatchOne,
     imgAlt:
-      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
+      "Mega Yate",
   },
   {
     isRightSection: false,
@@ -49,7 +49,7 @@ const articles: Articulo[] = [
     subTitle:
       "Introducción al mundo de los Mega Yates para que encuentres trabajo.",
     img: yatchTwo,
-    imgAlt: "Trabajadores de construcción orquestando un proyecto",
+    imgAlt: "Mega Yate y el mar",
   },
   {
     isRightSection: true,
@@ -58,7 +58,7 @@ const articles: Articulo[] = [
     single: true,
     img: yatchThree,
     imgAlt:
-      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
+      "Las mejores vistas",
   },
   {
     isRightSection: false,
@@ -66,7 +66,7 @@ const articles: Articulo[] = [
     subTitle: "Estrategias financieras recomendadas por un MBA en Finanzas.",
     img: yatchFour,
     imgAlt:
-      "Hombre con chaleco naranja y negro usando casco blanco sosteniendo una herramienta eléctrica amarilla y negra",
+      "Entrando en puerto",
   },
   {
     isRightSection: true,
@@ -75,7 +75,7 @@ const articles: Articulo[] = [
       "Planificación de carrera a largo plazo en el sector de los Mega Yates.",
       img: yatchFive,
     imgAlt:
-      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
+      "Cubierta de capitán",
     btnExists: true,
     btnTitle: "Pregunta por whatsapp",
     btnURL: "http://wa.link/9ggwrg",
@@ -87,7 +87,7 @@ const articles: Articulo[] = [
       "Un CV náutico para trabajar en Mega Yates de referencia y asesoramiento especializado para crear el tuyo.",
     img: yatchSix,
     imgAlt:
-      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
+      "Habitación",
   },
   {
     isRightSection: true,
@@ -95,7 +95,7 @@ const articles: Articulo[] = [
     subTitle: "Términos esenciales para la vida a bordo.",
     img: yatchSeven,
     imgAlt:
-      "Planificación de carrera a largo plazo en el sector de los Mega Yates",
+      "Vistas",
     btnExists: true,
     btnTitle: "Agendar reunión",
     btnURL: "http://wa.link/9ggwrg",
@@ -128,9 +128,7 @@ const pageTitle: string = `Servicios | ${SITE.title}`;
   <MainSection
     title="Mentoría Personalizada"
     subTitle="Una hora de consejos personalizados para ti, de un experto en mega yates, para resolver tus dudas y guiarte en tu carrera."
-    btnExists={true}
-    btnTitle="Agendar reunión"
-    btnURL="http://wa.link/9ggwrg"
+    btnExists={false}
   />
   {
     articles.map((article) => {

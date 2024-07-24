@@ -27,10 +27,14 @@
       "cents": ".00",
       "billingFrequency": "EUR",
       "features": [
-        "Acceso a materiales de estudio",
-        "Guías paso a paso",
-        "Ejemplos prácticos",
-        "Casos de estudio y testimonios de profesionales"
+        "Mentoría personalizada",
+        "Bolsa de Empleo",
+        "Bloque 1: Introducción y Preparación",
+        "Bloque 2: Vida y Trabajo en Megayates",
+        "Bloque 3: Estrategias Financieras",
+        "Bloque 4: Carrera, de tripulante a capitán",
+        "Creación de tu CV náutico",
+        "Glosario náutico Español/Inglés"
       ],
       "purchaseBtnTitle": "¡Inscríbete Ahora!",
       "purchaseLink": "/contact"
