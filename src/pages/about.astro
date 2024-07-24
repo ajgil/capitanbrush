@@ -1,7 +1,8 @@
 ---
 // Importa los componentes necesarios
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/misc/ContactSection.astro";
+import { Image } from "astro:assets";
+import CaptBrushRRSS from "../images/capitan-brush-RRSS.jpeg";
 import { SITE } from "@data/constants";
 
 // Define el título de la página
@@ -31,162 +32,299 @@ const pageTitle: string = `Sobre mí | ${SITE.title}`;
     inLanguage: "es",
   }}
 >
+  <!-- Testimonials -->
+  <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <!-- Grid -->
+    <div class="md:grid md:grid-cols-2 md:items-center md:gap-10 lg:gap-16">
+      <div class="mb-24 hidden sm:px-6 md:mb-0 md:block">
+        <div class="relative">
+          <Image class="rounded-xl" src={CaptBrushRRSS} alt="Captbrush" />
+          <!--<img class="rounded-xl" src={CaptBrushRRSS.src} alt="Captbrush"> -->
 
-<!-- Testimonials -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <!-- Grid -->
-  <div class="md:grid md:grid-cols-2 md:gap-10 lg:gap-16 md:items-center">
-    <div class="hidden md:block mb-24 md:mb-0 sm:px-6">
-      <div class="relative">
-        <img class="rounded-xl" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=500&h=600&q=80" alt="Avatar">
-
-        <!-- SVG Element -->
-        <div class="absolute bottom-0 start-0 -z-[1] translate-y-10 -translate-x-14">
-          <svg class="max-w-40 h-auto text-gray-400 dark:text-neutral-700" width="696" height="653" viewBox="0 0 696 653" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="72.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="171.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="270.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="369.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="468.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="567.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="666.5" cy="29.5" r="29.5" fill="currentColor"/>
-            <circle cx="29.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="128.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="227.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="326.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="425.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="524.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="623.5" cy="128.5" r="29.5" fill="currentColor"/>
-            <circle cx="72.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="171.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="270.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="369.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="468.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="567.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="666.5" cy="227.5" r="29.5" fill="currentColor"/>
-            <circle cx="29.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="128.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="227.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="326.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="425.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="524.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="623.5" cy="326.5" r="29.5" fill="currentColor"/>
-            <circle cx="72.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="171.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="270.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="369.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="468.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="567.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="666.5" cy="425.5" r="29.5" fill="currentColor"/>
-            <circle cx="29.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="128.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="227.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="326.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="425.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="524.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="623.5" cy="524.5" r="29.5" fill="currentColor"/>
-            <circle cx="72.5" cy="623.5" r="29.5" fill="currentColor"/>
-            <circle cx="171.5" cy="623.5" r="29.5" fill="currentColor"/>
-            <circle cx="270.5" cy="623.5" r="29.5" fill="currentColor"/>
-            <circle cx="369.5" cy="623.5" r="29.5" fill="currentColor"/>
-            <circle cx="468.5" cy="623.5" r="29.5" fill="currentColor"/>
-            <circle cx="567.5" cy="623.5" r="29.5" fill="currentColor"/>
-            <circle cx="666.5" cy="623.5" r="29.5" fill="currentColor"/>
-          </svg>
-        </div>
-        <!-- End SVG Element -->
-      </div>
-    </div>
-    <!-- End Col -->
-
-    <div>
-      <!-- Blockquote -->
-      <blockquote class="relative">
-        <svg class="absolute top-0 start-0 transform -translate-x-8 -translate-y-4 size-24 text-gray-200 dark:text-neutral-700" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z" fill="currentColor"/>
-        </svg>
-
-        <div class="relative z-10">
-          <p class="text-xs font-semibold text-gray-500 tracking-wide uppercase mb-3 dark:text-neutral-200">
-            Featured client
-          </p>
-
-          <p class="text-xl font-medium italic text-gray-800 md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal dark:text-neutral-200">
-            Hola a todos, soy Capitán Brush, el instructor principal de este curso de mega yates. Mi vida ha sido una travesía llena de aventuras, desafíos y grandes satisfacciones. Si has llegado hasta aquí, probablemente compartimos la misma pasión por el mar y los mega yates. ¡Permíteme contarte un poco sobre mi viaje y cómo llegué a donde estoy hoy!
-          </p>
-        </div>
-
-        <footer class="mt-6">
-          <div class="flex items-center">
-            <div class="md:hidden shrink-0">
-              <img class="size-12 rounded-full" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
-            </div>
-            <div class="ms-4 md:ms-0">
-              <div class="text-base font-semibold text-gray-800 dark:text-neutral-200">Capitán Brush</div>
-              <div class="text-xs text-gray-500 dark:text-neutral-400">Director del curso Mega Yates</div>
-            </div>
+          <!-- SVG Element -->
+          <div
+            class="absolute bottom-0 start-0 -z-[1] -translate-x-14 translate-y-10"
+          >
+            <svg
+              class="h-auto max-w-40 text-gray-400 dark:text-neutral-700"
+              width="696"
+              height="653"
+              viewBox="0 0 696 653"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="72.5" cy="29.5" r="29.5" fill="currentColor"></circle>
+              <circle cx="171.5" cy="29.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="270.5" cy="29.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="369.5" cy="29.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="468.5" cy="29.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="567.5" cy="29.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="666.5" cy="29.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="29.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="128.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="227.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="326.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="425.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="524.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="623.5" cy="128.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="72.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="171.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="270.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="369.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="468.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="567.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="666.5" cy="227.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="29.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="128.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="227.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="326.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="425.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="524.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="623.5" cy="326.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="72.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="171.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="270.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="369.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="468.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="567.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="666.5" cy="425.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="29.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="128.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="227.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="326.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="425.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="524.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="623.5" cy="524.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="72.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="171.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="270.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="369.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="468.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="567.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+              <circle cx="666.5" cy="623.5" r="29.5" fill="currentColor"
+              ></circle>
+            </svg>
           </div>
-        </footer>
-
-        <div class="mt-8 lg:mt-14">
-          <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800" href="#">
-            Leer mi historia
-          </a>
+          <!-- End SVG Element -->
         </div>
-      </blockquote>
-      <!-- End Blockquote -->
-    </div>
-    <!-- End Col -->
-  </div>
-  <!-- End Grid -->
-</div>
-<!-- End Testimonials -->
+      </div>
+      <!-- End Col -->
 
-  <div
-    class="mx-auto flex max-w-screen-lg flex-col items-center pb-16 pt-24 text-center"
-  >
-    <h1
-      class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-    >
-      ¿Quién es Capitán Brush?
-    </h1>
-    <div>
-      <p class="mt-1 text-pretty text-neutral-800 dark:text-neutral-600">
-        Descubre la Historia de Capitán Brush
-      </p>
-      <p class="text-sm text-neutral-600 dark:text-neutral-400">
-        Estimados navegantes, hoy queremos presentarles a una figura inspiradora en el mundo de la navegación: Capitán Brush. Con una pasión inquebrantable por el mar y una vida llena de aventuras, Capitán Brush no solo ha dejado su huella en el océano, sino que también ha encontrado la manera de equilibrar su vida profesional con sus pasatiempos personales.
-      </p>
-      <p class="text-sm text-neutral-600 dark:text-neutral-400"><strong>Un hombre de muchas pasiones:</strong></p>
-      <ul>
-        <li>
-          Pintura: Capitán Brush ha encontrado una forma de expresarse a través del arte, capturando la majestuosidad del mar en sus lienzos.
-        </li>
-        <li>
-          Artes Marciales: La disciplina y el control aprendidos en las artes marciales han sido fundamentales en su vida y carrera.
-        </li>
-        <li>
-          Kitesurf: Deslizarse sobre las olas con una tabla de kitesurf es una de las maneras favoritas de Capitán Brush para experimentar la libertad del mar.
-        </li>
-        <li>
-          Viajar: Explorar nuevos lugares y culturas siempre ha sido una parte esencial de su vida. Desde cruzar el Atlántico hasta enseñar a otros a navegar, la vida de Capitán Brush es una historia de pasión, dedicación y aventuras.
-        </li>
-      </ul>
+      <div>
+        <!-- Blockquote -->
+        <blockquote class="relative">
+
+          <div class="relative z-10">
+            <p
+              class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-2xl md:leading-normal xl:text-3xl xl:leading-normal"
+            >
+              Hola a todos, soy Capitán Brush, el instructor principal de este
+              curso de mega yates. Mi vida ha sido una travesía llena de
+              aventuras, desafíos y grandes satisfacciones. Si has llegado hasta
+              aquí, probablemente compartimos la misma pasión por el mar y los
+              mega yates. ¡Permíteme contarte un poco sobre mi viaje y cómo
+              llegué a donde estoy hoy!
+            </p>
+          </div>
+
+          <footer class="mt-6">
+            <div class="flex items-center">
+              <div class="shrink-0 md:hidden">
+                <img class="size-12 rounded-full" src="" alt="Avatar" />
+              </div>
+              <div class="ms-4 md:ms-0">
+                <div
+                  class="text-base font-semibold text-gray-800 dark:text-neutral-200"
+                >
+                  Capitán Brush
+                </div>
+                <div class="text-xs text-gray-500 dark:text-neutral-400">
+                  Director del curso Mega Yates
+                </div>
+              </div>
+            </div>
+          </footer>
+        </blockquote>
+        <!-- End Blockquote -->
+      </div>
+      <!-- End Col -->
     </div>
+    <!-- End Grid -->
   </div>
+  <!-- End Testimonials -->
+
   <div>
-    <section class="grid-container mb-10">
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+      De Ingeniero a Capitán de Mega Mates
+    </h3>
+    <div>
       <article>
-        <p>
-          <strong>De Ingeniero a Navegante: La Transformación de Capitán Brush</strong> Estimados navegantes, hoy exploramos un capítulo fascinante en la vida de Capitán Brush: su transición de una exitosa carrera en ingeniería a cruzar el Atlántico a vela. <strong>Un Cambio de Rumbo Audaz:</strong> - <strong>Carrera en Ingeniería:</strong> Capitán Brush comenzó su carrera en el campo de la ingeniería, trabajando en proyectos innovadores y desafiantes. - <strong>Decisión de Dejarlo Todo:</strong> A pesar de su éxito, sentía que algo faltaba. Así que tomó la audaz decisión de dejar su trabajo y embarcarse en un viaje a vela por el Atlántico. - <strong>Reinvención como Ingeniero de Mega Yates:</strong> Tras cruzar el océano, encontró su verdadera vocación como ingeniero de mega yates, combinando su amor por el mar con sus habilidades técnicas. El viaje por el Atlántico fue solo el comienzo de una emocionante nueva fase en su vida. ¡Mantente atento para conocer más sobre su viaje para convertirse en capitán!
-        </p>
-        <p>
-          <strong>De Ingeniero a Capitán</strong> <strong>Asunto: El Viaje de Capitán Brush para Enseñar Navegación</strong> Estimados navegantes, en el boletín de hoy compartimos cómo Capitán Brush pasó de ser un ingeniero de mega yates a convertirse en capitán y comenzar a enseñar a otros a navegar. <strong>El Ascenso a Capitán:</strong> - <strong>Experiencia en Mega Yates:</strong> A través de años de trabajo duro y aprendizaje constante, Capitán Brush ascendió en las filas de la tripulación de mega yates. - <strong>Certificación de Capitán:</strong> Completó rigurosos cursos y certificaciones para finalmente obtener su licencia de capitán. - <strong>Enseñanza de Navegación:</strong> Con su conocimiento y experiencia, decidió compartir su pasión por el mar enseñando a otros a navegar. La enseñanza se ha convertido en una de las mayores satisfacciones de Capitán Brush, ayudando a otros a encontrar su camino en el vasto océano.
-        </p>
-        <p>
-          <strong>La Libertad Financiera de Capitán Brush</strong> Estimados navegantes, hoy profundizamos en la historia de cómo Capitán Brush alcanzó la libertad financiera y ahora disfruta de una vida plena en su finca de frutas tropicales. <strong>Viviendo Sus Sueños:</strong> - <strong>Planificación Financiera:</strong> A lo largo de su carrera, Capitán Brush hizo inversiones inteligentes y ahorró estratégicamente. - <strong>Finca de Frutas Tropicales:</strong> Con su libertad financiera, adquirió una hermosa finca donde cultiva una variedad de frutas tropicales. - <strong>Vida Equilibrada:</strong> Ahora, disfruta de un equilibrio perfecto entre sus pasiones y su vida en el mar. La libertad financiera ha permitido a Capitán Brush vivir una vida que muchos solo pueden soñar. ¡Sigue leyendo para conocer más sobre sus consejos y experiencias!
+        <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+          Todo comenzó con una exitosa carrera en ingeniería. Trabajé duro, me
+          esforcé al máximo y, sí, lo admito, logré forrarme trabajando en la
+          industria de los mega yates y super yates. Durante años, diseñé y
+          mantuve algunas de las embarcaciones más lujosas y tecnológicamente
+          avanzadas que surcan los océanos. ¿Y qué hice con todo ese éxito? ¡Lo
+          dejé todo para cruzar el Atlántico a vela!
         </p>
       </article>
-    </section>
+    </div>
   </div>
+  <br>
+  <div>
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+      Cruzando el Atlántico y Redescubriendo mi Pasión
+    </h3>
+    <article>
+      <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+        Decidí que la vida detrás de un escritorio no era para mí. Compré un
+        velero y crucé el Atlántico, una experiencia que cambió mi vida para
+        siempre. Esa travesía no solo me acercó al mar, sino que también me
+        llevó a redescubrir una de mis mayores pasiones: la pintura. Ahora,
+        cuando no estoy navegando, me dedico a capturar la belleza del océano en
+        mis lienzos.
+      </p>
+    </article>
+  </div>
+  <br>
+  <div>
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+      Enseñando y Navegando
+    </h3>
+    <article>
+      <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+        Convertirme en capitán fue otro hito importante. Obtuve mi certificación
+        y comencé a enseñar a otros a navegar. Compartir mis conocimientos y
+        experiencias con nuevos navegantes es una de las cosas que más disfruto.
+        Desde las complejidades del motor de un barco hasta la lectura del cielo
+        y las nubes, me encanta ayudar a otros a explorar y dominar el arte de
+        la navegación.
+      </p>
+    </article>
+  </div>
+  <br>
+  <div>
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+      Instructor del Curso de Mega Yates
+    </h3>
+    <article>
+      <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+        Con todo el conocimiento y la experiencia que he acumulado a lo largo de
+        los años, he decidido impartir este curso de mega yates para compartir
+        mi pasión y ayudar a otros a alcanzar sus sueños en el mar. En este
+        curso, aprenderás desde las bases hasta los detalles más avanzados de
+        trabajar en mega yates y super yates. Mi objetivo es proporcionarte las
+        habilidades y el conocimiento necesarios para triunfar en esta
+        emocionante industria.
+      </p>
+    </article>
+  </div>
+  <br>
+  <div>
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+      La Libertad Financiera y una Vida Plena
+    </h3>
+    <article>
+      <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+        Gracias a mi éxito como ingeniero de mega yates, he logrado alcanzar la
+        libertad financiera. Ahora vivo en una hermosa finca llena de frutas
+        tropicales, donde puedo dedicarme a mis pasiones: pintar, practicar
+        artes marciales, hacer kitesurf y, por supuesto, viajar. Cada día es una
+        nueva aventura, ya sea en tierra o en el mar.
+      </p>
+    </article>
+  </div>
+  <br>
+  <div>
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+      Únete a la Aventura
+    </h3>
+    <article>
+      <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+        Si estás interesado en trabajar en mega yates o super yates, o
+        simplemente quieres aprender más sobre la vida en el mar, estás en el
+        lugar correcto. Mi objetivo es compartir mis experiencias y
+        conocimientos con aquellos que comparten mi pasión por el mar. Ya sea
+        que estés buscando un cambio de carrera, una nueva aventura, o
+        simplemente inspiración, espero que mi historia te motive a seguir tus
+        sueños.
+      </p>
+    </article>
+  </div>
+<br>
+  <div>
+    <article>
+      <p class="text-xl font-medium italic text-gray-800 dark:text-neutral-200 md:text-xl md:leading-normal xl:text-xl xl:leading-normal">
+        ¡Gracias por unirte a nuestro curso y espero verte en el mar!
+        Saludos marineros,
+        
+      </p>
+    </article>
+    <br>
+    <h3
+      class="text-xl font-bold text-neutral-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+    >
+    Capitán Brush
+    </h3>
+  </div>
+
 </MainLayout>
