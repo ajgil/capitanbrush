@@ -79,7 +79,13 @@ import Temario from "../pages/temario/index.astro";
 
       if (rejectButton) {
         rejectButton.addEventListener('click', () => {
-          alert("Debe aceptar las cookies para poder navegar.");
+          if (cookieConsent) {
+            cookieConsent.style.display = 'none';
+          }
+      
+          if (overlay) {
+            overlay.style.display = 'none';
+          }
         });
       }
     });
