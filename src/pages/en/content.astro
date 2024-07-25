@@ -42,7 +42,7 @@ const articles: Article[] = [
     single: false,
     imgOne: blueprints,
     imgOneAlt: "Blueprints and a digital tablet with construction plans.",
-    imgTwo: personWorking,
+    imgTwo: usingTools,
     imgTwoAlt: "Person working in the office",
   },
   {
@@ -113,14 +113,11 @@ const pageTitle: string = `Services | ${SITE.title}`;
         <RightSection
           title={article.title}
           subTitle={article.subTitle}
-          single={article.single}
-          imgOne={article.imgOne}
-          imgOneAlt={article.imgOneAlt}
-          imgTwo={article.imgTwo}
-          imgTwoAlt={article.imgTwoAlt}
           btnExists={article.btnExists}
           btnTitle={article.btnTitle}
           btnURL={article.btnURL}
+          img={article.imgOne}
+          imgAlt={article.imgOneAlt}
         />
       ) : (
         <LeftSection
