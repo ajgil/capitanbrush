@@ -10,10 +10,20 @@ import heroImage from "@images/logo-1.webp";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
-import Temario from "../pages/temario/index.astro"
+import Temario from "../pages/temario/index.astro";
 ---
 
 <MainLayout lang="es">
+  <!-- Overlay de bloqueo -->
+  <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50" style="display: none;"></div>
+
+  <!-- Mensaje de consentimiento de cookies -->
+  <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 p-4 bg-gray-800 text-white text-center z-50" style="display: none;">
+    <p>Este sitio utiliza cookies para mejorar su experiencia. ¿Acepta el uso de cookies?</p>
+    <button id="acceptCookies" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Aceptar</button>
+    <button id="rejectCookies" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Rechazar</button>
+  </div>
+
   <HeroSection
     title={`Transforma Tu Carrera con Nuestro Curso Exclusivo sobre <span class="text-yellow-500 dark:text-yellow-400">Mega Yates!</span>`}
     subTitle="¿Sueñas con ganar más de 3000€ al mes trabajando en mega yates? Únete a nuestro curso impartido por un ingeniero experto en mega yates y descubre cómo puedes alcanzar tus metas profesionales en esta apasionante industria."
@@ -41,4 +51,37 @@ import Temario from "../pages/temario/index.astro"
     subTitle="El curso tiene un precio de 150€, incluyendo todos los materiales de estudio y acceso a recursos exclusivos. ¡Plazas limitadas!"
     url="/contact"
   />
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+      const cookieConsent = document.getElementById('cookieConsent');
+      const overlay = document.getElementById('overlay');
+      const acceptButton = document.getElementById('acceptCookies');
+      const rejectButton = document.getElementById('rejectCookies');
+
+      if (!cookiesAccepted && cookieConsent && overlay) {
+        cookieConsent.style.display = 'block';
+        overlay.style.display = 'block';
+      }
+
+      if (acceptButton) {
+        acceptButton.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'true');
+          if (cookieConsent) {
+            cookieConsent.style.display = 'none';
+          }
+          if (overlay) {
+            overlay.style.display = 'none';
+          }
+        });
+      }
+
+      if (rejectButton) {
+        rejectButton.addEventListener('click', () => {
+          alert("Debe aceptar las cookies para poder navegar.");
+        });
+      }
+    });
+  </script>
 </MainLayout>
