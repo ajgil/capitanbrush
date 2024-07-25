@@ -2,10 +2,10 @@
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 
 // Define los posibles idiomas
-type Locale = 'es' | 'en' | 'fr';
+type Locale = "es" | "en" | "fr";
 
 // Obtén el idioma actual, usando 'es' por defecto
-const lang: Locale = (Astro.currentLocale as Locale) || 'es';
+const lang: Locale = (Astro.currentLocale as Locale) || "es";
 
 // Define el tipo de traducciones para cada idioma
 type Translations = {
@@ -26,6 +26,7 @@ type Translations = {
     submitButton: string;
     successTitle: string;
     successMessage: string;
+    goToPayment: string;
     closeButton: string;
   };
 };
@@ -34,7 +35,8 @@ type Translations = {
 const translations: Translations = {
   es: {
     title: "Estás a un paso de cambiar tu vida",
-    subTitle: "Navega por el mundo mientras llenas tu cartera, visitas sitios únicos. ¡Embárcate y empieza una nueva vida!",
+    subTitle:
+      "Navega por el mundo mientras llenas tu cartera, visitas sitios únicos. ¡Embárcate y empieza una nueva vida!",
     formTitle: "Completa el formulario",
     formSubTitle: "Nos pondremos en contacto contigo en 1 día hábil.",
     placeholderName: "Nombre",
@@ -42,18 +44,23 @@ const translations: Translations = {
     placeholderEmail: "Email",
     placeholderPhone: "Número de teléfono",
     emailErrorText: "Por favor, ingresa un email válido.",
-    phoneErrorText: "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.",
+    phoneErrorText:
+      "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.",
     terms: "términos",
     privacy: "política de privacidad",
     newsletter: "Suscribirse a la newsletter",
     submitButton: "Me apunto",
     successTitle: "¡Éxito!",
-    successMessage: "¡Tu formulario ha sido enviado correctamente! Nos pondremos en contacto contigo pronto.",
+    successMessage:
+      "¡Tu formulario ha sido enviado correctamente! Nos pondremos en contacto contigo pronto.",
+    goToPayment:
+      "Para finalizar tu inscripción vamos a enviarte a la pasarela de pago",
     closeButton: "Cerrar",
   },
   en: {
     title: "You’re One Step Away from Changing Your Life",
-    subTitle: "Travel the world while filling your wallet, visiting unique places. Embark and start a new life!",
+    subTitle:
+      "Travel the world while filling your wallet, visiting unique places. Embark and start a new life!",
     formTitle: "Complete the Form",
     formSubTitle: "We will contact you within 1 business day.",
     placeholderName: "First Name",
@@ -61,18 +68,23 @@ const translations: Translations = {
     placeholderEmail: "Email",
     placeholderPhone: "Phone Number",
     emailErrorText: "Please enter a valid email address.",
-    phoneErrorText: "Please enter a valid phone number with at least 10 digits.",
+    phoneErrorText:
+      "Please enter a valid phone number with at least 10 digits.",
     terms: "terms",
     privacy: "privacy policy",
     newsletter: "Subscribe to the newsletter",
     submitButton: "Sign Up",
     successTitle: "Success!",
-    successMessage: "Your form has been submitted successfully! We will get in touch with you soon.",
+    successMessage:
+      "Your form has been submitted successfully! We will get in touch with you soon.",
+    goToPayment:
+      "To complete your registration we will send you to the payment gateway",
     closeButton: "Close",
   },
   fr: {
     title: "Vous êtes à un pas de changer votre vie",
-    subTitle: "Voyagez à travers le monde tout en remplissant votre portefeuille, visitez des endroits uniques. Embarquez et commencez une nouvelle vie !",
+    subTitle:
+      "Voyagez à travers le monde tout en remplissant votre portefeuille, visitez des endroits uniques. Embarquez et commencez une nouvelle vie !",
     formTitle: "Complétez le formulaire",
     formSubTitle: "Nous vous contacterons dans un délai d'un jour ouvrable.",
     placeholderName: "Prénom",
@@ -80,26 +92,50 @@ const translations: Translations = {
     placeholderEmail: "Email",
     placeholderPhone: "Numéro de téléphone",
     emailErrorText: "Veuillez entrer une adresse e-mail valide.",
-    phoneErrorText: "Veuillez entrer un numéro de téléphone valide avec au moins 10 chiffres.",
+    phoneErrorText:
+      "Veuillez entrer un numéro de téléphone valide avec au moins 10 chiffres.",
     terms: "conditions",
     privacy: "politique de confidentialité",
     newsletter: "S'abonner à la newsletter",
     submitButton: "Je m'inscris",
     successTitle: "Succès !",
-    successMessage: "Votre formulaire a été soumis avec succès ! Nous vous contacterons bientôt.",
+    successMessage:
+      "Votre formulaire a été soumis avec succès ! Nous vous contacterons bientôt.",
+    goToPayment:
+      "Pour finaliser votre inscription, nous vous enverrons à la passerelle de paiement",
     closeButton: "Fermer",
-  }
+  },
 };
 
 // Desestructura las traducciones para el idioma actual
-const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLastName, placeholderEmail, placeholderPhone, emailErrorText, phoneErrorText, terms, privacy, newsletter, submitButton, successTitle, successMessage, closeButton } = translations[lang];
-
+const {
+  title,
+  subTitle,
+  formTitle,
+  formSubTitle,
+  placeholderName,
+  placeholderLastName,
+  placeholderEmail,
+  placeholderPhone,
+  emailErrorText,
+  phoneErrorText,
+  terms,
+  privacy,
+  newsletter,
+  submitButton,
+  successTitle,
+  successMessage,
+  closeButton,
+  goToPayment,
+} = translations[lang];
 ---
 
 <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
   <div class="mx-auto max-w-2xl lg:max-w-5xl">
     <div class="text-center">
-      <h1 class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
         {title}
       </h1>
       <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
@@ -141,7 +177,9 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
               placeholder={placeholderEmail}
               aria-describedby="email-error"
             />
-            <span id="email-error" class="text-red-600 text-sm hidden">{emailErrorText}</span>
+            <span id="email-error" class="hidden text-sm text-red-600"
+              >{emailErrorText}</span
+            >
           </div>
           <div>
             <input
@@ -155,7 +193,9 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
               placeholder={placeholderPhone}
               aria-describedby="phone-error"
             />
-            <span id="phone-error" class="text-red-600 text-sm hidden">{phoneErrorText}</span>
+            <span id="phone-error" class="hidden text-sm text-red-600"
+              >{phoneErrorText}</span
+            >
           </div>
 
           <div class="grid space-y-3">
@@ -171,7 +211,9 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
                 />
               </div>
               <label for="checkbox-tyc" class="ms-3">
-                <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">
+                <span
+                  class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
+                >
                   Acepto los <a href="terms" target="_blank"> {terms} </a>
                   <a href="privacy" target="_blank"> y la {privacy}</a>
                 </span>
@@ -189,7 +231,9 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
                 />
               </div>
               <label for="checkbox-ads" class="ms-3">
-                <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">
+                <span
+                  class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
+                >
                   {newsletter}
                 </span>
               </label>
@@ -203,30 +247,82 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
       </form>
 
       <!-- Success Modal -->
-      <div id="success-modal" class="fixed inset-0 z-50 hidden justify-center items-center bg-black bg-opacity-50" aria-labelledby="success-modal-label">
-        <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 max-w-sm mx-auto relative">
-          <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100" aria-label="Cerrar modal">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      <div
+        id="success-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+        aria-labelledby="success-modal-label"
+      >
+        <div
+          class="relative mx-auto mt-60 max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800"
+        >
+          <button
+            id="close-modal"
+            class="absolute right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+            aria-label="Cerrar modal"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
-          <h3 id="success-modal-label" class="text-lg font-bold text-gray-900 dark:text-white">{successTitle}</h3>
-          <p class="mt-2 text-gray-700 dark:text-neutral-400">{successMessage}</p>
-          <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg" data-hs-overlay="#success-modal">{closeButton}</button>
+          <h3
+            id="success-modal-label"
+            class="flex flex-wrap justify-center text-center text-lg font-bold text-gray-900 dark:text-white"
+          >
+            {successTitle}
+          </h3>
+          <p class="mt-2 text-gray-700 dark:text-neutral-400">
+            {successMessage}
+          </p>
+          <p
+            class="text-yellow-600 mt-4 text-lg font-extrabold dark:text-yellow-400"
+          >
+            {goToPayment}
+          </p>
+
+          <button
+            class="bg-blue-500 mt-4 rounded-lg px-4 py-2 text-white"
+            data-hs-overlay="#success-modal">{closeButton}</button
+          >
         </div>
       </div>
 
       <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const form = document.getElementById("contact-form") as HTMLFormElement;
-          const tyc = document.getElementById("checkbox-tyc") as HTMLInputElement;
+        document.addEventListener("DOMContentLoaded", () => {
+          const form = document.getElementById(
+            "contact-form"
+          ) as HTMLFormElement;
+          const tyc = document.getElementById(
+            "checkbox-tyc"
+          ) as HTMLInputElement;
           const enviar = document.getElementById("btn") as HTMLButtonElement;
-          const emailInput = document.getElementById("email") as HTMLInputElement;
-          const phoneInput = document.getElementById("phone") as HTMLInputElement;
-          const emailError = document.getElementById("email-error") as HTMLSpanElement;
-          const phoneError = document.getElementById("phone-error") as HTMLSpanElement;
-          const successModal = document.getElementById("success-modal") as HTMLDivElement;
-          const closeModalButton = document.getElementById("close-modal") as HTMLButtonElement;
+          const emailInput = document.getElementById(
+            "email"
+          ) as HTMLInputElement;
+          const phoneInput = document.getElementById(
+            "phone"
+          ) as HTMLInputElement;
+          const emailError = document.getElementById(
+            "email-error"
+          ) as HTMLSpanElement;
+          const phoneError = document.getElementById(
+            "phone-error"
+          ) as HTMLSpanElement;
+          const successModal = document.getElementById(
+            "success-modal"
+          ) as HTMLDivElement;
+          const closeModalButton = document.getElementById(
+            "close-modal"
+          ) as HTMLButtonElement;
 
           function mostrarErrores() {
             if (emailInput.validity.typeMismatch) {
@@ -236,7 +332,10 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
               emailError.classList.add("hidden");
             }
 
-            if (phoneInput.validity.patternMismatch || phoneInput.validity.tooShort) {
+            if (
+              phoneInput.validity.patternMismatch ||
+              phoneInput.validity.tooShort
+            ) {
               phoneError.textContent = "Format incorrect";
               phoneError.classList.remove("hidden");
             } else {
@@ -248,28 +347,35 @@ const { title, subTitle, formTitle, formSubTitle, placeholderName, placeholderLa
             enviar.disabled = !tyc.checked;
           }
 
-          form.addEventListener('submit', (event) => {
+          form.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            if (!emailInput.validity.valid || !phoneInput.validity.valid || !tyc.checked) {
+            if (
+              !emailInput.validity.valid ||
+              !phoneInput.validity.valid ||
+              !tyc.checked
+            ) {
               mostrarErrores();
               return;
             }
 
             // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
             setTimeout(() => {
-              successModal.classList.remove('hidden');
+              successModal.classList.remove("hidden");
               form.reset();
               enviar.disabled = true;
+              setTimeout(function () {
+                window.location.href = "https://app-eu1.hubspot.com/payments/HhzkzHZyP?referrer=PAYMENT_LINK";
+              }, 3000);
             }, 500);
           });
 
-          emailInput.addEventListener('input', mostrarErrores);
-          phoneInput.addEventListener('input', mostrarErrores);
-          tyc.addEventListener('change', cambiarCondiciones);
+          emailInput.addEventListener("input", mostrarErrores);
+          phoneInput.addEventListener("input", mostrarErrores);
+          tyc.addEventListener("change", cambiarCondiciones);
 
-          closeModalButton.addEventListener('click', () => {
-            successModal.classList.add('hidden');
+          closeModalButton.addEventListener("click", () => {
+            successModal.classList.add("hidden");
           });
 
           cambiarCondiciones();
