@@ -42,7 +42,7 @@ const translations: Translations = {
     placeholderName: "Nombre",
     placeholderLastName: "Apellidos",
     placeholderEmail: "Email",
-    placeholderPhone: "Número de teléfono",
+    placeholderPhone: "Número de teléfono sin prefijo de país",
     emailErrorText: "Por favor, ingresa un email válido.",
     phoneErrorText:
       "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.",
@@ -50,11 +50,11 @@ const translations: Translations = {
     privacy: "política de privacidad",
     newsletter: "Suscribirse a la newsletter",
     submitButton: "Me apunto",
-    successTitle: "¡Éxito!",
+    successTitle: "¡Ahoy!",
     successMessage:
-      "¡Tu formulario ha sido enviado correctamente! Nos pondremos en contacto contigo pronto.",
+      "¡Ya estás en lista! Recibirás un correo muy pronto.",
     goToPayment:
-      "Para finalizar tu inscripción vamos a enviarte a la pasarela de pago",
+    "¿Quieres embarcar ya? Te redirigimos automáticamente a la pasarela de pago.",
     closeButton: "Cerrar",
   },
   en: {
@@ -66,7 +66,7 @@ const translations: Translations = {
     placeholderName: "First Name",
     placeholderLastName: "Last Name",
     placeholderEmail: "Email",
-    placeholderPhone: "Phone Number",
+    placeholderPhone: "Phone Number, please add 00 and country code",
     emailErrorText: "Please enter a valid email address.",
     phoneErrorText:
       "Please enter a valid phone number with at least 10 digits.",
@@ -74,7 +74,7 @@ const translations: Translations = {
     privacy: "privacy policy",
     newsletter: "Subscribe to the newsletter",
     submitButton: "Sign Up",
-    successTitle: "Success!",
+    successTitle: "¡Ahoy!",
     successMessage:
       "Your form has been submitted successfully! We will get in touch with you soon.",
     goToPayment:
@@ -187,8 +187,7 @@ const {
               name="phone"
               required
               id="phone"
-              minlength="10"
-              pattern="[0-9]{10,}"
+              pattern="[0-9]*"
               class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
               placeholder={placeholderPhone}
               aria-describedby="phone-error"
