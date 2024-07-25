@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import { YouTube } from '@astro-community/astro-embed-youtube';
 //import ReviewComponent from "@components/ui/blocks/ReviewComponent.astro";
 
 // Define props from Astro
@@ -79,10 +80,13 @@ interface Props {
   </div>
   <!-- Hero Image Section -->
   <div class="flex w-full">
-      <div class="top-12 overflow-hidden">
-	
+      <div class="top-12 overflow-hidden h-full w-full scale-110 object-cover object-center">
+        <YouTube
+        id="ZpsKhU3I5tE"
+      />
+  <!--
   {src && alt &&
-	<Image
+  <Image
         src={src}
         alt={alt}
         class="h-full w-full scale-110 object-cover object-center"
@@ -91,7 +95,7 @@ interface Props {
         format={"avif"}
 	 />
 	}
-  
+   -->
     </div>
   </div>
 </section>
