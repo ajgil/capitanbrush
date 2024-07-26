@@ -1,13 +1,13 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import { Image } from "astro:assets";
-import  Asolare from "@images/customers/asolare.jpg";
-import  Cinquanta from "@images/customers/cinquanta.jpg";
-import  Dimitra from "@images/customers/dimitra.jpg";
-import  Genesia from "@images/customers/genesia.jpg";
-import  Margaret from "@images/customers/margaret-Ann.jpg";
-import  Modus from "@images/customers/modus.jpg";
-import  Nechida from "@images/customers/nechida.jpeg";
+import Asolare from "@images/customers/asolare.jpg";
+import Cinquanta from "@images/customers/cinquanta.jpg";
+import Dimitra from "@images/customers/dimitra.jpg";
+import Genesia from "@images/customers/genesia.jpg";
+import Margaret from "@images/customers/margaret-Ann.jpg";
+import Modus from "@images/customers/modus.jpg";
+import Nechida from "@images/customers/nechida.jpeg";
 import Pandion from "@images/customers/pandion.jpg";
 import Supernova from "@images/customers/supernova.jpg";
 import Taipan from "@images/customers/taipan.png";
@@ -15,71 +15,369 @@ import Slow from "@images/customers/slow-motion.jpg";
 ---
 
 <MainLayout>
-    <!-- Clients -->
+    <!-- Card Blog -->
     <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <!-- Title -->
-        <div class="mx-auto mb-6 text-center sm:w-1/2 md:mb-12 xl:w-1/3">
+        <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
             <h2
-                class="text-xl font-semibold text-gray-800 dark:text-neutral-200 md:text-2xl md:leading-tight"
+                class="text-2xl font-bold dark:text-white md:text-4xl md:leading-tight"
             >
                 Nuestros clientes
             </h2>
+            <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                Ayudamos a nuestros alumnos a encontrar su trabajo soñado
+            </p>
         </div>
         <!-- End Title -->
-       <embed src="https://digitalsailing.notion.site/38388c8eb22e4fcb9e8071d48be5ff39?v=229e99da87374b70906d1a95e03364c2&pvs=4" style="width:100%; height:50vw;">
-       <!--
-        <iframe src="https://digitalsailing.notion.site/38388c8eb22e4fcb9e8071d48be5ff39?v=229e99da87374b70906d1a95e03364c2&pvs=4" width="100%" height="50vw;" />
-     -->
-       
+
         <!-- Grid -->
-       <!--
-        <div
-            class="grid grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:gap-6"
-        >
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                
-                <Image src={Asolare} alt="" height={300}width={300}>
-                
-            </div>
+        <div class="mb-10 grid gap-6 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4">
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Asolare}
+                        alt="asolare"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Better is when everything works together
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Cinquanta} alt=""></Image>
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Cinquanta}
+                        alt="Cinquanta"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        What CFR really is about
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Dimitra} alt="" />
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Dimitra}
+                        alt="Dimitra"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Should Product Owners think like entrepreneurs?
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Genesia} alt="" />
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Genesia}
+                        alt="Genesia"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Announcing Front Strategies: Ready-to-use rules
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Margaret}
+                        alt="margaret"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Better is when everything works together
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Margaret} alt="" />
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Modus}
+                        alt="modus"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        What CFR really is about
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Modus} alt="" />
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Nechida}
+                        alt="nechida"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Should Product Owners think like entrepreneurs?
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Nechida} alt="" />
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Pandion}
+                        alt="pandion"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Announcing Front Strategies: Ready-to-use rules
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Slow}
+                        alt="slow"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Should Product Owners think like entrepreneurs?
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
 
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Pandion} alt="" />
-            </div>
-
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Slow} alt="" />
-            </div>
-
-            <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800 md:p-7">
-                <Image src={Supernova} alt="" />
-            </div>
+            <!-- Card -->
+            <a
+                class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
+                href="#"
+            >
+                <div class="aspect-w-16 aspect-h-9">
+                    <Image
+                        class="w-full rounded-t-xl object-cover"
+                        src={Supernova}
+                        alt="supernova"
+                    />
+                </div>
+                <div class="p-4 md:p-5">
+                    <p
+                        class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400"
+                    >
+                        Mega Yate
+                    </p>
+                    <h3
+                        class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                    >
+                        Announcing Front Strategies: Ready-to-use rules
+                    </h3>
+                </div>
+            </a>
+            <!-- End Card -->
         </div>
-         -->
         <!-- End Grid -->
     </div>
-    <!-- End Clients -->
+    <!-- End Card Blog -->
+
+    <!-- modal -->
+    <div class="text-center">
+        <button
+            type="button"
+            class="bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 inline-flex items-center gap-x-2 rounded-lg border border-transparent px-4 py-3 text-sm font-medium text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="hs-bg-gray-on-hover-cards"
+            data-hs-overlay="#hs-bg-gray-on-hover-cards"
+        >
+            Open modal
+        </button>
+    </div>
+
+    <div
+        id="hs-bg-gray-on-hover-cards"
+        class="hs-overlay pointer-events-none fixed start-0 top-0 z-[80] hidden size-full overflow-y-auto overflow-x-hidden"
+        role="dialog"
+        tabindex="-1"
+        aria-labelledby="hs-bg-gray-on-hover-cards-label"
+    >
+        <div
+            class="m-3 mt-0 h-[calc(100%-3.5rem)] opacity-0 transition-all ease-out hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 sm:mx-auto sm:w-full sm:max-w-4xl"
+        >
+            <div
+                class="pointer-events-auto flex max-h-full flex-col overflow-hidden rounded-xl border bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-700/70"
+            >
+                <div
+                    class="flex items-center justify-between border-b px-4 py-3 dark:border-neutral-800"
+                >
+                    <h3
+                        id="hs-bg-gray-on-hover-cards-label"
+                        class="font-bold text-gray-800 dark:text-neutral-200"
+                    >
+                        Mega Yate
+                    </h3>
+                    <button
+                        type="button"
+                        class="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
+                        aria-label="Close"
+                        data-hs-overlay="#hs-bg-gray-on-hover-cards"
+                    >
+                        <span class="sr-only">Close</span>
+                        <svg
+                            class="size-4 shrink-0"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M18 6 6 18"></path><path d="m6 6 12 12"
+                            ></path></svg
+                        >
+                    </button>
+                </div>
+
+                <div class="overflow-y-auto p-4">
+                    <div
+                        class="divide-gray-200 dark:divide-neutral-700 sm:divide-y"
+                    >
+                        <div class="py-3 sm:py-6">
+                            <!-- Grid -->
+                            <div>
+                                <Image src={Supernova} alt="supernova" />
+                            </div>
+                            <!-- End Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </MainLayout>
