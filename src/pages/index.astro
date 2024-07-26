@@ -55,6 +55,7 @@ import Temario from "../pages/temario/index.astro";
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+      const cookiesRejected = localStorage.getItem('cookiesRejected');
       const cookieConsent = document.getElementById('cookieConsent');
       const overlay = document.getElementById('overlay');
       const acceptButton = document.getElementById('acceptCookies');
@@ -79,6 +80,7 @@ import Temario from "../pages/temario/index.astro";
 
       if (rejectButton) {
         rejectButton.addEventListener('click', () => {
+          localStorage.setItem('cookiesRejected', 'true');
           if (cookieConsent) {
             cookieConsent.style.display = 'none';
           }
