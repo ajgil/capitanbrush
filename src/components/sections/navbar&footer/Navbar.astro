@@ -16,7 +16,7 @@ type SupportedLocales = 'es' | 'fr' | 'en';
 
 // Obtener las cadenas de texto y la URL del inicio basados en el locale actual
 const strings = Astro.currentLocale === 'en' ? enStrings : Astro.currentLocale === 'fr' ? frStrings : esStrings;
-const homeUrl = `/${Astro.currentLocale === 'es' ? '/' : Astro.currentLocale}`;
+const homeUrl = `${Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale === 'fr' ? '/fr' : "/"}`;
 
 ---
 
@@ -28,7 +28,7 @@ const homeUrl = `/${Astro.currentLocale === 'es' ? '/' : Astro.currentLocale}`;
     <div class="flex items-center justify-between h-28 w-24  ">
       <a
         class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-        href={`${Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale === 'fr' ? '/fr' : "/"}`}
+        href={homeUrl}
         aria-label="Brand"
       >
         <Image src={heroImage} alt="Capitan Brush" class="h-20 w-20 " draggable="false" format="svg" />
