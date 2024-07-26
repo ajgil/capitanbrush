@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+const { image, name, info, id } = Astro.props;
+---
+<div
+  data-id={"card-info-" + id}
+  class="cursor-pointer rounded-lg bg-white shadow transition duration-300 hover:scale-105 hover:shadow-lg"
+>
+  <div class="aspect-w-16 aspect-h-9">
+    <Image class="w-full rounded-t-xl object-cover" src={image} alt={name} />
+  </div>
+  <div class="p-4">
+    <h3 class="font-bold">{name}</h3>
+    <p>{info}</p>
+  </div>
+</div>
