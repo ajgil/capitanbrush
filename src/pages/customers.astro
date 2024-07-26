@@ -1,6 +1,5 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import { Image } from "astro:assets";
 import Asolare from "@images/customers/asolare.jpg";
 import Cinquanta from "@images/customers/cinquanta.jpg";
 import Dimitra from "@images/customers/dimitra.jpg";
@@ -12,152 +11,80 @@ import Pandion from "@images/customers/pandion.jpg";
 import Supernova from "@images/customers/supernova.jpg";
 import Taipan from "@images/customers/taipan.png";
 import Slow from "@images/customers/slow-motion.jpg";
+import CardInfo from "@/components/card/CardInfo.astro";
+import Modal from "@/components/modal/Modal.astro";
 
-const images = [
-  Slow,
-  Taipan,
-  Supernova,
-  Pandion,
-  Nechida,
-  Modus,
-  Margaret,
-  Genesia,
-  Dimitra,
-  Cinquanta,
-  Asolare,
+type Yacht = {
+  image: ImageMetadata;
+  name: string;
+  info: string;
+};
+
+const yachts: Yacht[] = [
+  { image: Slow, name: "Slow", info: "Navegando en el lujo: así se vive a bordo." },
+  { image: Taipan, name: "Taipan", info: "El mar nunca tuvo mejor compañía." },
+  { image: Supernova, name: "Supernova", info: "Donde los sueños encuentran su puerto." },
+  { image: Pandion, name: "Pandion", info: "Elegancia en cada ola." },
+  { image: Nechida, name: "Nechida", info: "La vida es mejor en alta mar." },
+  { image: Modus, name: "Modus", info: "Paraísos flotantes al alcance de tu mano." },
+  { image: Margaret, name: "Margaret Ann", info: "Deja que el océano cuente tu historia." },
+  { image: Genesia, name: "Genesia", info: "Cuando el lujo se encuentra con el horizonte." },
+  { image: Dimitra, name: "Dimitra", info: "Tu refugio de opulencia sobre las olas." },
+  { image: Cinquanta, name: "Cinquanta", info: "Porque mereces lo mejor, incluso en el mar." },
+  { image: Asolare, name: "Asolare", info: "La aventura empieza aquí, en nuestro mega yate." },
 ];
-const info = [
-"Navegando en el lujo: así se vive a bordo.",
-"El mar nunca tuvo mejor compañía.",
-"Donde los sueños encuentran su puerto.",
-"Elegancia en cada ola.",
-"La vida es mejor en alta mar.",
-"Paraísos flotantes al alcance de tu mano.",
-"Deja que el océano cuente tu historia.",
-"Cuando el lujo se encuentra con el horizonte.",
-"Tu refugio de opulencia sobre las olas.",
-"Porque mereces lo mejor, incluso en el mar.",
- "La aventura empieza aquí, en nuestro mega yate.",
-"Viviendo la buena vida, un ancla a la vez.",
-]
----
 
+let selectedYacht: Yacht | null = null;
+let isModalOpen = false;
+
+const openModal = (yacht: Yacht) =>  {
+  selectedYacht = yacht;
+  isModalOpen = true;
+};
+
+const closeModal  =  () => {
+  isModalOpen = false;
+  selectedYacht = null;
+};
+---
+<script>
+  let selectedYacht = null;
+  const cardInfoItems = document.querySelectorAll('[data-id]');
+  cardInfoItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const dataId = item.getAttribute("data-id");
+      if (!dataId) return;
+
+      const id = dataId.split("-")[2];
+      selectedYacht = id;
+    })
+  })
+</script>
 <MainLayout>
-  <!-- Card Blog -->
   <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-    <!-- Title -->
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <h2
-        class="text-2xl font-bold dark:text-white md:text-4xl md:leading-tight"
-      >
+      <h2 class="text-2xl font-bold dark:text-white md:text-4xl md:leading-tight">
         Nuestros clientes
       </h2>
       <p class="mt-1 text-gray-600 dark:text-neutral-400">
         Ayudamos a nuestros alumnos a encontrar su trabajo soñado
       </p>
     </div>
-    <!-- End Title -->
 
-    <!-- Grid -->
     <div class="mb-10 grid gap-6 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4">
-      {
-        images &&
-          images.map((img, index) => (
-            <button
-              type="button"
-              aria-haspopup="dialog"
-              aria-expanded="false"
-              aria-controls="hs-bg-gray-on-hover-cards"
-              data-hs-overlay="#hs-bg-gray-on-hover-cards"
-              class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md focus:shadow-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-900"
-            >
-              <div class="aspect-w-16 aspect-h-9">
-                <Image
-                  class="w-full rounded-t-xl object-cover"
-                  src={img}
-                  alt="supernova"
-                />
-              </div>
-              <div class="p-4 md:p-5">
-                <p class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400">
-                  Mega Yate
-                </p>
-                <h3 class="group-hover:text-blue-600 mt-2 text-lg font-medium text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-                  {img.format}
-                </h3>
-              </div>
-            </button>
-          ))
-      }
+      {yachts.map((yacht, id) => (
+        <CardInfo 
+          image={yacht.image} 
+          name={yacht.name} 
+          info={yacht.info}
+          id={id}
+        />
+      ))}
     </div>
-    <!-- End Grid -->
-  </div>
-  <!-- End Card Blog -->
-
-  <!-- modal -->
-
-  <div
-    id="hs-bg-gray-on-hover-cards"
-    class="hs-overlay pointer-events-none fixed start-0 top-0 z-[80] hidden size-full overflow-y-auto overflow-x-hidden"
-    role="dialog"
-    tabindex="-1"
-    aria-labelledby="hs-bg-gray-on-hover-cards-label"
-  >
-    <div
-      class="m-3 mt-0 h-[calc(100%-3.5rem)] opacity-0 transition-all ease-out hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 sm:mx-auto sm:w-full sm:max-w-4xl"
-    >
-      <div
-        class="pointer-events-auto flex max-h-full flex-col overflow-hidden rounded-xl border bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-700/70"
-      >
-        <div
-          class="flex items-center justify-between border-b px-4 py-3 dark:border-neutral-800"
-        >
-          <h3
-            id="hs-bg-gray-on-hover-cards-label"
-            class="font-bold text-gray-800 dark:text-neutral-200"
-          >
-            Mega Yate que flipas
-          </h3>
-          <button
-            type="button"
-            class="inline-flex size-8 items-center justify-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
-            aria-label="Close"
-            data-hs-overlay="#hs-bg-gray-on-hover-cards"
-          >
-            <span class="sr-only">Close</span>
-            <svg
-              class="size-4 shrink-0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
-            >
-          </button>
-        </div>
-
-        <div class="overflow-y-auto p-4">
-          <div class="divide-gray-200 dark:divide-neutral-700 sm:divide-y">
-            <div class="py-3 sm:py-6">
-              <!-- Grid -->
-              {
-                images &&
-                  images.map((img, index) => (
-                    <div>
-                      <Image src={img} alt="supernova" />
-                    </div>
-                  ))
-              }
-              <!-- End Grid -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Modal 
+      isOpen={isModalOpen} 
+      onClose={closeModal} 
+      yatch={selectedYacht}
+    />
   </div>
 </MainLayout>
