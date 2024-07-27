@@ -2,9 +2,9 @@ import ogImageSrc from "@images/social.png";
 
 export const SITE = {
   title: "Capitan Brush",
-  tagline: "Exclusivo curso sobre mega yates",
+  tagline: "Curso exclusivo mega yates",
   description: "Capitanbrush ofrece un cuso exclusivo para trabajar en mega yates Con el curso de Capitanbrush tendrás acceso a la libertad financiera que buscas, navegando por el mundo y visita sitios únicos mientras ganas dinero. Contacta con capitanbrush.",
-  description_short: "El gran cambio que necesitas en tu vida. Con el curso de Capitanbrush tendrás acceso a la libertad financiera que buscas, navegando por el mundo y visita sitios únicos mientras ganas dinero.",
+  description_short: "Mega yates, curso, exclusivo, libertad financiera, todas las respuestas a tus preguntas sobre mega yates.",
   url: "https://capitanbrush.es",
   author: "fitsoftware LLC",
 };
