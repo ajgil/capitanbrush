@@ -14,13 +14,13 @@ import Slow from "@images/customers/slow-motion.jpg";
 import CardInfo from "@/components/card/CardInfo.astro";
 import Modal from "@/components/modal/Modal.astro";
 
-type Yacht = {
+type Yatch = {
   image: ImageMetadata;
   name: string;
   info: string;
 };
 
-const yachts: Yacht[] = [
+const yatchs: Yatch[] = [
   { image: Slow, name: "Slow", info: "Navegando en el lujo: así se vive a bordo." },
   { image: Taipan, name: "Taipan", info: "El mar nunca tuvo mejor compañía." },
   { image: Supernova, name: "Supernova", info: "Donde los sueños encuentran su puerto." },
@@ -34,21 +34,21 @@ const yachts: Yacht[] = [
   { image: Asolare, name: "Asolare", info: "La aventura empieza aquí, en nuestro mega yate." },
 ];
 
-let selectedYacht: Yacht | null = null;
+let selectedYatch: Yatch | null = null;
 let isModalOpen = false;
 
-const openModal = (yacht: Yacht) =>  {
-  selectedYacht = yacht;
+const openModal = (yatch: Yatch) =>  {
+  selectedYatch = yatch;
   isModalOpen = true;
 };
 
 const closeModal  =  () => {
   isModalOpen = false;
-  selectedYacht = null;
+  selectedYatch = null;
 };
 ---
 <script>
-  let selectedYacht = null;
+  let selectedYatch = null;
   const cardInfoItems = document.querySelectorAll('[data-id]');
   cardInfoItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -56,7 +56,7 @@ const closeModal  =  () => {
       if (!dataId) return;
 
       const id = dataId.split("-")[2];
-      selectedYacht = id;
+      selectedYatch = id;
     })
   })
 </script>
@@ -72,11 +72,11 @@ const closeModal  =  () => {
     </div>
 
     <div class="mb-10 grid gap-6 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4">
-      {yachts.map((yacht, id) => (
+      {yatchs.map((yatch, id) => (
         <CardInfo 
-          image={yacht.image} 
-          name={yacht.name} 
-          info={yacht.info}
+          image={yatch.image} 
+          name={yatch.name} 
+          info={yatch.info}
           id={id}
         />
       ))}
@@ -84,7 +84,7 @@ const closeModal  =  () => {
     <Modal 
       isOpen={isModalOpen} 
       onClose={closeModal} 
-      yatch={selectedYacht}
+      yatch={selectedYatch}
     />
   </div>
 </MainLayout>
