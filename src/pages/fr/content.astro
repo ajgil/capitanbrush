@@ -7,14 +7,13 @@ import RightSection from "@components/ui/blocks/RightSection.astro";
 import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
 
 // Importer les images nécessaires
-import blueprints from "@images/blueprints-image.avif";
-import personWorking from "@images/person-working.avif";
-import beforeAfter from "@images/before-after.avif";
-import constructionWorkers from "@images/construction-workers.avif";
-import aerialView from "@images/aerial-view.avif";
-import usingTools from "@images/using-tools.avif";
-import progressBuilding from "@images/progress-building.avif";
-import underConstruction from "@images/under-construction.avif";
+import yachtFive from "@images/yatchs/yatch-5.png";
+import yachtSeven from "@images/yatchs/yatch-7.png";
+import yachtTwo from "@images/yatchs/yatch-2.png";
+import yachtOne from "@images/yatchs/yatch-1.png";
+import yachtThree from "@images/yatchs/yatch-3.png";
+import finances from "@images/finances.png";
+import resume from "@images/resume_generic.png";
 import { SITE } from "@data/constants";
 
 interface Article {
@@ -36,50 +35,65 @@ interface Article {
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Programme Complet",
+    title: "Offre d'Emploi",
     subTitle:
-      "Vous disposerez de quatre blocs avec un contenu détaillé et des liens vers des sites de référence.",
-    single: false,
-    imgOne: blueprints,
-    imgOneAlt: "Plans et tablette numérique avec des plans de construction.",
-    imgTwo: usingTools,
-    imgTwoAlt: "Personne travaillant dans le bureau",
+      "Accès aux offres d'emploi nautique et aux canaux d'emploi dans les méga-yachts pour trouver un travail rapidement.",
+    single: true,
+    img: yachtOne,
+    imgAlt: "Méga Yatch",
   },
   {
     isRightSection: false,
-    title: "Glossaire Nautique Espagnol / Anglais",
+    title: "Introduction et Préparation",
     subTitle:
-      "Termes essentiels pour la vie à bord.",
-    img: beforeAfter,
-    imgAlt: "Site de construction avant et après",
-    btnExists: true,
-    btnTitle: "Inscrivez-vous",
-    btnURL: "/contact",
+      "Introduction au monde des Méga Yachts pour vous aider à trouver un emploi.",
+    img: yachtTwo,
+    imgAlt: "Méga Yatch et la mer",
   },
   {
     isRightSection: true,
-    title: "Mentorat et Orientation Professionnelle",
-    subTitle:
-      "Session en ligne d'une heure avec un expert",
-    single: false,
-    imgOne: constructionWorkers,
-    imgOneAlt: "Travailleurs de construction orchestrant un projet",
-    imgTwo: aerialView,
-    imgTwoAlt: "Vue aérienne d'une construction gérée",
+    title: "Vie et Travail dans les Méga Yachts",
+    subTitle: "Vie et travail dans les Méga Yachts de l'intérieur.",
+    single: true,
+    img: yachtThree,
+    imgAlt: "Les meilleures vues",
   },
   {
     isRightSection: false,
-    title: "Offre d'Emploi",
+    title: "Stratégies Financières",
+    subTitle: "Stratégies financières recommandées par un MBA en Finances.",
+    img: finances,
+    imgAlt: "Liberté financière",
+  },
+  {
+    isRightSection: true,
+    title: "Carrière, de matelot à capitaine",
     subTitle:
-      "Coordonnées des recruteurs et canaux avec des offres d'emploi.",
-    img: usingTools,
-    imgAlt:
-      "Homme en gilet orange et noir avec un casque blanc tenant un outil électrique jaune et noir",
+      "Planification de carrière à long terme dans le secteur des Méga Yachts.",
+    img: yachtFive,
+    imgAlt: "Pont du capitaine",
+    btnExists: true,
+    btnTitle: "Demandez sur WhatsApp",
+    btnURL: "http://wa.link/9ggwrg",
+  },
+  {
+    isRightSection: false,
+    title: "Un CV nautique pour travailler dans les méga-yachts",
+    subTitle:
+      "Un CV nautique pour travailler dans les Méga Yachts avec des conseils spécialisés pour créer le vôtre.",
+    img: resume,
+    imgAlt: "nous créons votre CV pour travailler dans les méga-yachts",
+  },
+  {
+    isRightSection: true,
+    title: "Glossaire Nautique Espagnol / Anglais",
+    subTitle: "Termes essentiels pour la vie à bord.",
+    img: yachtSeven,
+    imgAlt: "Vues",
   },
 ];
 
 const pageTitle: string = `Services | ${SITE.title}`;
-
 ---
 
 <MainLayout
@@ -87,37 +101,38 @@ const pageTitle: string = `Services | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://capitanbrush.es/content",
-    "url": "https://capitanbrush.es/content",
-    "name": "Services de Cours pour Travailler sur les Méga-Yachts | Capitanbrush",
-    "description": "Alliant expérience et vision, Capitanbrush offre un service exceptionnel et un cours complet pour travailler dans l'industrie des méga-yachts.",
-    "isPartOf": {
+    "@id": "https://capitanbrush.fr/content",
+    url: "https://capitanbrush.fr/content",
+    name: "Conseils d'un expert en méga-yachts, offres d'emploi | Capitanbrush",
+    description:
+      "Canaux d'emploi dans les méga-yachts, stratégies financières, planification de carrière à long terme dans le secteur des méga-yachts.",
+    isPartOf: {
       "@type": "WebSite",
-      "url": "https://capitanbrush.es",
-      "name": "Capitanbrush",
-      "description": "Capitanbrush propose un cours unique pour apprendre l'industrie des méga-yachts. Atteignez la liberté financière"
+      url: "https://capitanbrush.fr",
+      name: "Capitanbrush",
+      description:
+        "Capitanbrush propose un cours unique pour apprendre l'industrie des méga-yachts et atteindre la liberté financière.",
     },
-    "inLanguage": "fr"
+    inLanguage: "fr",
   }}
 >
   <MainSection
-    title="Contenu du Cours"
-    subTitle="Conçu pour fournir une compréhension approfondie et pratique sur comment commencer et prospérer dans l'industrie des Méga-Yachts. Des questions ? Cliquez ci-dessous pour m'envoyer un message WhatsApp et nous en discuterons."
-    btnExists={true}
-    btnTitle="Aller sur WhatsApp"
-    btnURL="http://wa.link/9ggwrg"
+    title="Mentorat Personnalisé"
+    subTitle="Une heure de conseils personnalisés pour vous, d'un expert en méga-yachts, pour résoudre vos questions et vous guider dans votre carrière."
+    btnExists={false}
   />
   {
-    articles.map(article => {
+    articles.map((article) => {
       return article.isRightSection ? (
-      <RightSection
+        <RightSection
           title={article.title}
           subTitle={article.subTitle}
+          single={article.single}
+          img={article.img}
+          imgAlt={article.imgAlt}
           btnExists={article.btnExists}
           btnTitle={article.btnTitle}
           btnURL={article.btnURL}
-          img={article.imgOne}
-          imgAlt={article.imgOneAlt}
         />
       ) : (
         <LeftSection
@@ -133,14 +148,14 @@ const pageTitle: string = `Services | ${SITE.title}`;
     })
   }
   <FeaturesStats
-    title="Ne Ratez Pas Cette Opportunité !"
-    subTitle="Le cours est au prix de 150€, incluant tous les matériaux d'étude et l'accès à des ressources exclusives. Places limitées !"
+    title="Ne Manquez Pas Cette Opportunité !"
+    subTitle="Le cours coûte 150€, comprenant tous les matériaux d'étude et l'accès à des ressources exclusives. Places limitées !"
     mainStatTitle="99%"
     mainStatSubTitle="De nos clients évaluent leur expérience avec Capitanbrush comme exceptionnelle"
     stats={[
       {
         stat: "99.8%",
-        description: "Taux d'emploi assuré.",
+        description: "Taux de travail garanti.",
       },
       {
         stat: "800+",
@@ -148,7 +163,7 @@ const pageTitle: string = `Services | ${SITE.title}`;
       },
       {
         stat: "85%",
-        description: "Croissance des étudiants d'une année sur l'autre",
+        description: "Croissance des étudiants d'année en année",
       },
     ]}
   />

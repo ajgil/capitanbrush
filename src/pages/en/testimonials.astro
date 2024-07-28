@@ -1,58 +1,55 @@
 ---
 // Importing necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-
 import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
-
-// Importing necessary functions from Astro
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Fetching all the product related content and sorting it by main.id
-const product: CollectionEntry<"products">[] = (
-  await getCollection("products")
-).sort(
-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-    a.data.main.id - b.data.main.id
-);
-
-// Define variables for page content
-const title: string = "Products";
-const subTitle: string =
-  "Explore the durability and precision of Capitanbrush tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+import Alberto from "@images/ref-Alberto-1.webp"
+import Sara from "@images/ref-Sara-1.webp"
+import Tools from "@images/using-tools.avif"
+import Larissa from "@images/ref-Larissa.png"
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   // First testimonial data
   {
     content:
-      " \"When I closed my business, I was fortunate that Capitán Brush advised and guided me in creating a specific CV for yachts, in addition to advising on various courses I should take. Thanks to him, I got my first job on yachts, with a salary I would never have achieved on land doing the same job.\" ",
-    author: "Alberto Molina",
+      " \"When I closed my business, I was lucky that Captain Brush advised and guided me to create a CV specifically for yachts. He also advised me on which different courses I should take, and largely thanks to him, I got my first job on yachts, earning a salary I never would have achieved on land doing the same job.\" ",
+    author: "Alberto Molina, ",
     role: "Chef on Mega Yachts",
     avatarSrc:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      Alberto,
     avatarAlt: "Image Description",
   },
   // Second testimonial data
   {
     content:
-      " \"I took the online course and the mentoring, which helped me find a job on mega yachts. Highly recommended. Definitely a very good experience.\" ",
+      " \"I took the online course, followed by the mentorship, and it helped me find a job on mega yachts. Highly recommended. It was definitely a great experience.\" ",
     author: "Sara Martínez",
-    role: "Stewardess and Sailor on Mega Yachts",
+    role: "Hostess and Sailor on Mega Yachts",
     avatarSrc:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      Sara,
     avatarAlt: "Image Description",
   },
   // Third testimonial data
   {
     content:
-      " \"I took the online course and the mentoring, and it was a pleasant experience. It helped me a lot to enter the maritime sector and mega yachts. A good person and great professional. Definitely recommended.\" ",
+      " \"I took the online course and mentorship; it was a pleasant experience that helped me a lot in entering the maritime and mega yacht sector. A nice person and a great professional, definitely recommendable.\" ",
     author: "Luis Jiménez",
     role: "Sailor and Chef on Mega Yachts",
     avatarSrc:
-      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    Tools,
     avatarAlt: "Image Description",
+  },
+  // Fourth testimonial data
+  {
+    content:
+      " \"This course is very useful; it saved me a lot of time researching on my own and clarified things a lot. Thank you so much, Hugo 😍.\" ",
+    author: "Larissa",
+    role: "Sailor",
+    avatarSrc:
+    Larissa,
+    avatarAlt: "Larissa during the course",
   },
 ];
 
@@ -68,20 +65,20 @@ const pageTitle: string = `Testimonials | ${SITE.title}`;
     url: "https://capitanbrush.es/testimonials",
     name: "Testimonials | Capitanbrush",
     description:
-      "Explore the durability and precision of Capitanbrush tools, designed for both professionals and enthusiasts.",
+      "Testimonials for Capitanbrush mega yacht course",
     isPartOf: {
       "@type": "WebSite",
       url: "https://capitanbrush.es",
       name: "Capitanbrush",
       description:
-        "Capitanbrush offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Testimonials for Capitanbrush mega yacht course",
     },
     inLanguage: "en-US",
   }}
 >
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="What Our Clients Are Saying"
+    title="What Our Clients Say"
     testimonials={testimonials}
   />
 </MainLayout>
