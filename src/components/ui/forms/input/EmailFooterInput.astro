@@ -116,8 +116,8 @@ const redirectUrl = modalLocale.redirectUrl;
 
 <script type="text/javascript">
   function validateAndShowModal() {
-    const firstname = document.getElementById('firstname').value.trim();
-    const email = document.getElementById('email').value.trim();
+   /* const firstname = document.getElementById('firstname').value;
+    const email = document.getElementById('email').value;
 
     // Simple email validation regex
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -128,9 +128,9 @@ const redirectUrl = modalLocale.redirectUrl;
     }
 
     if (!emailPattern.test(email)) {
-      alert(Astro.currentLocale === "en" ? 'Please enter a valid email address.' : Astro.currentLocale === "fr" ? 'Veuillez saisir une adresse e-mail valide.' : 'Por favor, introduce una dirección de correo electrónico válida.');
+      alert( 'Please enter a valid email address.' );
       return;
-    }
+    }*/
 
     showModal();
   }
