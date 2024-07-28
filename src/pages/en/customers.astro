@@ -1,0 +1,79 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Asolare from "@images/customers/asolare.jpg";
+import Cinquanta from "@images/customers/cinquanta.jpg";
+import Dimitra from "@images/customers/dimitra.jpg";
+import Genesia from "@images/customers/genesia.jpg";
+import Margaret from "@images/customers/margaret-Ann.jpg";
+import Modus from "@images/customers/modus.jpg";
+import Nechida from "@images/customers/nechida.jpeg";
+import Pandion from "@images/customers/pandion.jpg";
+import Supernova from "@images/customers/supernova.jpg";
+import Taipan from "@images/customers/taipan.png";
+import Slow from "@images/customers/slow-motion.jpg";
+import CardInfo from "@/components/card/CardInfo.astro";
+import Modal from "@/components/modal/Modal.astro";
+
+type Yatch = {
+  image: ImageMetadata;
+  name: string;
+  info: string;
+};
+
+const yachtsEn: Yatch[] = [
+  { image: Slow, name: "Slow", info: "Sailing in luxury: this is how life is lived on board." },
+  { image: Taipan, name: "Taipan", info: "The sea has never had better company." },
+  { image: Supernova, name: "Supernova", info: "Where dreams find their harbor." },
+  { image: Pandion, name: "Pandion", info: "Elegance on every wave." },
+  { image: Nechida, name: "Nechida", info: "Life is better on the high seas." },
+  { image: Modus, name: "Modus", info: "Floating paradises at your fingertips." },
+  { image: Margaret, name: "Margaret Ann", info: "Let the ocean tell your story." },
+  { image: Genesia, name: "Genesia", info: "Where luxury meets the horizon." },
+  { image: Dimitra, name: "Dimitra", info: "Your refuge of opulence on the waves." },
+  { image: Cinquanta, name: "Cinquanta", info: "Because you deserve the best, even at sea." },
+  { image: Asolare, name: "Asolare", info: "The adventure begins here, on our mega yacht." },
+];
+
+let selectedYacht: Yatch | null = null;
+let isModalOpen = false;
+
+const openModal = (yacht: Yatch) => {
+  selectedYacht = yacht;
+  isModalOpen = true;
+};
+
+const closeModal = () => {
+  isModalOpen = false;
+  selectedYacht = null;
+};
+---
+
+<MainLayout>
+  <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+      <h2 class="text-2xl font-bold dark:text-white md:text-4xl md:leading-tight">
+        Our Customers
+      </h2>
+      <p class="mt-1 text-gray-600 dark:text-neutral-400">
+        We help our clients find their dream job
+      </p>
+    </div>
+
+    <div class="mb-10 grid gap-6 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4">
+      {yachtsEn.map((yacht, id) => (
+        <CardInfo 
+          key={id}
+          image={yacht.image} 
+          name={yacht.name} 
+          info={yacht.info}
+          onClick={() => openModal(yacht)}
+        />
+      ))}
+    </div>
+    <Modal 
+      isOpen={isModalOpen} 
+      onClose={closeModal} 
+      yacht={selectedYacht}
+    />
+  </div>
+</MainLayout>;
