@@ -1,4 +1,6 @@
 ---
+import { red } from "tailwindcss/colors";
+
 const label = "Search";
 const locales = {
   fr: {
@@ -20,32 +22,62 @@ const locales = {
     url: "/contact",
   },
 };
-const locale =
-  locales[
-    Astro.currentLocale === "en"
-      ? "en"
-      : Astro.currentLocale === "fr"
-        ? "fr"
-        : "es"
-  ]; // Establecer el idioma por defecto como inglés si no se encuentra ningún idioma correspondiente
+
+const modalMessages = {
+  fr: {
+    title: "Merci de vous être inscrit à notre newsletter.",
+    message: "Vous recevrez des informations précises et actualisées pour suivre notre cours de méga-yachts.",
+    buttonText: "D'accord",
+    redirectUrl: "/fr",
+  },
+  en: {
+    title: "Thank you for signing up for our newsletter.",
+    message: "You will receive accurate and updated information to attend our mega yachts course.",
+    buttonText: "OK",
+    redirectUrl: "/en",
+  },
+  es: {
+    title: "Gracias por apuntarte a nuestra newsletter.",
+    message: "Recibirás información precisa y actualizada para poder realizar nuestro curso de mega yates.",
+    buttonText: "Aceptar",
+    redirectUrl: "/",
+  },
+};
+
+const locale = locales[
+  Astro.currentLocale === "en"
+    ? "en"
+    : Astro.currentLocale === "fr"
+    ? "fr"
+    : "es"
+];
+
+const modalLocale = modalMessages[
+  Astro.currentLocale === "en"
+    ? "en"
+    : Astro.currentLocale === "fr"
+    ? "fr"
+    : "es"
+];
 
 const title = locale.title;
 const placeholder = locale.placeholder;
 const placeholderName = locale.placeholderName;
 const id = "footer-input";
+const modalTitle = modalLocale.title;
+const modalMessage = modalLocale.message;
+const buttonText = modalLocale.buttonText;
+const redirectUrl = modalLocale.redirectUrl;
 ---
 
-<div
-  class="mt-4 flex flex-col items-center gap-2 rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800 sm:flex-row sm:gap-3"
->
+<div class="mt-4 flex flex-col items-center gap-2 rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800 sm:flex-row sm:gap-3">
   <div class="row-auto flex w-full">
     <label for={id} class="sr-only">{label}</label>
     <div class="mr-2">
       <input
         type="text"
-        id={id}
-        name="firstname"
         id="firstname"
+        name="firstname"
         required
         class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 focus:border-orange-400 focus:ring-orange-400 disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-700 dark:text-gray-300 dark:placeholder:text-neutral-300"
         placeholder={placeholderName}
@@ -54,9 +86,8 @@ const id = "footer-input";
 
     <input
       type="email"
-      id={id}
-      name="email"
       id="email"
+      name="email"
       required
       class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 focus:border-orange-400 focus:ring-orange-400 disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-700 dark:text-gray-300 dark:placeholder:text-neutral-300"
       placeholder={placeholder}
@@ -65,5 +96,49 @@ const id = "footer-input";
   <button
     title={title}
     class="inline-flex w-full items-center justify-center gap-x-2 whitespace-nowrap rounded-lg border border-transparent bg-orange-400 p-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 hover:bg-orange-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:ring-zinc-200 dark:focus:outline-none dark:focus:ring-1 sm:w-auto"
-    type="submit">{title}</button>
+    type="button"
+    onclick="validateAndShowModal()"
+  >
+    {title}
+  </button>
 </div>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden ">
+  <div class="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-900">
+    <h2 class="text-lg font-bold mb-4">{modalTitle}</h2>
+    <p class="mb-4">{modalMessage}</p>
+    <a href={redirectUrl} class="inline-flex items-center justify-center gap-x-2 whitespace-nowrap rounded-lg border border-transparent bg-orange-400 p-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 hover:bg-orange-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:ring-zinc-200 dark:focus:outline-none dark:focus:ring-1">
+      {buttonText}
+    </a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function validateAndShowModal() {
+    const firstname = document.getElementById('firstname').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    // Simple email validation regex
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (firstname === '' || email === '') {
+      alert( 'Please fill out all fields.');
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      alert(Astro.currentLocale === "en" ? 'Please enter a valid email address.' : Astro.currentLocale === "fr" ? 'Veuillez saisir une adresse e-mail valide.' : 'Por favor, introduce una dirección de correo electrónico válida.');
+      return;
+    }
+
+    showModal();
+  }
+
+  function showModal() {
+    const modalElement = document.getElementById('modal');
+    if (modalElement) {
+      modalElement.classList.remove('hidden');
+    }
+  }
+</script>
