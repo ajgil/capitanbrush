@@ -20,7 +20,7 @@ type Yatch = {
   info: string;
 };
 
-const yatchs: Yatch[] = [
+const yatchsEs: Yatch[] = [
   { image: Slow, name: "Slow", info: "Navegando en el lujo: así se vive a bordo." },
   { image: Taipan, name: "Taipan", info: "El mar nunca tuvo mejor compañía." },
   { image: Supernova, name: "Supernova", info: "Donde los sueños encuentran su puerto." },
@@ -72,7 +72,7 @@ const closeModal  =  () => {
     </div>
 
     <div class="mb-10 grid gap-6 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4">
-      {yatchs.map((yatch, id) => (
+      {yatchsEs.map((yatch, id) => (
         <CardInfo 
           image={yatch.image} 
           name={yatch.name} 
