@@ -1,4 +1,4 @@
-import ogImageSrc from "@images/social.png";
+import capImageSrc from "@images/cap_social.png";
 
 export const SITE = {
   title: "Capitan Brush",
@@ -35,5 +35,5 @@ export const OG = {
   url: SITE.url,
   title: `${SITE.title}: : Exclusivo curso sobre mega yates`,
   description: "El gran cambio que necesitas en tu vida. Con el curso de Capitanbrush tendrás acceso a la libertad financiera que buscas, navegando por el mundo y visita sitios únicos mientras ganas dinero",
-  image: ogImageSrc,
+  image: capImageSrc,
 };

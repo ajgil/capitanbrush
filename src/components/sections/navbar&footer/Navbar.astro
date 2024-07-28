@@ -1,18 +1,15 @@
 ---
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
-import Authentication from "../misc/Authentication.astro";
 import esStrings from "@/utils/es/navigation";
 import frStrings from "@/utils/fr/navigation";
 import enStrings from "@/utils/en/navigation";
 import { Image } from "astro:assets";
-import heroImage from "@images/heroImageCaptBrush.svg";
+import Isotipo_captbrush from "@images/Isotipo_captbrush.svg"
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
 // Definir el tipo para los locales soportados
 type SupportedLocales = 'es' | 'fr' | 'en';
-
-
 
 // Obtener las cadenas de texto y la URL del inicio basados en el locale actual
 const strings = Astro.currentLocale === 'en' ? enStrings : Astro.currentLocale === 'fr' ? frStrings : esStrings;
@@ -31,7 +28,7 @@ const homeUrl = `${Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ===
         href={homeUrl}
         aria-label="Brand"
       >
-        <Image src={heroImage} alt="Capitan Brush" class="h-20 w-20 " draggable="false" format="svg" />
+        <Image src={Isotipo_captbrush} alt="Capitan Brush" class="h-20 w-20 " draggable="false" format="svg" />
       </a>
       <div class="ml-auto mr-5 md:hidden">
         <button
