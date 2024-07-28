@@ -5,22 +5,29 @@ const locales = {
     title: "S'abonner",
     placeholder: "Votre adresse e-mail",
     placeholderName: "Votre nom",
-    url: "/fr/contact"
+    url: "/fr/contact",
   },
   en: {
     title: "Submit",
     placeholder: "Your email address",
     placeholderName: "Your name",
-    url: "/en/contact"
+    url: "/en/contact",
   },
   es: {
     title: "Enviar",
     placeholder: "Tu dirección de correo electrónico",
     placeholderName: "Tu nombre",
-    url: "/contact"
-  }
+    url: "/contact",
+  },
 };
-const locale = locales[Astro.currentLocale === "en" ? "en" : Astro.currentLocale === "fr" ? "fr" : "es"]; // Establecer el idioma por defecto como inglés si no se encuentra ningún idioma correspondiente
+const locale =
+  locales[
+    Astro.currentLocale === "en"
+      ? "en"
+      : Astro.currentLocale === "fr"
+        ? "fr"
+        : "es"
+  ]; // Establecer el idioma por defecto como inglés si no se encuentra ningún idioma correspondiente
 
 const title = locale.title;
 const placeholder = locale.placeholder;
@@ -28,35 +35,35 @@ const placeholderName = locale.placeholderName;
 const id = "footer-input";
 ---
 
-<div class="mt-4 flex flex-col items-center gap-2 rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800 sm:flex-row sm:gap-3">
-  <div class="w-full flex  row-auto">
+<div
+  class="mt-4 flex flex-col items-center gap-2 rounded-lg bg-neutral-200 p-2 dark:bg-neutral-800 sm:flex-row sm:gap-3"
+>
+  <div class="row-auto flex w-full">
     <label for={id} class="sr-only">{label}</label>
-    <div class="mr-2" >
+    <div class="mr-2">
       <input
         type="text"
         id={id}
-        name="footer-input"
-        required  
+        name="firstname"
+        id="firstname"
+        required
         class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 focus:border-orange-400 focus:ring-orange-400 disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-700 dark:text-gray-300 dark:placeholder:text-neutral-300"
         placeholder={placeholderName}
       />
     </div>
-    
+
     <input
       type="email"
       id={id}
-      name="footer-input"
-      required 
+      name="email"
+      id="email"
+      required
       class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 focus:border-orange-400 focus:ring-orange-400 disabled:pointer-events-none disabled:opacity-50 dark:border-transparent dark:bg-neutral-700 dark:text-gray-300 dark:placeholder:text-neutral-300"
       placeholder={placeholder}
     />
   </div>
-
-  {/* Enlace <a> con los parámetros correo y nombre */}
-  <a
+  <button
+    title={title}
     class="inline-flex w-full items-center justify-center gap-x-2 whitespace-nowrap rounded-lg border border-transparent bg-orange-400 p-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 hover:bg-orange-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:ring-zinc-200 dark:focus:outline-none dark:focus:ring-1 sm:w-auto"
-    href={locale.url}
-  >
-    {title}
-  </a>
+    type="submit">{title}</button>
 </div>
