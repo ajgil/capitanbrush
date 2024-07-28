@@ -55,11 +55,10 @@ interface Props {
       <Fragment set:html={title} />
     </h1>
     {subTitle &&
-    <p
+    <p set:html={subTitle}
       class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5"
-    >
-      {subTitle}
-    </p>
+    />
+      
   }
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
     <div class="mt-7 grid w-full gap-3 sm:inline-flex">
