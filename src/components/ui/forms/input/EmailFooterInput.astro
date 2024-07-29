@@ -1,5 +1,5 @@
 ---
-import { red } from "tailwindcss/colors";
+
 
 const label = "Search";
 const locales = {
@@ -94,17 +94,18 @@ const redirectUrl = modalLocale.redirectUrl;
     />
   </div>
   <button
+    id="submit-button"
     title={title}
     class="inline-flex w-full items-center justify-center gap-x-2 whitespace-nowrap rounded-lg border border-transparent bg-orange-400 p-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 hover:bg-orange-500 focus-visible:ring disabled:pointer-events-none disabled:opacity-50 dark:ring-zinc-200 dark:focus:outline-none dark:focus:ring-1 sm:w-auto"
     type="button"
-    onclick="validateAndShowModal()"
+    disabled
   >
     {title}
   </button>
 </div>
 
 <!-- Modal -->
-<div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden ">
+<div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
   <div class="bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-900">
     <h2 class="text-lg font-bold mb-4">{modalTitle}</h2>
     <p class="mb-4">{modalMessage}</p>
@@ -115,24 +116,32 @@ const redirectUrl = modalLocale.redirectUrl;
 </div>
 
 <script type="text/javascript">
-  function validateAndShowModal() {
-   /* const firstname = document.getElementById('firstname').value;
-    const email = document.getElementById('email').value;
-
-    // Simple email validation regex
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (firstname === '' || email === '') {
-      alert( 'Please fill out all fields.');
-      return;
+  document.addEventListener("DOMContentLoaded", () => {
+    const emailInput = document.getElementById('email');
+    const nameInput = document.getElementById('firstname');
+    const submitButton = document.getElementById('submit-button');
+    
+    function validateInputs() {
+      const isEmailValid = emailInput.checkValidity();
+      const isNameValid = nameInput.checkValidity();
+      submitButton.disabled = !(isEmailValid && isNameValid);
     }
 
-    if (!emailPattern.test(email)) {
-      alert( 'Please enter a valid email address.' );
-      return;
-    }*/
+    emailInput.addEventListener('input', validateInputs);
+    nameInput.addEventListener('input', validateInputs);
 
-    showModal();
+    submitButton.addEventListener('click', validateAndShowModal);
+
+    validateInputs();
+  });
+
+  function validateAndShowModal() {
+    const emailInput = document.getElementById('email');
+    const nameInput = document.getElementById('firstname');
+
+    if (emailInput.checkValidity() && nameInput.checkValidity()) {
+      showModal();
+    }
   }
 
   function showModal() {
