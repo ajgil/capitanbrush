@@ -7,12 +7,12 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   // Configuración del sitio
-  site: "https://ajgil.github.io",
+  site: "https://capitanbrush.es",
   base: "/",
   
   // Autorización de imágenes remotas
   image: {
-    domains: ["images.unsplash.com"],
+    domains: [],
   },
 
   // Prefetching
@@ -49,25 +49,16 @@ export default defineConfig({
           },
           autogenerate: { directory: "guides" },
         },
-        {
-          label: "Herramientas y Equipos",
-          items: [
-            { label: "Guías de Herramientas", link: "tools/tool-guides/" },
-            { label: "Cuidado del Equipo", link: "tools/equipment-care/" },
-          ],
-        },
+        
         {
           label: "Servicios de mentoria",
-          autogenerate: { directory: "construction" },
+          autogenerate: { directory: "content" },
         },
         {
-          label: "Temas Avanzados",
-          autogenerate: { directory: "advanced" },
+          label: "Curso megayates",
+          autogenerate: { directory: "contact" },
         },
       ],
-      social: {
-        github: "https://github.com/ajgil/capitanbrush",
-      },
       disable404Route: true,
       customCss: ["./src/assets/styles/starlight.css"],
       favicon: "/favicon.ico",
