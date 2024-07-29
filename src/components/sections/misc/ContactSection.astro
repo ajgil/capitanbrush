@@ -46,7 +46,7 @@ const translations: Translations = {
     emailErrorText: "Por favor, ingresa un email válido.",
     phoneErrorText:
       "Por favor, ingresa un número de teléfono válido con al menos 10 dígitos.",
-    terms: "términos",
+    terms: "términos y condiciones",
     privacy: "política de privacidad",
     newsletter: "Suscribirse a la newsletter",
     submitButton: "Me apunto",
@@ -95,7 +95,7 @@ const translations: Translations = {
     phoneErrorText:
       "Veuillez entrer un numéro de téléphone valide avec au moins 10 chiffres.",
     terms: "conditions",
-    privacy: "politique de confidentialité",
+    privacy: "privacy",
     newsletter: "S'abonner à la newsletter",
     submitButton: "Je m'inscris",
     successTitle: "Succès !",
@@ -213,8 +213,8 @@ const {
                 <span
                   class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
                 >
-                  Acepto los <a href="terms" target="_blank"> {terms} </a>
-                  <a href="privacy" target="_blank"> y la {privacy}</a>
+                  Acepto los <span class="text-yellow-500 dark:text-yellow-400"><a href="terms" target="_blank"> {terms}</a></span>
+                  y la <span class="text-yellow-500 dark:text-yellow-400"><a href="privacy" target="_blank"> {privacy}</a></span>
                 </span>
               </label>
             </div>
