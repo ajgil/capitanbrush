@@ -56,20 +56,22 @@ interface Props {
 
         <blockquote>
 
-          <p class="text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal">
-            {testimonial.content}
-          </p>
-
+          <p
+      class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl"
+    >
+      {testimonial.content}
+    </p>
+        
           <footer class="mt-6">
             <div class="flex items-center">
               <div class="lg:hidden shrink-0">
-                <Image class="size-12 rounded-full" src={testimonial.avatarSrc} alt="Avatar">
+                <Image class="size-16 rounded-full" src={testimonial.avatarSrc} alt="Avatar">
               </div>
               <div class="ms-4 lg:ms-0">
-                <p class="font-medium text-gray-800">
+                <p class="font-light text-neutral-600 dark:text-neutral-400">
                   {testimonial.author}
                 </p>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
                   {testimonial.role}
                 </p>
               </div>
