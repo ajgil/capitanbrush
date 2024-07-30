@@ -25,7 +25,7 @@ interface Props {
   id="testimonials"
 >
   <!-- Title of the testimonials section -->
-  <div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
+  <div class="w-3/4 max-w-2xl mb-2  lg:w-1/2 ">
     <h2
       class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
     >
@@ -36,15 +36,16 @@ interface Props {
 
 
 <!-- Testimonials -->
-<div class="relative overflow-hidden">
-  <div class="max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 mx-auto">
+<div class="relative overflow-hidden  ">
+  <div class="max-w-[85rem] px-0 py-6 sm:px-6 lg:px-0 lg:py-10 mx-auto">
 
     <!-- Grid -->
-    <div class="lg:grid lg:grid-cols-6 lg:gap-8 lg:items-center">
+    <div class="">
       {
         testimonials.map((testimonial) => (
 
-      <div class="hidden lg:block lg:col-span-2">
+        <div class=" border bg-gray-100 border-gray-200 mb-3 p-2 rounded-lg lg:grid lg:grid-cols-6 lg:gap-8 lg:items-center">
+          <div class="hidden lg:block lg:col-span-2  ">
         <Image class="rounded-xl" src={testimonial.avatarSrc} alt="avatar" />
        
       </div>
@@ -85,6 +86,9 @@ interface Props {
     
       <!-- End Col -->
     </div>
+        </div>
+
+      
     ))}
     
     <!-- End Grid -->
