@@ -19,7 +19,7 @@ const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Abonnez vous" 
 const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.currentLocale === "en" ? "Crafted with" : "Hecho por";
 ---
 
-<footer class="w-full bg-neutral-300 dark:bg-neutral-900">
+<footer class="w-full bg-neutral-300 dark:bg-neutral-500/80">
   <div
     class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-screen-2xl"
   >
@@ -28,7 +28,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Conçu avec" : Astro.cur
         <!-- Brand Logo 
         <BrandLogo class="h-auto w-32" />
       -->
-      <Image src={Isotipo_captbrush} alt="Capitan Brush" class="h-auto w-32"/>
+      <Image src={Isotipo_captbrush} alt="Capitan Brush" class="h-auto w-32 dark:drop-shadow-light-shadow"/>
         
       </div>
       
