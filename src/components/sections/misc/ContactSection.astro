@@ -28,6 +28,8 @@ type Translations = {
     successMessage: string;
     goToPayment: string;
     closeButton: string;
+    needToPay: string;
+    payInfo: string;
   };
 };
 
@@ -56,6 +58,8 @@ const translations: Translations = {
     goToPayment:
     "¿Quieres embarcar ya? Te redirigimos automáticamente a la pasarela de pago.",
     closeButton: "Cerrar",
+    needToPay: "Ya me registré quiero pagar",
+    payInfo: "Si anteriormente te registraste pero no pudiste completar tu pago, no te preocupes, puedes hacerlo desde aquí."
   },
   en: {
     title: "You’re One Step Away from Changing Your Life",
@@ -80,6 +84,8 @@ const translations: Translations = {
     goToPayment:
       "To complete your registration we will send you to the payment gateway",
     closeButton: "Close",
+    needToPay: "Already registered, I want to pay",
+    payInfo: "If you previously registered but were unable to complete your payment, no worries, you can do so from here."
   },
   fr: {
     title: "Vous êtes à un pas de changer votre vie",
@@ -104,6 +110,8 @@ const translations: Translations = {
     goToPayment:
       "Pour finaliser votre inscription, nous vous enverrons à la passerelle de paiement",
     closeButton: "Fermer",
+    needToPay: "Déjà inscrit, je veux payer",
+    payInfo: "Si vous vous êtes déjà inscrit mais que vous n'avez pas pu effectuer votre paiement, pas de souci, vous pouvez le faire ici."
   },
 };
 
@@ -127,6 +135,8 @@ const {
   successMessage,
   closeButton,
   goToPayment,
+  needToPay,
+  payInfo
 } = translations[lang];
 ---
 
@@ -241,6 +251,20 @@ const {
 
           <div class="mt-4 grid">
             <AuthBtn title={submitButton} id="btn" name="btn" disabled />
+           <div class="flex   " >
+            <a href="https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK" class=" hover:text-orange-500  text-orange-300 text-sm p-2 flex items-center">
+              {needToPay}
+              
+            </a>
+            <div class="relative group ml-1  pt-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  text-orange-300 " viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 100-2 1 1 0 000 2zm-1 8a1 1 0 102 0V9a1 1 0 10-2 0v6z" clip-rule="evenodd" />
+              </svg>
+              <div class="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 hidden w-80 p-2 dark:bg-gray-400 dark:text-gray-800 bg-gray-800 text-white text-sm rounded-md shadow-md group-hover:block">
+                {payInfo}
+              </div>
+            </div>
+           </div>
           </div>
         </div>
       </form>

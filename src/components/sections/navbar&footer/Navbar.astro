@@ -19,7 +19,9 @@ const homeUrl = `${Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ===
 
 <header class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start">
   <nav
-    class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
+    class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md dark:border-neutral-700/40 dark:bg-neutral-500/80 dark:backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto "
+
+
     aria-label="Global"
   >
     <div class="flex items-center justify-between h-28 w-24  ">
@@ -28,7 +30,13 @@ const homeUrl = `${Astro.currentLocale === 'en' ? 'en' : Astro.currentLocale ===
         href={homeUrl}
         aria-label="Brand"
       >
-        <Image src={Isotipo_captbrush} alt="Capitan Brush" class="h-20 w-20 " draggable="false" format="svg" />
+      <Image
+      src={Isotipo_captbrush}
+      alt="Capitan Brush"
+      class="h-20 w-20 dark:drop-shadow-light-shadow"
+      draggable="false"
+      format="svg"
+    />
       </a>
       <div class="ml-auto mr-5 md:hidden">
         <button
