@@ -1,29 +1,45 @@
 {
-    "subTitle": "Posez-nous toutes vos questions sur notre marque et nos produits, et obtenez des réponses factuelles.",
+    "subTitle": "Posez-nous toutes vos questions, et obtenez des réponses factuelles.",
     "faqs": [
       {
-        "question": "Quels types d'outils sont inclus dans le Kit de Démarrage ?",
-        "answer": "Le Kit de Démarrage comprend des outils manuels et électriques essentiels pour divers projets de bricolage, y compris des marteaux, des perceuses, des tournevis et une variété de fixations. C'est une sélection soigneusement choisie pour aider les débutants et les bricoleurs expérimentés à s'attaquer à la plupart des tâches d'amélioration de la maison."
+        "question": "Quelles certifications dois-je avoir pour travailler sur un méga yacht ?",
+        "answer": "Pour travailler sur un méga yacht, vous avez besoin de la certification STCW et d'un certificat médical ENG1. Selon le poste, des cours supplémentaires tels que les premiers secours et la lutte contre l'incendie peuvent être requis."
       },
       {
-        "question": "Puis-je passer du Kit de Démarrage à la Boîte à Outils Professionnelle ?",
-        "answer": "Absolument ! Vous pouvez passer à la Boîte à Outils Professionnelle à tout moment pour accéder à une gamme plus large d'outils de haute qualité, bénéficier d'un support client prioritaire et recevoir du contenu exclusif. Contactez notre équipe de support pour une transition en douceur."
+        "question": "Comment puis-je trouver du travail sur un méga yacht ?",
+        "answer": "Vous pouvez trouver du travail sur des méga yachts par le biais d'agences spécialisées et de portails d'emploi tels que CrewSeekers, YotSpot et Crew4Yachts. Participer à des salons de l'emploi et à des événements de réseautage est également très utile."
       },
       {
-        "question": "Quels rabais sont disponibles pour les commandes en gros via le plan Boîte à Outils Professionnelle ?",
-        "answer": "Les membres de la Boîte à Outils Professionnelle ont droit à des rabais exclusifs sur les commandes en gros, dont le pourcentage peut varier en fonction du volume de la commande. Contactez-nous pour discuter de vos besoins, et nous vous fournirons une structure de rabais adaptée."
+        "question": "Quels sont les avantages de travailler sur un méga yacht ?",
+        "answer": "Les avantages incluent de bons salaires, l'opportunité de voyager, le logement et les repas fournis, ainsi que la possibilité d'économiser une grande partie de votre salaire."
       },
       {
-        "question": "Quel type de support client puis-je attendre ?",
-        "answer": "Tous nos clients reçoivent un support par e-mail dédié. Avec le Kit de Démarrage, vous bénéficierez de notre support standard, tandis que le plan Boîte à Outils Professionnelle vous offre un support prioritaire, ce qui signifie des temps de réponse plus rapides et une assistance spécialisée."
+        "question": "Quels défis vais-je rencontrer en travaillant sur un méga yacht ?",
+        "answer": "Les défis incluent de longues heures de travail, être loin de chez soi pendant de longues périodes, et la nécessité de maintenir des normes de service élevées en tout temps."
       },
       {
-        "question": "Quelle est l'actualité des ressources en ligne et des tutoriels ?",
-        "answer": "Nous mettons régulièrement à jour nos ressources en ligne et nos tutoriels pour refléter les dernières tendances en matière de bricolage et de construction, ainsi que les nouvelles introductions d'outils et de techniques. Notre matériel vise à être complet et facile à utiliser pour tous les niveaux de compétence."
+        "question": "Comment puis-je assurer mon bien-être mental à bord ?",
+        "answer": "Maintenez une routine quotidienne, faites de l'exercice régulièrement et restez en contact avec vos amis et votre famille. Utilisez les ressources de santé mentale conçues pour les marins si vous avez besoin d'aide supplémentaire."
       },
       {
-        "question": "Capitanbrush propose-t-il des services pour des projets de construction à grande échelle ?",
-        "answer": "Oui, nos Solutions Entreprises sont conçues pour les grandes entreprises nécessitant des services complets. Nous proposons des consultations, de la planification, ainsi que la fourniture d'outils et de matériaux de haute qualité, ainsi que des solutions de personnel pour des besoins de construction importants. Contactez-nous pour un devis personnalisé."
+        "question": "Comment puis-je planifier ma carrière sur les méga yachts ?",
+        "answer": "Continuez votre formation et obtenez des certifications supplémentaires. Cherchez des opportunités pour acquérir de l'expérience et envisagez des cours avancés offerts par la RYA et d'autres institutions."
+      },
+      {
+        "question": "Quelles sont les bonnes options d'investissement pour les membres d'équipage de méga yachts ?",
+        "answer": "Envisagez d'investir dans l'immobilier, les actions ou les fonds communs de placement. Consultez un conseiller financier pour prendre des décisions éclairées et diversifiez vos investissements pour minimiser les risques."
+      },
+      {
+        "question": "Comment puis-je maintenir ma liberté financière à long terme ?",
+        "answer": "Planifiez et suivez un budget, investissez judicieusement et gardez un fonds d'urgence. Utilisez des outils financiers et des conseillers professionnels pour maximiser vos économies et vos investissements."
+      },
+      {
+        "question": "Quelles validations et certifications sont nécessaires pour progresser dans ma carrière ?",
+        "answer": "Renseignez-vous sur les validations et certifications requises pour progresser dans votre carrière. La Maritime and Coastguard Agency (MCA) et l'Organisation Maritime Internationale (OMI) sont de bonnes sources d'information sur les réglementations et exigences spécifiques."
+      },
+      {
+        "question": "Comment puis-je passer des méga yachts à d'autres secteurs ?",
+        "answer": "Les compétences acquises sur les méga yachts sont transférables à d'autres secteurs, tels que l'industrie de l'hospitalité et le tourisme de luxe. Les compétences en gestion, service client et maintenance technique sont très appréciées dans de nombreux autres domaines professionnels."
       }
     ]
   }
