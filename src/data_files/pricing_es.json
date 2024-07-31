@@ -21,8 +21,8 @@
     },
   
     "professionalToolbox": {
-      "name": "Precio total del curso",
-      "description": "",
+      "name": "Contenido del curso",
+      "description": "Contenido del curso",
       "price": "150",
       "cents": ".00",
       "billingFrequency": "EUR",
