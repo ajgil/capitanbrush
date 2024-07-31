@@ -1,29 +1,45 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Ask us anything, and get factual responses.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "What certifications do I need to work on a mega yacht?",
+      "answer": "To work on a mega yacht, you need the STCW certification and an ENG1 medical certificate. Depending on the position, additional courses such as first aid and firefighting may be required."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "How can I find work on a mega yacht?",
+      "answer": "You can find work on mega yachts through specialized agencies and job portals such as CrewSeekers, YotSpot, and Crew4Yachts. Attending job fairs and networking events is also very helpful."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "What are the benefits of working on a mega yacht?",
+      "answer": "Benefits include good salaries, the opportunity to travel, provided accommodation and meals, and the ability to save a large portion of your salary."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "What challenges will I face working on a mega yacht?",
+      "answer": "Challenges include long working hours, being away from home for extended periods, and the need to maintain high service standards at all times"
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "How can I ensure my mental well-being on board?",
+      "answer": "Maintain a daily routine, exercise regularly, and keep in touch with friends and family. Use mental health resources designed for seafarers if you need additional help."
     },
     {
-      "question": "Does Capitanbrush offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "How can I plan my career on mega yachts?",
+      "answer": "Continue your training and obtain additional certifications. Look for opportunities to gain experience and consider advanced courses offered by the RYA and other institutions."
+    },
+    {
+      "question": "What are good investment options for mega yacht crew members?",
+      "answer": "Consider investing in real estate, stocks, or mutual funds. Consult with a financial advisor to make informed decisions and diversify your investments to minimize risks."
+    },
+    {
+      "question": "How can I maintain financial freedom in the long term?",
+      "answer": "Plan and follow a budget, invest wisely, and keep an emergency fund. Use financial tools and professional advisors to maximize your savings and investments."
+    },
+    {
+      "question": "What validations and certifications are needed to advance in my career?",
+      "answer": "Learn about the validations and certifications required to advance in your career. The Maritime and Coastguard Agency (MCA) and the International Maritime Organization (IMO) are good sources of information on specific regulations and requirements."
+    },
+    {
+      "question": "How can I transition from mega yachts to other sectors?",
+      "answer": "The skills acquired on mega yachts are transferable to other sectors, such as the hospitality industry and luxury tourism. Management, customer service, and technical maintenance skills are highly valued in many other professional areas."
     }
   ]
 }
