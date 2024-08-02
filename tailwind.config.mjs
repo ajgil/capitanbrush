@@ -32,7 +32,11 @@ export default {
       red: colors.red, // Used for bookmark icon
       zinc: colors.zinc, // Used mainly for box-shadow
     },
-    extend: {},
+    extend: {
+      dropShadow: {
+        'light-shadow': '0 0 4px rgba(255, 255, 255, 0.7)',
+      },
+    },
   },
   plugins: [
     require("tailwindcss/nesting"),
