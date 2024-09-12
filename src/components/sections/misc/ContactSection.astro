@@ -187,84 +187,131 @@ const {
               placeholder={placeholderEmail}
               aria-describedby="email-error"
             />
-            <span id="email-error" class="hidden text-sm text-red-600"
-              >{emailErrorText}</span
-            >
+            <span id="email-error" class="hidden text-sm text-red-600">{emailErrorText}</span>
           </div>
-          <div>
+          <div class="flex flex-row gap-2 sm:flex-row mb-3 ">
+            <select
+              name="country-code"
+              id="country-code"
+              class="block  md:w-28 w-28 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-3 text-sm text-neutral-700 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300"
+              required
+            >
+            <option value="+34" data-flag="es" selected>🇪🇸 +34</option>
+            <option value="+33" data-flag="fr">🇫🇷 +33</option>
+            <option value="+1" data-flag="us">🇺🇸 +1</option>
+            <option value="+44" data-flag="gb">🇬🇧 +44</option>
+            <option value="+49" data-flag="de">🇩🇪 +49</option>
+            <option value="+39" data-flag="it">🇮🇹 +39</option>
+            <option value="+7" data-flag="ru">🇷🇺 +7</option>
+            <option value="+81" data-flag="jp">🇯🇵 +81</option>
+            <option value="+86" data-flag="cn">🇨🇳 +86</option>
+            <option value="+61" data-flag="au">🇦🇺 +61</option>
+            <option value="+91" data-flag="in">🇮🇳 +91</option>
+            <option value="+52" data-flag="mx">🇲🇽 +52</option>
+            <option value="+55" data-flag="br">🇧🇷 +55</option>
+            <option value="+27" data-flag="za">🇿🇦 +27</option>
+            <option value="+82" data-flag="kr">🇰🇷 +82</option>
+            <option value="+54" data-flag="ar">🇦🇷 +54</option>
+            <option value="+1" data-flag="ca">🇨🇦 +1</option>
+            <option value="+57" data-flag="co">🇨🇴 +57</option>
+            <option value="+63" data-flag="ph">🇵🇭 +63</option>
+            <option value="+48" data-flag="pl">🇵🇱 +48</option>
+            <option value="+90" data-flag="tr">🇹🇷 +90</option>
+            <option value="+234" data-flag="ng">🇳🇬 +234</option>
+            <option value="+92" data-flag="pk">🇵🇰 +92</option>
+            <option value="+62" data-flag="id">🇮🇩 +62</option>
+            <option value="+60" data-flag="my">🇲🇾 +60</option>
+            <option value="+66" data-flag="th">🇹🇭 +66</option>
+            <option value="+31" data-flag="nl">🇳🇱 +31</option>
+            <option value="+46" data-flag="se">🇸🇪 +46</option>
+            <option value="+41" data-flag="ch">🇨🇭 +41</option>
+            <option value="+420" data-flag="cz">🇨🇿 +420</option>
+            <option value="+32" data-flag="be">🇧🇪 +32</option>
+            <option value="+64" data-flag="nz">🇳🇿 +64</option>
+            <option value="+353" data-flag="ie">🇮🇪 +353</option>
+            <option value="+47" data-flag="no">🇳🇴 +47</option>
+            <option value="+372" data-flag="ee">🇪🇪 +372</option>
+            <option value="+30" data-flag="gr">🇬🇷 +30</option>
+            <option value="+380" data-flag="ua">🇺🇦 +380</option>
+            <option value="+971" data-flag="ae">🇦🇪 +971</option>
+            <option value="+964" data-flag="iq">🇮🇶 +964</option>
+            <option value="+974" data-flag="qa">🇶🇦 +974</option>
+            <option value="+965" data-flag="kw">🇰🇼 +965</option>
+            <option value="+966" data-flag="sa">🇸🇦 +966</option>
+            <option value="+94" data-flag="lk">🇱🇰 +94</option>
+            <option value="+95" data-flag="mm">🇲🇲 +95</option>
+            <option value="+84" data-flag="vn">🇻🇳 +84</option>
+            <option value="+593" data-flag="ec">🇪🇨 +593</option>
+            <option value="+598" data-flag="uy">🇺🇾 +598</option>
+            
+            </select>
             <input
               type="tel"
               name="phone"
               required
               id="phone"
               pattern="[0-9]*"
-              class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder={placeholderPhone}
+              class="block w-full sm:w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+              placeholder="Teléfono"
               aria-describedby="phone-error"
             />
-            <span id="phone-error" class="hidden text-sm text-red-600"
-              >{phoneErrorText}</span
-            >
           </div>
-
-          <div class="grid space-y-3">
-            <div class="relative flex items-start">
-              <div class="mt-1 flex h-5 items-center">
-                <input
-                  id="checkbox-tyc"
-                  name="checkbox-tyc"
-                  type="checkbox"
-                  onchange="cambiarCondiciones()"
-                  class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
-                  aria-describedby="checkbox-tyc-description"
-                />
-              </div>
-              <label for="checkbox-tyc" class="ms-3">
-                <span
-                  class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
-                >
-                  Acepto los <span class="text-yellow-500 dark:text-yellow-400"><a href="/terms" target="_blank"> {terms}</a></span>
-                  y la <span class="text-yellow-500 dark:text-yellow-400"><a href="/privacy" target="_blank"> {privacy}</a></span>
-                </span>
-              </label>
+          <span id="phone-error" class="hidden text-sm text-red-600">Error en el teléfono</span>
+        </div>
+        
+      
+        <div class="grid space-y-3">
+          <div class="relative flex items-start">
+            <div class="mt-1 flex h-5 items-center">
+              <input
+                id="checkbox-tyc"
+                name="checkbox-tyc"
+                type="checkbox"
+                onchange="cambiarCondiciones()"
+                class="text-blue-600  focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
+                aria-describedby="checkbox-tyc-description"
+              />
             </div>
-
-            <div class="relative flex items-start">
-              <div class="mt-1 flex h-5 items-center">
-                <input
-                  id="checkbox-ads"
-                  name="checkbox-ads"
-                  type="checkbox"
-                  class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
-                  aria-describedby="checkbox-ads-description"
-                />
-              </div>
-              <label for="checkbox-ads" class="ms-3">
-                <span
-                  class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
-                >
-                  {newsletter}
-                </span>
-              </label>
-            </div>
+            <label for="checkbox-tyc" class="ms-3">
+              <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">
+                Acepto los <span class="text-yellow-500 dark:text-yellow-400"><a href="/terms" target="_blank">{terms}</a></span>
+                y la <span class="text-yellow-500 dark:text-yellow-400"><a href="/privacy" target="_blank">{privacy}</a></span>
+              </span>
+            </label>
           </div>
-
-          <div class="mt-4 grid">
-            <AuthBtn title={submitButton} id="btn" name="btn" disabled />
-           <div class="flex   " >
-            <a href="https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK" class=" hover:text-orange-500  text-orange-300 text-sm p-2 flex items-center">
+      
+          <div class="relative flex items-start">
+            <div class="mt-1 flex h-5 items-center">
+              <input
+                id="checkbox-ads"
+                name="checkbox-ads"
+                type="checkbox"
+                class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
+                aria-describedby="checkbox-ads-description"
+              />
+            </div>
+            <label for="checkbox-ads" class="ms-3">
+              <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">
+                {newsletter}
+              </span>
+            </label>
+          </div>
+        </div>
+      
+        <div class="mt-4 grid">
+          <AuthBtn title={submitButton} id="btn" name="btn" disabled />
+          <div class="flex">
+            <a href="https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK" class="hover:text-orange-500 text-orange-300 text-sm p-2 flex items-center">
               {needToPay}
-              
             </a>
-            <div class="relative group ml-1  pt-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  text-orange-300 " viewBox="0 0 20 20" fill="currentColor">
+            <div class="relative group ml-1 pt-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-300" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 100-2 1 1 0 000 2zm-1 8a1 1 0 102 0V9a1 1 0 10-2 0v6z" clip-rule="evenodd" />
               </svg>
               <div class="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 hidden w-80 p-2 dark:bg-gray-400 dark:text-gray-800 bg-gray-800 text-white text-sm rounded-md shadow-md group-hover:block">
                 {payInfo}
               </div>
             </div>
-           </div>
           </div>
         </div>
       </form>
