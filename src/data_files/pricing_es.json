@@ -21,8 +21,8 @@
     },
   
     "professionalToolbox": {
-      "name": "Contenido del curso",
-      "description": "Contenido del curso",
+      "name": "¿Qué obtendrás?",
+      "description": "¿Qué obtendrás?",
       "price": "150",
       "cents": ".00",
       "billingFrequency": "EUR",
