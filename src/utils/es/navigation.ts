@@ -2,7 +2,7 @@
 const navBarLinks = [
   { name: "Sobre mi", url: "/about" },
   { name: "Clientes", url: "/customers" },
-  { name: "Curso", url: "/" },
+  { name: "Embarca en un Mega Yate", url: "/" },
   { name: "Contenido", url: "/content" },
   { name: "Testimonios", url: "/testimonials" },
   { name: "Contacto", url: "/contact" },
@@ -15,7 +15,7 @@ const footerLinks = [
     links: [
       { name: "Sobre mi", url: "/about" },
       { name: "Clientes", url: "/customers" },
-      { name: "Curso", url: "/" },
+      { name: "Embarca en un Mega Yate", url: "/" },
       { name: "Contenido", url: "/content" },
       { name: "Testimonios", url: "/testimonials" },
       { name: "Contacto", url: "/contact" },
