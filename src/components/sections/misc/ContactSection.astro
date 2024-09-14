@@ -368,32 +368,17 @@ const {
 
       <script>
         document.addEventListener("DOMContentLoaded", () => {
-          const form = document.getElementById(
-            "contact-form"
-          ) as HTMLFormElement;
-          const tyc = document.getElementById(
-            "checkbox-tyc"
-          ) as HTMLInputElement;
+          const form = document.getElementById("contact-form") as HTMLFormElement;
+          const tyc = document.getElementById("checkbox-tyc") as HTMLInputElement;
           const enviar = document.getElementById("btn") as HTMLButtonElement;
-          const emailInput = document.getElementById(
-            "email"
-          ) as HTMLInputElement;
-          const phoneInput = document.getElementById(
-            "phone"
-          ) as HTMLInputElement;
-          const emailError = document.getElementById(
-            "email-error"
-          ) as HTMLSpanElement;
-          const phoneError = document.getElementById(
-            "phone-error"
-          ) as HTMLSpanElement;
-          const successModal = document.getElementById(
-            "success-modal"
-          ) as HTMLDivElement;
-          const closeModalButton = document.getElementById(
-            "close-modal"
-          ) as HTMLButtonElement;
-
+          const emailInput = document.getElementById("email") as HTMLInputElement;
+          const phoneInput = document.getElementById("phone") as HTMLInputElement;
+          const countryCodeInput = document.getElementById("country-code") as HTMLSelectElement; // Añadimos el select del código de país
+          const emailError = document.getElementById("email-error") as HTMLSpanElement;
+          const phoneError = document.getElementById("phone-error") as HTMLSpanElement;
+          const successModal = document.getElementById("success-modal") as HTMLDivElement;
+          const closeModalButton = document.getElementById("close-modal") as HTMLButtonElement;
+      
           function mostrarErrores() {
             if (emailInput.validity.typeMismatch) {
               emailError.textContent = "Format incorrect";
@@ -401,57 +386,62 @@ const {
             } else {
               emailError.classList.add("hidden");
             }
-
-            if (
-              phoneInput.validity.patternMismatch ||
-              phoneInput.validity.tooShort
-            ) {
+      
+            if (phoneInput.validity.patternMismatch || phoneInput.validity.tooShort) {
               phoneError.textContent = "Format incorrect";
               phoneError.classList.remove("hidden");
             } else {
               phoneError.classList.add("hidden");
             }
           }
-
+      
           function cambiarCondiciones() {
             enviar.disabled = !tyc.checked;
           }
-
+      
           form.addEventListener("submit", (event) => {
             event.preventDefault();
-
-            if (
-              !emailInput.validity.valid ||
-              !phoneInput.validity.valid ||
-              !tyc.checked
-            ) {
+      
+            if (!emailInput.validity.valid || !phoneInput.validity.valid || !tyc.checked) {
               mostrarErrores();
               return;
             }
+      
+            // Concatenar el código del país con el teléfono
+            const countryCode = countryCodeInput.value; // Obtener el valor del código de país seleccionado
+            const phoneNumber = phoneInput.value;
+            const fullPhoneNumber = countryCode + phoneNumber;
+      
+            // Asignar el valor concatenado al campo del teléfono antes de enviar
+            phoneInput.value = fullPhoneNumber;
 
+            countryCodeInput.remove();
+      
             // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
             setTimeout(() => {
               successModal.classList.remove("hidden");
               form.reset();
               enviar.disabled = true;
               setTimeout(function () {
-                window.location.href = "https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK";
+                window.location.href =
+                  "https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK";
               }, 6000);
             }, 1000);
           });
-
+      
           emailInput.addEventListener("input", mostrarErrores);
           phoneInput.addEventListener("input", mostrarErrores);
           tyc.addEventListener("change", cambiarCondiciones);
-
+      
           closeModalButton.addEventListener("click", () => {
             successModal.classList.add("hidden");
           });
-
+      
           cambiarCondiciones();
           mostrarErrores();
         });
       </script>
+      
     </div>
   </div>
 </section>
