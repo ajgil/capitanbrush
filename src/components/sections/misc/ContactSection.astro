@@ -1,4 +1,5 @@
 ---
+import PaymentCTA from "@/components/ui/buttons/PaymentCTA.astro";
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 
 // Define los posibles idiomas
@@ -16,7 +17,7 @@ type Translations = {
     formSubTitle: string;
     placeholderName: string;
     placeholderLastName: string;
-    placeholderAddress: string;
+    placeholderCity: string;
     placeholderEmail: string;
     placeholderPhone: string;
     emailErrorText: string;
@@ -44,7 +45,7 @@ const translations: Translations = {
     formSubTitle: "",
     placeholderName: "Nombre",
     placeholderLastName: "Apellidos",
-    placeholderAddress: "Dirección",
+    placeholderCity: "Ciudad",
     placeholderEmail: "Email",
     placeholderPhone: "Número de teléfono sin prefijo de país",
     emailErrorText: "Por favor, ingresa un email válido.",
@@ -70,7 +71,7 @@ const translations: Translations = {
     formSubTitle: "We will contact you within 1 business day.",
     placeholderName: "First Name",
     placeholderLastName: "Last Name",
-    placeholderAddress: "Address",
+    placeholderCity: "Ciudad",
     placeholderEmail: "Email",
     placeholderPhone: "Phone Number, please add 00 and country code",
     emailErrorText: "Please enter a valid email address.",
@@ -86,7 +87,7 @@ const translations: Translations = {
     goToPayment:
       "To complete your registration we will send you to the payment gateway",
     closeButton: "Close",
-    needToPay: "Already registered, I want to pay",
+    needToPay: "Buy now",
     payInfo:
       "If you previously registered but were unable to complete your payment, no worries, you can do so from here.",
   },
@@ -98,7 +99,7 @@ const translations: Translations = {
     formSubTitle: "Nous vous contacterons dans un délai d'un jour ouvrable.",
     placeholderName: "Prénom",
     placeholderLastName: "Nom de famille",
-    placeholderAddress: "",
+    placeholderCity: "Cité",
     placeholderEmail: "Email",
     placeholderPhone: "Numéro de téléphone",
     emailErrorText: "Veuillez entrer une adresse e-mail valide.",
@@ -124,12 +125,12 @@ const translations: Translations = {
 const {
   title,
   subTitle,
-  formTitle,
+  //formTitle,
   //formSubTitle,
   placeholderName,
   placeholderLastName,
   placeholderEmail,
-  placeholderAddress,
+  placeholderCity,
   //placeholderPhone,
   emailErrorText,
   //phoneErrorText,
@@ -230,10 +231,10 @@ const {
           <input
             type="text"
             required
-            name="dirección"
-            id="direccion"
+            name="ciudad"
+            id="ciudad"
             class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-            placeholder={placeholderAddress}
+            placeholder={placeholderCity}
           />
 
           <input
@@ -373,348 +374,328 @@ const {
       <div>
         <div class="mt-4 grid">
           <AuthBtn title={submitButton} id="btn" name="btn" disabled />
+        </div>
 
-          <div>
-            <p
-              class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
+        <!-- Success Modal -->
+        <div
+          id="success-modal"
+          class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+          aria-labelledby="success-modal-label"
+        >
+          <div
+            class="relative mx-auto mt-60 max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800"
+          >
+            <button
+              id="close-modal"
+              class="absolute right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+              aria-label="Cerrar modal"
             >
-              Nota importante:
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+            <h3
+              id="success-modal-label"
+              class="flex flex-wrap justify-center text-center text-lg font-bold text-gray-900 dark:text-white"
+            >
+              {successTitle}
+            </h3>
+            <p class="mt-2 text-gray-700 dark:text-neutral-400">
+              {successMessage}
             </p>
             <p
-              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              class="text-yellow-600 mt-4 text-lg font-extrabold dark:text-yellow-400"
             >
-              Al contratar cualquier servicio, desbloqueas un 10% de descuento
-              en cursos STCW, RYA y más opciones profesionales en nuestras
-              escuelas asociadas.
+              {goToPayment}
             </p>
-          </div>
 
-          <div
-            class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-          >
-            <div class="flex h-5 items-center">
-              <input
-                id="radio-1"
-                name="basico"
-                type="radio"
-                onchange="MostrarOcultar(this.value)"
-                value="1"
-                class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
-              />
-            </div>
-            <div class="ms-2 text-sm">
-              <label
-                for="helper-radio-1"
-                class="font-medium text-gray-900 dark:text-gray-300"
-              >
-                <div>Curso básico a bordo de un megayate</div>
-                <p
-                  id="helper-radio-text-1"
-                  class="text-xs font-normal text-gray-500 dark:text-gray-300"
-                >
-                  Vive una experiencia práctica única a bordo de un megayate.
-                  Aprende lo esencial sobre el sector y expande tus
-                  conocimientos en un entorno real.
-                </p>
-                <p
-                  id="helper-radio-text-1"
-                  class="text-xs font-medium text-gray-500 dark:text-gray-300"
-                >
-                  Precio: Desde 690 $
-                </p>
-              </label>
-            </div>
-          </div>
-          <!-- Link de pago para name="radio-1" -->
-          <div id="div1" style="display:none">
-            <a href="">Adquirir ahora</a>
-          </div>
-          <div
-            class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-          >
-            <div class="flex h-5 items-center">
-              <input
-                id="radio-2"
-                name="radio-2"
-                type="radio"
-                onchange="MostrarOcultar(this.value)"
-                value="2"
-                class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
-              />
-            </div>
-            <div class="ms-2 text-sm">
-              <label
-                for="helper-radio-5"
-                class="font-medium text-gray-900 dark:text-gray-300"
-              >
-                <div>Mentoría personalizada para conseguir trabajo</div>
-                <p
-                  id="helper-radio-text-5"
-                  class="text-xs font-normal text-gray-500 dark:text-gray-300"
-                >
-                  Recibe orientación paso a paso para encontrar tu primer empleo
-                  en un megayate. Te apoyamos hasta que consigas embarcar, con
-                  sesiones que puedes programar según tu disponibilidad.
-                </p>
-                <p
-                  id="helper-radio-text-5"
-                  class="text-xs font-medium text-gray-500 dark:text-gray-300"
-                >
-                  Precio: 149 $
-                </p>
-              </label>
-            </div>
-          </div>
-          <!-- Link de pago para name="radio-2" -->
-          <div id="div2" style="display:none">
-            <a href="">Adquirir ahora</a>
-          </div>
-          <div
-            class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
-          >
-            <div class="flex h-5 items-center">
-              <input
-                id="radio-3"
-                name="radio-"
-                type="radio"
-                onchange="MostrarOcultar(this.value)"
-                value="3"
-                class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
-              />
-            </div>
-            <div class="ms-2 text-sm">
-              <label
-                for="helper-radio-6"
-                class="font-medium text-gray-900 dark:text-gray-300"
-              >
-                <div>Acceso a la bolsa de empleo para megayates</div>
-                <p
-                  id="helper-radio-text-6"
-                  class="text-xs font-normal text-gray-500 dark:text-gray-300"
-                >
-                  Multiplica tus oportunidades de contratación con acceso
-                  directo a los mejores reclutadores del sector. La herramienta
-                  perfecta para dar el salto profesional.
-                </p>
-                <p
-                  id="helper-radio-text-6"
-                  class="text-xs font-medium text-gray-500 dark:text-gray-300"
-                >
-                  Precio: 59 $
-                </p>
-              </label>
-            </div>
-          </div>
-          <!-- Link de pago para name="radio-2" -->
-          <div id="div3" style="display:none">
-            <a href="">Adquirir ahora</a>
-          </div>
-          <!--
-          <div class="flex">
-            <div class="flex h-5 items-center">
-              <a
-                href="https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK"
-                class="flex items-center p-2 text-sm text-orange-300 hover:text-orange-500"
-              >
-                {needToPay}
-              </a>
-              <div class="group relative ml-1 pt-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-orange-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 100-2 1 1 0 000 2zm-1 8a1 1 0 102 0V9a1 1 0 10-2 0v6z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                <div
-                  class="absolute bottom-full left-1/2 mb-2 hidden w-80 -translate-x-1/2 transform rounded-md bg-gray-800 p-2 text-sm text-white shadow-md group-hover:block dark:bg-gray-400 dark:text-gray-800"
-                >
-                  {payInfo}
-                </div>
-              </div>
-            </div>
+            <button
+              class="bg-blue-500 mt-4 rounded-lg px-4 py-2 text-white"
+              data-hs-overlay="#success-modal">{closeButton}</button
+            >
           </div>
         </div>
- -->
-          <!-- Success Modal -->
-          <div
-            id="success-modal"
-            class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
-            aria-labelledby="success-modal-label"
-          >
-            <div
-              class="relative mx-auto mt-60 max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800"
-            >
-              <button
-                id="close-modal"
-                class="absolute right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
-                aria-label="Cerrar modal"
-              >
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-              <h3
-                id="success-modal-label"
-                class="flex flex-wrap justify-center text-center text-lg font-bold text-gray-900 dark:text-white"
-              >
-                {successTitle}
-              </h3>
-              <p class="mt-2 text-gray-700 dark:text-neutral-400">
-                {successMessage}
-              </p>
-              <p
-                class="text-yellow-600 mt-4 text-lg font-extrabold dark:text-yellow-400"
-              >
-                {goToPayment}
-              </p>
 
-              <button
-                class="bg-blue-500 mt-4 rounded-lg px-4 py-2 text-white"
-                data-hs-overlay="#success-modal">{closeButton}</button
-              >
-            </div>
-          </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById(
+              "contact-form"
+            ) as HTMLFormElement;
+            const tyc = document.getElementById(
+              "checkbox-tyc"
+            ) as HTMLInputElement;
+            const enviar = document.getElementById("btn") as HTMLButtonElement;
+            const emailInput = document.getElementById(
+              "email"
+            ) as HTMLInputElement;
+            const phoneInput = document.getElementById(
+              "phone"
+            ) as HTMLInputElement;
+            const countryCodeInput = document.getElementById(
+              "country-code"
+            ) as HTMLSelectElement; // Añadimos el select del código de país
+            const emailError = document.getElementById(
+              "email-error"
+            ) as HTMLSpanElement;
+            const phoneError = document.getElementById(
+              "phone-error"
+            ) as HTMLSpanElement;
+            const successModal = document.getElementById(
+              "success-modal"
+            ) as HTMLDivElement;
+            const closeModalButton = document.getElementById(
+              "close-modal"
+            ) as HTMLButtonElement;
 
-          <script type="text/javascript">
-            function MostrarOcultar(valor) {
-              var Div1 = document.getElementById("div1");
-              var Div2 = document.getElementById("div2");
-              var Div3 = document.getElementById("div3");
-              var DivI = document.getElementById("inicial");
-              Div1.style.display = "none";
-              Div2.style.display = "none";
-              Div3.style.display = "none";
-              if (valor == 1) {
-                Div1.style.display = "";
-              } else if (valor == 2) {
-                Div2.style.display = "";
-              } else if (valor == 3) {
-                Div3.style.display = "";
+            function mostrarErrores() {
+              if (emailInput.validity.typeMismatch) {
+                emailError.textContent = "Format incorrect";
+                emailError.classList.remove("hidden");
               } else {
-                DivI.style.display = "";
+                emailError.classList.add("hidden");
+              }
+
+              if (
+                phoneInput.validity.patternMismatch ||
+                phoneInput.validity.tooShort
+              ) {
+                phoneError.textContent = "Format incorrect";
+                phoneError.classList.remove("hidden");
+              } else {
+                phoneError.classList.add("hidden");
               }
             }
-          </script>
 
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              const form = document.getElementById(
-                "contact-form",
-              ) as HTMLFormElement;
-              const tyc = document.getElementById(
-                "checkbox-tyc",
-              ) as HTMLInputElement;
-              const enviar = document.getElementById(
-                "btn",
-              ) as HTMLButtonElement;
-              const emailInput = document.getElementById(
-                "email",
-              ) as HTMLInputElement;
-              const phoneInput = document.getElementById(
-                "phone",
-              ) as HTMLInputElement;
-              const countryCodeInput = document.getElementById(
-                "country-code",
-              ) as HTMLSelectElement; // Añadimos el select del código de país
-              const emailError = document.getElementById(
-                "email-error",
-              ) as HTMLSpanElement;
-              const phoneError = document.getElementById(
-                "phone-error",
-              ) as HTMLSpanElement;
-              const successModal = document.getElementById(
-                "success-modal",
-              ) as HTMLDivElement;
-              const closeModalButton = document.getElementById(
-                "close-modal",
-              ) as HTMLButtonElement;
+            function cambiarCondiciones() {
+              enviar.disabled = !tyc.checked;
+            }
 
-              function mostrarErrores() {
-                if (emailInput.validity.typeMismatch) {
-                  emailError.textContent = "Format incorrect";
-                  emailError.classList.remove("hidden");
-                } else {
-                  emailError.classList.add("hidden");
-                }
+            form.addEventListener("submit", (event) => {
+              event.preventDefault();
 
-                if (
-                  phoneInput.validity.patternMismatch ||
-                  phoneInput.validity.tooShort
-                ) {
-                  phoneError.textContent = "Format incorrect";
-                  phoneError.classList.remove("hidden");
-                } else {
-                  phoneError.classList.add("hidden");
-                }
+              if (
+                !emailInput.validity.valid ||
+                !phoneInput.validity.valid ||
+                !tyc.checked
+              ) {
+                mostrarErrores();
+                return;
               }
 
-              function cambiarCondiciones() {
-                enviar.disabled = !tyc.checked;
-              }
+              // Concatenar el código del país con el teléfono
+              const countryCode = countryCodeInput.value; // Obtener el valor del código de país seleccionado
+              const phoneNumber = phoneInput.value;
+              const fullPhoneNumber = countryCode + phoneNumber;
 
-              form.addEventListener("submit", (event) => {
-                event.preventDefault();
+              // Asignar el valor concatenado al campo del teléfono antes de enviar
+              phoneInput.value = fullPhoneNumber;
 
-                if (
-                  !emailInput.validity.valid ||
-                  !phoneInput.validity.valid ||
-                  !tyc.checked
-                ) {
-                  mostrarErrores();
-                  return;
-                }
+              countryCodeInput.remove();
 
-                // Concatenar el código del país con el teléfono
-                const countryCode = countryCodeInput.value; // Obtener el valor del código de país seleccionado
-                const phoneNumber = phoneInput.value;
-                const fullPhoneNumber = countryCode + phoneNumber;
-
-                // Asignar el valor concatenado al campo del teléfono antes de enviar
-                phoneInput.value = fullPhoneNumber;
-
-                countryCodeInput.remove();
-
-                // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
-                setTimeout(() => {
-                  successModal.classList.remove("hidden");
-                  form.reset();
-                  enviar.disabled = true;
-                  setTimeout(function () {
-                    window.location.href =
-                      "https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK";
-                  }, 6000);
-                }, 1000);
-              });
-
-              emailInput.addEventListener("input", mostrarErrores);
-              phoneInput.addEventListener("input", mostrarErrores);
-              tyc.addEventListener("change", cambiarCondiciones);
-
-              closeModalButton.addEventListener("click", () => {
-                successModal.classList.add("hidden");
-              });
-
-              cambiarCondiciones();
-              mostrarErrores();
+              // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
+              setTimeout(() => {
+                successModal.classList.remove("hidden");
+                form.reset();
+                enviar.disabled = true;
+                setTimeout(function () {
+                  window.location.href =
+                    "https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK";
+                }, 6000);
+              }, 1000);
             });
-          </script>
-        </div>
+
+            emailInput.addEventListener("input", mostrarErrores);
+            phoneInput.addEventListener("input", mostrarErrores);
+            tyc.addEventListener("change", cambiarCondiciones);
+
+            closeModalButton.addEventListener("click", () => {
+              successModal.classList.add("hidden");
+            });
+
+            cambiarCondiciones();
+            mostrarErrores();
+          });
+        </script>
       </div>
     </form>
+
+    <div class="mt-4 grid">
+      <div>
+        <p
+          class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
+        >
+          Nota importante:
+        </p>
+        <p
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+        >
+          Al contratar cualquier servicio, desbloqueas un 10% de descuento en
+          cursos STCW, RYA y más opciones profesionales en nuestras escuelas
+          asociadas.
+        </p>
+      </div>
+      <!-- Radio buttons pago -->
+      <div class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <div class="flex h-5 items-center">
+          <input
+            id="radio-1"
+            name="basico"
+            type="radio"
+            onchange="MostrarOcultar(this.value)"
+            value="1"
+            class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
+          />
+        </div>
+        <div class="ms-2 text-sm">
+          <label
+            for="helper-radio-1"
+            class="font-medium font-bold text-neutral-600 dark:text-neutral-400"
+          >
+            <div>
+              <p
+                class="font-medium text-gray-900 dark:text-gray-300"
+              >
+                Curso básico a bordo de un megayate
+              </p>
+            </div>
+            <p
+              id="helper-radio-text-1"
+              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+            >
+              Vive una experiencia práctica única a bordo de un megayate.
+              Aprende lo esencial sobre el sector y expande tus conocimientos en
+              un entorno real.
+            </p>
+            <p
+              id="helper-radio-text-1"
+              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+            >
+              Precio: <span class="text-xs font-bold text-neutral-600 dark:text-neutral-400">Desde 690 $</span>
+            </p>
+          </label>
+        </div>
+      </div>
+      <!-- Link de pago para name="radio-1" -->
+      <div id="div1" style="display:none" class="mt-4 grid">
+        <PaymentCTA
+          title={needToPay}
+          url="https://app-eu1.hubspot.com/payments/purchase/hscs_eu1_hWKJ6nYsRwb6mbzgfhIpIuZ673yREdsxjcDbAL7qfJA4dJTiOSrmpeEEUGakFgEI?referrer=PAYMENT_LINK"
+        />
+      </div>
+      <!-- CTA pago 2 -->
+      <div class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <div class="flex h-5 items-center">
+          <input
+            id="radio-2"
+            name="radio-2"
+            type="radio"
+            onchange="MostrarOcultar(this.value)"
+            value="2"
+            class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
+          />
+        </div>
+        <div class="ms-2 text-sm">
+          <label
+            for="helper-radio-2"
+            class="font-medium text-gray-900 dark:text-gray-300"
+          >
+            <div>Mentoría personalizada para conseguir trabajo</div>
+            <p
+              id="helper-radio-text-2"
+              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+            >
+              Recibe orientación paso a paso para encontrar tu primer empleo en
+              un megayate. Te apoyamos hasta que consigas embarcar, con sesiones
+              que puedes programar según tu disponibilidad.
+            </p>
+            <p
+              id="helper-radio-text-5"
+              class="text-xs font-medium text-gray-500 dark:text-gray-300"
+            >
+              Precio: <span class="text-xs font-bold text-neutral-600 dark:text-neutral-400">149 $</span>
+            </p>
+          </label>
+        </div>
+      </div>
+      <!-- Link de pago para name="radio-2" -->
+      <div id="div2" style="display:none" class="mt-4 grid">
+        <PaymentCTA
+          title={needToPay}
+          url="https://app-eu1.hubspot.com/payments/purchase/hscs_eu1_7RXRhmR5O7IUlDySMNltvpzlvm7Adlr6gnXFig3wK7Q81ATL6i0BttRno3gsPhcf?referrer=PAYMENT_LINK"
+        />
+      </div>
+      <div class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <div class="flex h-5 items-center">
+          <input
+            id="radio-3"
+            name="radio-"
+            type="radio"
+            onchange="MostrarOcultar(this.value)"
+            value="3"
+            class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
+          />
+        </div>
+        <div class="ms-2 text-sm">
+          <label
+            for="helper-radio-6"
+            class="font-medium text-gray-900 dark:text-gray-300"
+          >
+            <div>Acceso a la bolsa de empleo para megayates</div>
+            <p
+              id="helper-radio-text-6"
+              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+            >
+              Multiplica tus oportunidades de contratación con acceso directo a
+              los mejores reclutadores del sector. La herramienta perfecta para
+              dar el salto profesional.
+            </p>
+            <p
+              id="helper-radio-text-6"
+              class="text-xs font-medium text-gray-500 dark:text-gray-300"
+            >
+              Precio: <span class="text-xs font-bold text-neutral-600 dark:text-neutral-400">59 $</span>
+            </p>
+          </label>
+        </div>
+      </div>
+      <!-- Link de pago para name="radio-3" -->
+      <div id="div3" style="display:none" class="mt-4 grid">
+        <PaymentCTA
+          title={needToPay}
+          url="https://app-eu1.hubspot.com/payments/purchase/hscs_eu1_mjm88p1axRu9q1lmunX8B4hqTqXuM9oXnHCvhrdCuGcmNZMAK6Q0v7SobgWtmQbC?referrer=PAYMENT_LINK"
+        />
+      </div>
+    </div>
   </div>
+
+  <script is:inline type="text/javascript">
+    function MostrarOcultar(valor) {
+      var Div1 = document.getElementById("div1");
+      var Div2 = document.getElementById("div2");
+      var Div3 = document.getElementById("div3");
+      var DivI = document.getElementById("inicial");
+      Div1.style.display = "none";
+      Div2.style.display = "none";
+      Div3.style.display = "none";
+      if (valor == 1) {
+        Div1.style.display = "";
+      } else if (valor == 2) {
+        Div2.style.display = "";
+      } else if (valor == 3) {
+        Div3.style.display = "";
+      } else {
+        DivI.style.display = "";
+      }
+    }
+  </script>
 </section>
