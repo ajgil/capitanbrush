@@ -16,6 +16,7 @@ type Translations = {
     formSubTitle: string;
     placeholderName: string;
     placeholderLastName: string;
+    placeholderAddress: string;
     placeholderEmail: string;
     placeholderPhone: string;
     emailErrorText: string;
@@ -36,13 +37,14 @@ type Translations = {
 // Define las traducciones
 const translations: Translations = {
   es: {
-    title: "Estás a un paso de cambiar tu vida",
+    title: "¡Empieza tu carrera en mega yates hoy mismo!",
     subTitle:
-      "Navega por el mundo mientras llenas tu cartera y visitas sitios únicos. ¡Embárcate y empieza una nueva vida!",
-    formTitle: "Completa el formulario",
-    formSubTitle: "Nos pondremos en contacto contigo en 1 día hábil.",
+      "🚤 Es el momento de empezar tu carrera en la industria náutica. ¡Elige tu opción y regístrate hoy mismo!",
+    formTitle: "",
+    formSubTitle: "",
     placeholderName: "Nombre",
     placeholderLastName: "Apellidos",
+    placeholderAddress: "Dirección",
     placeholderEmail: "Email",
     placeholderPhone: "Número de teléfono sin prefijo de país",
     emailErrorText: "Por favor, ingresa un email válido.",
@@ -56,7 +58,7 @@ const translations: Translations = {
     goToPayment:
       "¿Quieres embarcar ya? Te redirigimos automáticamente a la pasarela de pago.",
     closeButton: "Cerrar",
-    needToPay: "Ya me registré y quiero pagar",
+    needToPay: "Adquirir ahora",
     payInfo:
       "Si anteriormente te registraste pero no pudiste completar tu pago, no te preocupes, puedes hacerlo desde aquí.",
   },
@@ -68,6 +70,7 @@ const translations: Translations = {
     formSubTitle: "We will contact you within 1 business day.",
     placeholderName: "First Name",
     placeholderLastName: "Last Name",
+    placeholderAddress: "Address",
     placeholderEmail: "Email",
     placeholderPhone: "Phone Number, please add 00 and country code",
     emailErrorText: "Please enter a valid email address.",
@@ -95,6 +98,7 @@ const translations: Translations = {
     formSubTitle: "Nous vous contacterons dans un délai d'un jour ouvrable.",
     placeholderName: "Prénom",
     placeholderLastName: "Nom de famille",
+    placeholderAddress: "",
     placeholderEmail: "Email",
     placeholderPhone: "Numéro de téléphone",
     emailErrorText: "Veuillez entrer une adresse e-mail valide.",
@@ -125,6 +129,7 @@ const {
   placeholderName,
   placeholderLastName,
   placeholderEmail,
+  placeholderAddress,
   //placeholderPhone,
   emailErrorText,
   //phoneErrorText,
@@ -155,346 +160,561 @@ const {
     </div>
 
     <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8">
+      <!--
       <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">
         {formTitle}
-      </h2>
-      <form method="POST" id="contact-form">
-        <div class="grid gap-4">
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <input
-              type="text"
-              required
-              name="firstname"
-              id="firstname"
-              class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder={placeholderName}
-            />
-            <input
-              type="text"
-              required
-              name="lastname"
-              id="lastname"
-              class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder={placeholderLastName}
-            />
-          </div>
-          <div>
-            <input
-              type="email"
-              required
-              name="email"
-              id="email"
-              class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-              placeholder={placeholderEmail}
-              aria-describedby="email-error"
-            />
-            <span id="email-error" class="hidden text-sm text-red-600"
-              >{emailErrorText}</span
-            >
-          </div>
-          <div class="mb-3 flex flex-row gap-2 sm:flex-row">
-            <select
-              name="country-code"
-              id="country-code"
-              class="block w-28 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-3 text-sm text-neutral-700 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 md:w-28"
-              required
-            >
-              <option value="+34" data-flag="es" selected>🇪🇸 +34</option>
-              <option value="+33" data-flag="fr">🇫🇷 +33</option>
-              <option value="+1" data-flag="us">🇺🇸 +1</option>
-              <option value="+44" data-flag="gb">🇬🇧 +44</option>
-              <option value="+49" data-flag="de">🇩🇪 +49</option>
-              <option value="+39" data-flag="it">🇮🇹 +39</option>
-              <option value="+7" data-flag="ru">🇷🇺 +7</option>
-              <option value="+81" data-flag="jp">🇯🇵 +81</option>
-              <option value="+86" data-flag="cn">🇨🇳 +86</option>
-              <option value="+61" data-flag="au">🇦🇺 +61</option>
-              <option value="+91" data-flag="in">🇮🇳 +91</option>
-              <option value="+51" data-flag="pe">🇵🇪 +51</option>
-              <option value="+52" data-flag="mx">🇲🇽 +52</option>
-              <option value="+55" data-flag="br">🇧🇷 +55</option>
-              <option value="+56" data-flag="cl">🇨🇱 +56</option>
-              <option value="+27" data-flag="za">🇿🇦 +27</option>
-              <option value="+82" data-flag="kr">🇰🇷 +82</option>
-              <option value="+54" data-flag="ar">🇦🇷 +54</option>
-              <option value="+1" data-flag="ca">🇨🇦 +1</option>
-              <option value="+57" data-flag="co">🇨🇴 +57</option>
-              <option value="+58" data-flag="vz">🇻🇪 +58</option>
-              <option value="+63" data-flag="ph">🇵🇭 +63</option>
-              <option value="+48" data-flag="pl">🇵🇱 +48</option>
-              <option value="+90" data-flag="tr">🇹🇷 +90</option>
-              <option value="+234" data-flag="ng">🇳🇬 +234</option>
-              <option value="+92" data-flag="pk">🇵🇰 +92</option>
-              <option value="+62" data-flag="id">🇮🇩 +62</option>
-              <option value="+60" data-flag="my">🇲🇾 +60</option>
-              <option value="+66" data-flag="th">🇹🇭 +66</option>
-              <option value="+31" data-flag="nl">🇳🇱 +31</option>
-              <option value="+46" data-flag="se">🇸🇪 +46</option>
-              <option value="+41" data-flag="ch">🇨🇭 +41</option>
-              <option value="+420" data-flag="cz">🇨🇿 +420</option>
-              <option value="+32" data-flag="be">🇧🇪 +32</option>
-              <option value="+64" data-flag="nz">🇳🇿 +64</option>
-              <option value="+353" data-flag="ie">🇮🇪 +353</option>
-              <option value="+47" data-flag="no">🇳🇴 +47</option>
-              <option value="+372" data-flag="ee">🇪🇪 +372</option>
-              <option value="+30" data-flag="gr">🇬🇷 +30</option>
-              <option value="+380" data-flag="ua">🇺🇦 +380</option>
-              <option value="+971" data-flag="ae">🇦🇪 +971</option>
-              <option value="+964" data-flag="iq">🇮🇶 +964</option>
-              <option value="+974" data-flag="qa">🇶🇦 +974</option>
-              <option value="+965" data-flag="kw">🇰🇼 +965</option>
-              <option value="+966" data-flag="sa">🇸🇦 +966</option>
-              <option value="+94" data-flag="lk">🇱🇰 +94</option>
-              <option value="+95" data-flag="mm">🇲🇲 +95</option>
-              <option value="+84" data-flag="vn">🇻🇳 +84</option>
-              <option value="+212" data-flag="ma">MA +212</option>
-              <option value="+593" data-flag="ec">🇪🇨 +593</option>
-              <option value="+595" data-flag="pa">🇵🇾 +595</option>
-              <option value="+598" data-flag="uy">🇺🇾 +598</option>
-            </select>
-            <input
-              type="tel"
-              name="phone"
-              required
-              id="phone"
-              pattern="[0-9]*"
-              class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1 sm:w-full"
-              placeholder="Teléfono"
-              aria-describedby="phone-error"
-            />
-          </div>
-          <span id="phone-error" class="hidden text-sm text-red-600"
-            >Error en el teléfono</span
+      </h2> -->
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+        Con nuestra <span
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          >mentoría online por solo 149 $
+        </span>, tendrás todo lo necesario para dar el primer paso hacia un
+        futuro en la industria náutica. Además, al contratar la mentoría,
+        obtendrás un <span
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          >10% de descuento en cualquier curso STCW, RYA o profesional de
+          nuestras escuelas asociadas.
+        </span>
+      </p>
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+        <span
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          >Beneficios de la mentoría:</span
+        >
+      </p>
+
+      <div>
+        <ul class="list-inside list-disc">
+          <li>
+            <span
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              >Orientación personalizada:</span
+            > te ayudamos hasta que consigas tu primer contrato.
+          </li>
+          <li>
+            <span
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              >Acceso a descuentos exclusivos</span
+            > en los mejores cursos náuticos.
+          </li>
+          <li>
+            <span
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              >Flexibilidad total:</span
+            > programa tus sesiones según tu disponibilidad.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <form method="POST" id="contact-form">
+      <div class="grid gap-4">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <input
+            type="text"
+            required
+            name="firstname"
+            id="firstname"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder={placeholderName}
+          />
+          <input
+            type="text"
+            required
+            name="lastname"
+            id="lastname"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder={placeholderLastName}
+          />
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <input
+            type="text"
+            required
+            name="dirección"
+            id="direccion"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder={placeholderAddress}
+          />
+
+          <input
+            type="email"
+            required
+            name="email"
+            id="email"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            placeholder={placeholderEmail}
+          />
+          <span id="email-error" class="hidden text-sm text-red-600"
+            >{emailErrorText}</span
           >
         </div>
+        <div class="mb-3 flex flex-row gap-2 sm:flex-row">
+          <select
+            name="country-code"
+            id="country-code"
+            class="block w-28 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-3 text-sm text-neutral-700 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 md:w-28"
+            required
+          >
+            <option value="+34" data-flag="es" selected>🇪🇸 +34</option>
+            <option value="+33" data-flag="fr">🇫🇷 +33</option>
+            <option value="+1" data-flag="us">🇺🇸 +1</option>
+            <option value="+44" data-flag="gb">🇬🇧 +44</option>
+            <option value="+49" data-flag="de">🇩🇪 +49</option>
+            <option value="+39" data-flag="it">🇮🇹 +39</option>
+            <option value="+7" data-flag="ru">🇷🇺 +7</option>
+            <option value="+81" data-flag="jp">🇯🇵 +81</option>
+            <option value="+86" data-flag="cn">🇨🇳 +86</option>
+            <option value="+61" data-flag="au">🇦🇺 +61</option>
+            <option value="+91" data-flag="in">🇮🇳 +91</option>
+            <option value="+51" data-flag="pe">🇵🇪 +51</option>
+            <option value="+52" data-flag="mx">🇲🇽 +52</option>
+            <option value="+55" data-flag="br">🇧🇷 +55</option>
+            <option value="+56" data-flag="cl">🇨🇱 +56</option>
+            <option value="+27" data-flag="za">🇿🇦 +27</option>
+            <option value="+82" data-flag="kr">🇰🇷 +82</option>
+            <option value="+54" data-flag="ar">🇦🇷 +54</option>
+            <option value="+1" data-flag="ca">🇨🇦 +1</option>
+            <option value="+57" data-flag="co">🇨🇴 +57</option>
+            <option value="+58" data-flag="vz">🇻🇪 +58</option>
+            <option value="+63" data-flag="ph">🇵🇭 +63</option>
+            <option value="+48" data-flag="pl">🇵🇱 +48</option>
+            <option value="+90" data-flag="tr">🇹🇷 +90</option>
+            <option value="+234" data-flag="ng">🇳🇬 +234</option>
+            <option value="+92" data-flag="pk">🇵🇰 +92</option>
+            <option value="+62" data-flag="id">🇮🇩 +62</option>
+            <option value="+60" data-flag="my">🇲🇾 +60</option>
+            <option value="+66" data-flag="th">🇹🇭 +66</option>
+            <option value="+31" data-flag="nl">🇳🇱 +31</option>
+            <option value="+46" data-flag="se">🇸🇪 +46</option>
+            <option value="+41" data-flag="ch">🇨🇭 +41</option>
+            <option value="+420" data-flag="cz">🇨🇿 +420</option>
+            <option value="+32" data-flag="be">🇧🇪 +32</option>
+            <option value="+64" data-flag="nz">🇳🇿 +64</option>
+            <option value="+353" data-flag="ie">🇮🇪 +353</option>
+            <option value="+47" data-flag="no">🇳🇴 +47</option>
+            <option value="+372" data-flag="ee">🇪🇪 +372</option>
+            <option value="+30" data-flag="gr">🇬🇷 +30</option>
+            <option value="+380" data-flag="ua">🇺🇦 +380</option>
+            <option value="+971" data-flag="ae">🇦🇪 +971</option>
+            <option value="+964" data-flag="iq">🇮🇶 +964</option>
+            <option value="+974" data-flag="qa">🇶🇦 +974</option>
+            <option value="+965" data-flag="kw">🇰🇼 +965</option>
+            <option value="+966" data-flag="sa">🇸🇦 +966</option>
+            <option value="+94" data-flag="lk">🇱🇰 +94</option>
+            <option value="+95" data-flag="mm">🇲🇲 +95</option>
+            <option value="+84" data-flag="vn">🇻🇳 +84</option>
+            <option value="+212" data-flag="ma">MA +212</option>
+            <option value="+593" data-flag="ec">🇪🇨 +593</option>
+            <option value="+595" data-flag="pa">🇵🇾 +595</option>
+            <option value="+598" data-flag="uy">🇺🇾 +598</option>
+          </select>
+          <input
+            type="tel"
+            name="phone"
+            required
+            id="phone"
+            pattern="[0-9]*"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1 sm:w-full"
+            placeholder="Teléfono"
+            aria-describedby="phone-error"
+          />
+        </div>
+        <span id="phone-error" class="hidden text-sm text-red-600"
+          >Error en el teléfono</span
+        >
+      </div>
 
-        <div class="grid space-y-3">
-          <div class="relative flex items-start">
-            <div class="mt-1 flex h-5 items-center">
-              <input
-                id="checkbox-tyc"
-                name="checkbox-tyc"
-                type="checkbox"
-                onchange="cambiarCondiciones()"
-                class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
-                aria-describedby="checkbox-tyc-description"
-              />
-            </div>
-            <label for="checkbox-tyc" class="ms-3">
-              <span
-                class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
-              >
-                Acepto los <span class="text-yellow-500 dark:text-yellow-400"
-                  ><a href="/terms" target="_blank">{terms}</a></span
-                >
-                y la <span class="text-yellow-500 dark:text-yellow-400"
-                  ><a href="/privacy" target="_blank">{privacy}</a></span
-                >
-              </span>
-            </label>
+      <div class="grid space-y-3">
+        <div class="relative flex items-start">
+          <div class="mt-1 flex h-5 items-center">
+            <input
+              id="checkbox-tyc"
+              name="checkbox-tyc"
+              type="checkbox"
+              onchange="cambiarCondiciones()"
+              class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
+              aria-describedby="checkbox-tyc-description"
+            />
           </div>
-
-          <div class="relative flex items-start">
-            <div class="mt-1 flex h-5 items-center">
-              <input
-                id="checkbox-ads"
-                name="checkbox-ads"
-                type="checkbox"
-                class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
-                aria-describedby="checkbox-ads-description"
-              />
-            </div>
-            <label for="checkbox-ads" class="ms-3">
-              <span
-                class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
+          <label for="checkbox-tyc" class="ms-3">
+            <span
+              class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
+            >
+              Acepto los <span class="text-yellow-500 dark:text-yellow-400"
+                ><a href="/terms" target="_blank">{terms}</a></span
               >
-                {newsletter}
-              </span>
-            </label>
-          </div>
+              y la <span class="text-yellow-500 dark:text-yellow-400"
+                ><a href="/privacy" target="_blank">{privacy}</a></span
+              >
+            </span>
+          </label>
         </div>
 
+        <div class="relative flex items-start">
+          <div class="mt-1 flex h-5 items-center">
+            <input
+              id="checkbox-ads"
+              name="checkbox-ads"
+              type="checkbox"
+              class="text-blue-600 focus:ring-blue-500 dark:checked:bg-blue-500 dark:checked:border-blue-500 rounded border-gray-200 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-700 dark:bg-neutral-800 dark:focus:ring-offset-gray-800"
+              aria-describedby="checkbox-ads-description"
+            />
+          </div>
+          <label for="checkbox-ads" class="ms-3">
+            <span
+              class="block text-sm font-semibold text-gray-800 dark:text-neutral-300"
+            >
+              {newsletter}
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div>
         <div class="mt-4 grid">
           <AuthBtn title={submitButton} id="btn" name="btn" disabled />
-          <div class="flex">
-            <a
-              href="https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK"
-              class="flex items-center p-2 text-sm text-orange-300 hover:text-orange-500"
+
+          <div>
+            <p
+              class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
             >
-              {needToPay}
-            </a>
-            <div class="group relative ml-1 pt-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-orange-300"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+              Nota importante:
+            </p>
+            <p
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+            >
+              Al contratar cualquier servicio, desbloqueas un 10% de descuento
+              en cursos STCW, RYA y más opciones profesionales en nuestras
+              escuelas asociadas.
+            </p>
+          </div>
+
+          <div
+            class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+          >
+            <div class="flex h-5 items-center">
+              <input
+                id="radio-1"
+                name="basico"
+                type="radio"
+                onchange="MostrarOcultar(this.value)"
+                value="1"
+                class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
+              />
+            </div>
+            <div class="ms-2 text-sm">
+              <label
+                for="helper-radio-1"
+                class="font-medium text-gray-900 dark:text-gray-300"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 100-2 1 1 0 000 2zm-1 8a1 1 0 102 0V9a1 1 0 10-2 0v6z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              <div
-                class="absolute bottom-full left-1/2 mb-2 hidden w-80 -translate-x-1/2 transform rounded-md bg-gray-800 p-2 text-sm text-white shadow-md group-hover:block dark:bg-gray-400 dark:text-gray-800"
+                <div>Curso básico a bordo de un megayate</div>
+                <p
+                  id="helper-radio-text-1"
+                  class="text-xs font-normal text-gray-500 dark:text-gray-300"
+                >
+                  Vive una experiencia práctica única a bordo de un megayate.
+                  Aprende lo esencial sobre el sector y expande tus
+                  conocimientos en un entorno real.
+                </p>
+                <p
+                  id="helper-radio-text-1"
+                  class="text-xs font-medium text-gray-500 dark:text-gray-300"
+                >
+                  Precio: Desde 690 $
+                </p>
+              </label>
+            </div>
+          </div>
+          <!-- Link de pago para name="radio-1" -->
+          <div id="div1" style="display:none">
+            <a href="">Adquirir ahora</a>
+          </div>
+          <div
+            class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+          >
+            <div class="flex h-5 items-center">
+              <input
+                id="radio-2"
+                name="radio-2"
+                type="radio"
+                onchange="MostrarOcultar(this.value)"
+                value="2"
+                class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
+              />
+            </div>
+            <div class="ms-2 text-sm">
+              <label
+                for="helper-radio-5"
+                class="font-medium text-gray-900 dark:text-gray-300"
               >
-                {payInfo}
+                <div>Mentoría personalizada para conseguir trabajo</div>
+                <p
+                  id="helper-radio-text-5"
+                  class="text-xs font-normal text-gray-500 dark:text-gray-300"
+                >
+                  Recibe orientación paso a paso para encontrar tu primer empleo
+                  en un megayate. Te apoyamos hasta que consigas embarcar, con
+                  sesiones que puedes programar según tu disponibilidad.
+                </p>
+                <p
+                  id="helper-radio-text-5"
+                  class="text-xs font-medium text-gray-500 dark:text-gray-300"
+                >
+                  Precio: 149 $
+                </p>
+              </label>
+            </div>
+          </div>
+          <!-- Link de pago para name="radio-2" -->
+          <div id="div2" style="display:none">
+            <a href="">Adquirir ahora</a>
+          </div>
+          <div
+            class="flex rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
+          >
+            <div class="flex h-5 items-center">
+              <input
+                id="radio-3"
+                name="radio-"
+                type="radio"
+                onchange="MostrarOcultar(this.value)"
+                value="3"
+                class="text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 h-4 w-4 border-gray-300 bg-gray-100 focus:ring-2 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700"
+              />
+            </div>
+            <div class="ms-2 text-sm">
+              <label
+                for="helper-radio-6"
+                class="font-medium text-gray-900 dark:text-gray-300"
+              >
+                <div>Acceso a la bolsa de empleo para megayates</div>
+                <p
+                  id="helper-radio-text-6"
+                  class="text-xs font-normal text-gray-500 dark:text-gray-300"
+                >
+                  Multiplica tus oportunidades de contratación con acceso
+                  directo a los mejores reclutadores del sector. La herramienta
+                  perfecta para dar el salto profesional.
+                </p>
+                <p
+                  id="helper-radio-text-6"
+                  class="text-xs font-medium text-gray-500 dark:text-gray-300"
+                >
+                  Precio: 59 $
+                </p>
+              </label>
+            </div>
+          </div>
+          <!-- Link de pago para name="radio-2" -->
+          <div id="div3" style="display:none">
+            <a href="">Adquirir ahora</a>
+          </div>
+          <!--
+          <div class="flex">
+            <div class="flex h-5 items-center">
+              <a
+                href="https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK"
+                class="flex items-center p-2 text-sm text-orange-300 hover:text-orange-500"
+              >
+                {needToPay}
+              </a>
+              <div class="group relative ml-1 pt-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-orange-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 100-2 1 1 0 000 2zm-1 8a1 1 0 102 0V9a1 1 0 10-2 0v6z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <div
+                  class="absolute bottom-full left-1/2 mb-2 hidden w-80 -translate-x-1/2 transform rounded-md bg-gray-800 p-2 text-sm text-white shadow-md group-hover:block dark:bg-gray-400 dark:text-gray-800"
+                >
+                  {payInfo}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </form>
-
-      <!-- Success Modal -->
-      <div
-        id="success-modal"
-        class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
-        aria-labelledby="success-modal-label"
-      >
-        <div
-          class="relative mx-auto mt-60 max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800"
-        >
-          <button
-            id="close-modal"
-            class="absolute right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
-            aria-label="Cerrar modal"
+ -->
+          <!-- Success Modal -->
+          <div
+            id="success-modal"
+            class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50"
+            aria-labelledby="success-modal-label"
           >
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="relative mx-auto mt-60 max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-800"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-          <h3
-            id="success-modal-label"
-            class="flex flex-wrap justify-center text-center text-lg font-bold text-gray-900 dark:text-white"
-          >
-            {successTitle}
-          </h3>
-          <p class="mt-2 text-gray-700 dark:text-neutral-400">
-            {successMessage}
-          </p>
-          <p
-            class="text-yellow-600 mt-4 text-lg font-extrabold dark:text-yellow-400"
-          >
-            {goToPayment}
-          </p>
+              <button
+                id="close-modal"
+                class="absolute right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+                aria-label="Cerrar modal"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+              <h3
+                id="success-modal-label"
+                class="flex flex-wrap justify-center text-center text-lg font-bold text-gray-900 dark:text-white"
+              >
+                {successTitle}
+              </h3>
+              <p class="mt-2 text-gray-700 dark:text-neutral-400">
+                {successMessage}
+              </p>
+              <p
+                class="text-yellow-600 mt-4 text-lg font-extrabold dark:text-yellow-400"
+              >
+                {goToPayment}
+              </p>
 
-          <button
-            class="bg-blue-500 mt-4 rounded-lg px-4 py-2 text-white"
-            data-hs-overlay="#success-modal">{closeButton}</button
-          >
+              <button
+                class="bg-blue-500 mt-4 rounded-lg px-4 py-2 text-white"
+                data-hs-overlay="#success-modal">{closeButton}</button
+              >
+            </div>
+          </div>
+
+          <script type="text/javascript">
+            function MostrarOcultar(valor) {
+              var Div1 = document.getElementById("div1");
+              var Div2 = document.getElementById("div2");
+              var Div3 = document.getElementById("div3");
+              var DivI = document.getElementById("inicial");
+              Div1.style.display = "none";
+              Div2.style.display = "none";
+              Div3.style.display = "none";
+              if (valor == 1) {
+                Div1.style.display = "";
+              } else if (valor == 2) {
+                Div2.style.display = "";
+              } else if (valor == 3) {
+                Div3.style.display = "";
+              } else {
+                DivI.style.display = "";
+              }
+            }
+          </script>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const form = document.getElementById(
+                "contact-form",
+              ) as HTMLFormElement;
+              const tyc = document.getElementById(
+                "checkbox-tyc",
+              ) as HTMLInputElement;
+              const enviar = document.getElementById(
+                "btn",
+              ) as HTMLButtonElement;
+              const emailInput = document.getElementById(
+                "email",
+              ) as HTMLInputElement;
+              const phoneInput = document.getElementById(
+                "phone",
+              ) as HTMLInputElement;
+              const countryCodeInput = document.getElementById(
+                "country-code",
+              ) as HTMLSelectElement; // Añadimos el select del código de país
+              const emailError = document.getElementById(
+                "email-error",
+              ) as HTMLSpanElement;
+              const phoneError = document.getElementById(
+                "phone-error",
+              ) as HTMLSpanElement;
+              const successModal = document.getElementById(
+                "success-modal",
+              ) as HTMLDivElement;
+              const closeModalButton = document.getElementById(
+                "close-modal",
+              ) as HTMLButtonElement;
+
+              function mostrarErrores() {
+                if (emailInput.validity.typeMismatch) {
+                  emailError.textContent = "Format incorrect";
+                  emailError.classList.remove("hidden");
+                } else {
+                  emailError.classList.add("hidden");
+                }
+
+                if (
+                  phoneInput.validity.patternMismatch ||
+                  phoneInput.validity.tooShort
+                ) {
+                  phoneError.textContent = "Format incorrect";
+                  phoneError.classList.remove("hidden");
+                } else {
+                  phoneError.classList.add("hidden");
+                }
+              }
+
+              function cambiarCondiciones() {
+                enviar.disabled = !tyc.checked;
+              }
+
+              form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                if (
+                  !emailInput.validity.valid ||
+                  !phoneInput.validity.valid ||
+                  !tyc.checked
+                ) {
+                  mostrarErrores();
+                  return;
+                }
+
+                // Concatenar el código del país con el teléfono
+                const countryCode = countryCodeInput.value; // Obtener el valor del código de país seleccionado
+                const phoneNumber = phoneInput.value;
+                const fullPhoneNumber = countryCode + phoneNumber;
+
+                // Asignar el valor concatenado al campo del teléfono antes de enviar
+                phoneInput.value = fullPhoneNumber;
+
+                countryCodeInput.remove();
+
+                // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
+                setTimeout(() => {
+                  successModal.classList.remove("hidden");
+                  form.reset();
+                  enviar.disabled = true;
+                  setTimeout(function () {
+                    window.location.href =
+                      "https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK";
+                  }, 6000);
+                }, 1000);
+              });
+
+              emailInput.addEventListener("input", mostrarErrores);
+              phoneInput.addEventListener("input", mostrarErrores);
+              tyc.addEventListener("change", cambiarCondiciones);
+
+              closeModalButton.addEventListener("click", () => {
+                successModal.classList.add("hidden");
+              });
+
+              cambiarCondiciones();
+              mostrarErrores();
+            });
+          </script>
         </div>
       </div>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const form = document.getElementById(
-            "contact-form",
-          ) as HTMLFormElement;
-          const tyc = document.getElementById(
-            "checkbox-tyc",
-          ) as HTMLInputElement;
-          const enviar = document.getElementById("btn") as HTMLButtonElement;
-          const emailInput = document.getElementById(
-            "email",
-          ) as HTMLInputElement;
-          const phoneInput = document.getElementById(
-            "phone",
-          ) as HTMLInputElement;
-          const countryCodeInput = document.getElementById(
-            "country-code",
-          ) as HTMLSelectElement; // Añadimos el select del código de país
-          const emailError = document.getElementById(
-            "email-error",
-          ) as HTMLSpanElement;
-          const phoneError = document.getElementById(
-            "phone-error",
-          ) as HTMLSpanElement;
-          const successModal = document.getElementById(
-            "success-modal",
-          ) as HTMLDivElement;
-          const closeModalButton = document.getElementById(
-            "close-modal",
-          ) as HTMLButtonElement;
-
-          function mostrarErrores() {
-            if (emailInput.validity.typeMismatch) {
-              emailError.textContent = "Format incorrect";
-              emailError.classList.remove("hidden");
-            } else {
-              emailError.classList.add("hidden");
-            }
-
-            if (
-              phoneInput.validity.patternMismatch ||
-              phoneInput.validity.tooShort
-            ) {
-              phoneError.textContent = "Format incorrect";
-              phoneError.classList.remove("hidden");
-            } else {
-              phoneError.classList.add("hidden");
-            }
-          }
-
-          function cambiarCondiciones() {
-            enviar.disabled = !tyc.checked;
-          }
-
-          form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            if (
-              !emailInput.validity.valid ||
-              !phoneInput.validity.valid ||
-              !tyc.checked
-            ) {
-              mostrarErrores();
-              return;
-            }
-
-            // Concatenar el código del país con el teléfono
-            const countryCode = countryCodeInput.value; // Obtener el valor del código de país seleccionado
-            const phoneNumber = phoneInput.value;
-            const fullPhoneNumber = countryCode + phoneNumber;
-
-            // Asignar el valor concatenado al campo del teléfono antes de enviar
-            phoneInput.value = fullPhoneNumber;
-
-            countryCodeInput.remove();
-
-            // Aquí podrías manejar el envío del formulario, por ejemplo con AJAX
-            setTimeout(() => {
-              successModal.classList.remove("hidden");
-              form.reset();
-              enviar.disabled = true;
-              setTimeout(function () {
-                window.location.href =
-                  "https://app-eu1.hubspot.com/payments/pcgPXNpx4KCS4qz?referrer=PAYMENT_LINK";
-              }, 6000);
-            }, 1000);
-          });
-
-          emailInput.addEventListener("input", mostrarErrores);
-          phoneInput.addEventListener("input", mostrarErrores);
-          tyc.addEventListener("change", cambiarCondiciones);
-
-          closeModalButton.addEventListener("click", () => {
-            successModal.classList.add("hidden");
-          });
-
-          cambiarCondiciones();
-          mostrarErrores();
-        });
-      </script>
-    </div>
+    </form>
   </div>
 </section>
