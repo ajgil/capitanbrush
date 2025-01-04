@@ -155,7 +155,7 @@ const {
       >
         {title}
       </h1>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
         {subTitle}
       </p>
     </div>
@@ -165,42 +165,45 @@ const {
       <h2 class="mb-8 text-xl font-bold text-neutral-700 dark:text-neutral-300">
         {formTitle}
       </h2> -->
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
         Con nuestra <span
-          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-200"
           >mentoría online por solo 149 $
         </span>, tendrás todo lo necesario para dar el primer paso hacia un
         futuro en la industria náutica. Además, al contratar la mentoría,
         obtendrás un <span
-          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-300"
           >10% de descuento en cualquier curso STCW, RYA o profesional de
           nuestras escuelas asociadas.
         </span>
       </p>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
         <span
-          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-200"
           >Beneficios de la mentoría:</span
         >
       </p>
 
       <div>
-        <ul class="list-inside list-disc">
+        <ul
+          class="mt-1 list-inside list-disc text-pretty text-neutral-600 dark:text-neutral-300"
+        >
           <li>
             <span
-              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-200"
               >Orientación personalizada:</span
             > te ayudamos hasta que consigas tu primer contrato.
           </li>
           <li>
             <span
-              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-300"
               >Acceso a descuentos exclusivos</span
-            > en los mejores cursos náuticos.
+            >
+            en los mejores cursos náuticos.
           </li>
           <li>
             <span
-              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+              class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-200"
               >Flexibilidad total:</span
             > programa tus sesiones según tu disponibilidad.
           </li>
@@ -215,7 +218,7 @@ const {
             required
             name="firstname"
             id="firstname"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-200 dark:placeholder:text-neutral-300 dark:focus:ring-1"
             placeholder={placeholderName}
           />
           <input
@@ -223,7 +226,7 @@ const {
             required
             name="lastname"
             id="lastname"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-200 dark:placeholder:text-neutral-300 dark:focus:ring-1"
             placeholder={placeholderLastName}
           />
         </div>
@@ -233,7 +236,7 @@ const {
             required
             name="city"
             id="city"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-200 dark:placeholder:text-neutral-300 dark:focus:ring-1"
             placeholder={placeholderCity}
           />
 
@@ -242,7 +245,7 @@ const {
             required
             name="email"
             id="email"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-200 dark:placeholder:text-neutral-300 dark:focus:ring-1"
             placeholder={placeholderEmail}
           />
           <span id="email-error" class="hidden text-sm text-red-600"
@@ -315,7 +318,7 @@ const {
             required
             id="phone"
             pattern="[0-9]*"
-            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1 sm:w-full"
+            class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-200 dark:placeholder:text-neutral-300 dark:focus:ring-1 sm:w-full"
             placeholder="Teléfono"
             aria-describedby="phone-error"
           />
@@ -537,7 +540,7 @@ const {
           Nota importante:
         </p>
         <p
-          class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-400"
+          class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
         >
           Al contratar cualquier servicio, desbloqueas un 10% de descuento en
           cursos STCW, RYA y más opciones profesionales en nuestras escuelas
@@ -559,18 +562,14 @@ const {
         <div class="ms-2 text-sm">
           <label
             for="helper-radio-1"
-            class="font-medium font-bold text-neutral-600 dark:text-neutral-400"
+            class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
           >
             <div>
-              <p
-                class="font-medium text-gray-900 dark:text-gray-300"
-              >
-                Curso básico a bordo de un megayate
-              </p>
+              <p>Curso básico a bordo de un megayate</p>
             </div>
             <p
               id="helper-radio-text-1"
-              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+              class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
               Vive una experiencia práctica única a bordo de un megayate.
               Aprende lo esencial sobre el sector y expande tus conocimientos en
@@ -578,9 +577,12 @@ const {
             </p>
             <p
               id="helper-radio-text-1"
-              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+              class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-              Precio: <span class="text-xs font-bold text-neutral-600 dark:text-neutral-400">Desde 690 $</span>
+              Precio: <span
+                class="text-pretty font-bold text-neutral-700 dark:text-neutral-300"
+                >Desde 690 $</span
+              >
             </p>
           </label>
         </div>
@@ -607,12 +609,12 @@ const {
         <div class="ms-2 text-sm">
           <label
             for="helper-radio-2"
-            class="font-medium text-gray-900 dark:text-gray-300"
+            class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
           >
             <div>Mentoría personalizada para conseguir trabajo</div>
             <p
               id="helper-radio-text-2"
-              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+              class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
               Recibe orientación paso a paso para encontrar tu primer empleo en
               un megayate. Te apoyamos hasta que consigas embarcar, con sesiones
@@ -620,9 +622,12 @@ const {
             </p>
             <p
               id="helper-radio-text-5"
-              class="text-xs font-medium text-gray-500 dark:text-gray-300"
+              class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-              Precio: <span class="text-xs font-bold text-neutral-600 dark:text-neutral-400">149 $</span>
+              Precio: <span
+                class="text-pretty font-bold text-neutral-700 dark:text-neutral-300"
+                >149 $</span
+              >
             </p>
           </label>
         </div>
@@ -648,12 +653,12 @@ const {
         <div class="ms-2 text-sm">
           <label
             for="helper-radio-6"
-            class="font-medium text-gray-900 dark:text-gray-300"
+            class="mt-1 text-pretty font-bold text-neutral-700 dark:text-neutral-300"
           >
             <div>Acceso a la bolsa de empleo para megayates</div>
             <p
               id="helper-radio-text-6"
-              class="text-xs font-normal text-gray-500 dark:text-gray-300"
+              class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
               Multiplica tus oportunidades de contratación con acceso directo a
               los mejores reclutadores del sector. La herramienta perfecta para
@@ -661,9 +666,12 @@ const {
             </p>
             <p
               id="helper-radio-text-6"
-              class="text-xs font-medium text-gray-500 dark:text-gray-300"
+              class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-              Precio: <span class="text-xs font-bold text-neutral-600 dark:text-neutral-400">59 $</span>
+              Precio: <span
+                class="text-pretty font-bold text-neutral-700 dark:text-neutral-300"
+                >59 $</span
+              >
             </p>
           </label>
         </div>
