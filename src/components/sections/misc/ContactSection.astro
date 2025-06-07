@@ -168,7 +168,7 @@ const {
       <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-300">
         Con nuestra <span
           class="mt-1 text-pretty font-bold text-neutral-600 dark:text-neutral-200"
-          >mentoría online por solo 149 €
+          >mentoría online por solo 349 €
         </span>, tendrás todo lo necesario para dar el primer paso hacia un
         futuro en la industria náutica. Además, al contratar la mentoría,
         obtendrás un <span
@@ -432,32 +432,32 @@ const {
         <script>
           document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById(
-              "contact-form"
+              "contact-form",
             ) as HTMLFormElement;
             const tyc = document.getElementById(
-              "checkbox-tyc"
+              "checkbox-tyc",
             ) as HTMLInputElement;
             const enviar = document.getElementById("btn") as HTMLButtonElement;
             const emailInput = document.getElementById(
-              "email"
+              "email",
             ) as HTMLInputElement;
             const phoneInput = document.getElementById(
-              "phone"
+              "phone",
             ) as HTMLInputElement;
             const countryCodeInput = document.getElementById(
-              "country-code"
+              "country-code",
             ) as HTMLSelectElement; // Añadimos el select del código de país
             const emailError = document.getElementById(
-              "email-error"
+              "email-error",
             ) as HTMLSpanElement;
             const phoneError = document.getElementById(
-              "phone-error"
+              "phone-error",
             ) as HTMLSpanElement;
             const successModal = document.getElementById(
-              "success-modal"
+              "success-modal",
             ) as HTMLDivElement;
             const closeModalButton = document.getElementById(
-              "close-modal"
+              "close-modal",
             ) as HTMLButtonElement;
 
             function mostrarErrores() {
@@ -512,7 +512,7 @@ const {
                 enviar.disabled = true;
                 setTimeout(function () {
                   window.location.href =
-                  "https://buy.stripe.com/5kA2bcgXI2pE88gbII";
+                    "https://buy.stripe.com/5kA2bcgXI2pE88gbII";
                 }, 6000);
               }, 1000);
             });
@@ -571,7 +571,11 @@ const {
               id="helper-radio-text-1"
               class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-            Curso para trabajar en yates con temario didáctico, glosario náutico y CV ejemplo. Incluye acceso a bolsa de recruiters y descuentos en cursos STCW, RYA, inglés, PADI, AEC y más con escuelas asociadas. Ideal para avanzar por tu cuenta sin mentoría personalizada.
+              Curso para trabajar en yates con temario didáctico, glosario
+              náutico y CV ejemplo. Incluye acceso a bolsa de recruiters y
+              descuentos en cursos STCW, RYA, inglés, PADI, AEC y más con
+              escuelas asociadas. Ideal para avanzar por tu cuenta sin mentoría
+              personalizada.
             </p>
             <p
               id="helper-radio-text-1"
@@ -614,22 +618,19 @@ const {
               id="helper-radio-text-2"
               class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-            Mentoría para trabajar en mega yates con asesoría personalizada, acceso a bolsa de empleo, CV optimizado, glosario náutico y material didáctico. Incluye descuentos en cursos STCW, RYA, inglés, PADI, AEC y más con escuelas asociadas.
+              Mentoría para trabajar en mega yates con asesoría personalizada,
+              acceso a bolsa de empleo, CV optimizado, glosario náutico y
+              material didáctico. Incluye descuentos en cursos STCW, RYA,
+              inglés, PADI, AEC y más con escuelas asociadas.
             </p>
             <p
               id="helper-radio-text-5"
               class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-              Precio: <del><span
+              Precio: <span
                 class="text-pretty font-bold text-neutral-700 dark:text-neutral-300"
                 >349€</span
-              ></del>
-              <br/>
-              <span>Codigo descuento <b>-200€</b> introduce <b>CAPITANBRUSHPROMO</b> en el formulario.</span>
-              <br />
-              <span>Precio final: <span class="text-pretty font-bold text-neutral-700 dark:text-neutral-300">149€</span>
-              <br />
-              <span>Código promocional válido hasta el 6 de Junio 2025.</span>
+              >
             </p>
           </label>
         </div>
@@ -662,7 +663,12 @@ const {
               id="helper-radio-text-6"
               class="text-medium font-normal text-gray-500 dark:text-gray-300"
             >
-            Incluye mentoría completa y un día de navegación con el Capitán Brush para aprender onsite todo sobre megayates. Precio desde 749€, varía según puerto, fecha y embarcación. Puede compartirse entre varios alumnos según capacidad del barco. Acceso a bolsa de recruiters y descuentos en cursos STCW, RYA, inglés, PADI, AEC y más.
+              Incluye mentoría completa y un día de navegación con el Capitán
+              Brush para aprender onsite todo sobre megayates. Precio desde
+              749€, varía según puerto, fecha y embarcación. Puede compartirse
+              entre varios alumnos según capacidad del barco. Acceso a bolsa de
+              recruiters y descuentos en cursos STCW, RYA, inglés, PADI, AEC y
+              más.
             </p>
             <p
               id="helper-radio-text-6"
